@@ -1,7 +1,9 @@
 
-if(counter<1) {
-	solver_check_exists_var=0;
-	solver_var=0;
+if(counter<10) {
+	solver_find_singles_var=0;  //JUST A VALUE COUNTER
+	solver_return_singles_var=0;  //JUST A VALUE COUNTER
+	solver_var=0;  //JUST A VALUE COUNTER
+	
 
 
 	sudoku_create_solution_validation(); //check previous one [only for testing]

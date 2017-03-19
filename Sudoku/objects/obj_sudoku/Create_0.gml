@@ -2,8 +2,9 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_set_color(c_black);
 
-solver_check_exists_var=0;
-solver_var=0;
+solver_find_singles_var=0;  //JUST A VALUE COUNTER
+solver_return_singles_var=0;  //JUST A VALUE COUNTER
+solver_var=0;  //JUST A VALUE COUNTER
 
 
 counter=0;

@@ -1,8 +1,8 @@
 {
-    "id": "d4145ee4-afb0-4905-b0ab-6b298de243d5",
+    "id": "9300394f-eedd-4068-9f51-9c342e548478",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "solver_1",
+    "name": "solver_find_singles",
     "IsCompatibility": false,
     "IsDnD": false
 }

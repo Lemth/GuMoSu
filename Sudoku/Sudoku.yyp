@@ -71,14 +71,6 @@
             }
         },
         {
-            "Key": "3a25bfb8-4ae5-4756-8c82-7f708e46711d",
-            "Value": {
-                "id": "00db0770-80d3-4449-906f-c658a19f72e1",
-                "resourcePath": "scripts\\solver_1\\solver_1.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "3a34815c-c446-4b13-8922-32ae8f701a9c",
             "Value": {
                 "id": "e2fe5f96-9cbb-4f3e-83dd-53da6882993f",
@@ -95,19 +87,19 @@
             }
         },
         {
-            "Key": "53ba5a7b-bd86-423b-81fb-380846cd7f35",
-            "Value": {
-                "id": "d5a418dd-807c-47f0-8f32-096257f62daf",
-                "resourcePath": "objects\\obj_sudoku_1\\obj_sudoku_1.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "5572dcd2-ec25-490e-b8ca-d636ce5cb949",
             "Value": {
                 "id": "ada32e11-1990-4b84-9aed-d5613707f77f",
                 "resourcePath": "objects\\obj_sudoku\\obj_sudoku.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "5ec0b529-f383-4510-8129-e0b03a73d124",
+            "Value": {
+                "id": "d9fbb862-690b-40e6-adb0-8f4dffbe6337",
+                "resourcePath": "scripts\\ds_list_delete_value\\ds_list_delete_value.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -170,7 +162,7 @@
             "Key": "9300394f-eedd-4068-9f51-9c342e548478",
             "Value": {
                 "id": "e58111ba-24ec-4892-83df-be668badc954",
-                "resourcePath": "scripts\\solver_check_exists\\solver_check_exists.yy",
+                "resourcePath": "scripts\\solver_find_singles\\solver_find_singles.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -247,6 +239,14 @@
             }
         },
         {
+            "Key": "be0697ac-13fe-4d7a-9150-4af44b4227d4",
+            "Value": {
+                "id": "3c6fb530-1b48-42fe-8521-65a4ab8ccc4b",
+                "resourcePath": "scripts\\solver_return_singles\\solver_return_singles.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "c8edd5c0-48a6-47bf-ae7a-73034644ba77",
             "Value": {
                 "id": "03f3d8d6-bd4f-4e80-b0de-116b63d6e699",
@@ -260,6 +260,14 @@
                 "id": "74620570-ea3f-43db-bedc-c4d8b21540d2",
                 "resourcePath": "options\\windows\\options_windows.yy",
                 "resourceType": "GMWindowsOptions"
+            }
+        },
+        {
+            "Key": "d4145ee4-afb0-4905-b0ab-6b298de243d5",
+            "Value": {
+                "id": "323a7d9c-d6c8-4f71-a199-0d4e18921c6b",
+                "resourcePath": "scripts\\solver_1\\solver_1.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -322,7 +330,9 @@
         "15a7a192-7003-4a5d-bf29-e2f976ece012",
         "9300394f-eedd-4068-9f51-9c342e548478",
         "3a34815c-c446-4b13-8922-32ae8f701a9c",
-        "3a25bfb8-4ae5-4756-8c82-7f708e46711d"
+        "5ec0b529-f383-4510-8129-e0b03a73d124",
+        "d4145ee4-afb0-4905-b0ab-6b298de243d5",
+        "be0697ac-13fe-4d7a-9150-4af44b4227d4"
     ],
     "tutorial": ""
 }

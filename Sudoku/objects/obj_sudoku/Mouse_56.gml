@@ -1,6 +1,8 @@
-solver_check_exists_var=0;
-solver_var=0;
-
+solver_find_singles_var=0;  //JUST A VALUE COUNTER
+solver_return_singles_var=0;  //JUST A VALUE COUNTER
+solver_var=0;  //JUST A VALUE COUNTER
+	
+	
 time=get_timer()/1000;
 
 sudoku();

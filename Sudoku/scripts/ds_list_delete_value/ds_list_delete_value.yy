@@ -1,8 +1,8 @@
 {
-    "id": "d4145ee4-afb0-4905-b0ab-6b298de243d5",
+    "id": "5ec0b529-f383-4510-8129-e0b03a73d124",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "solver_1",
+    "name": "ds_list_delete_value",
     "IsCompatibility": false,
     "IsDnD": false
 }
