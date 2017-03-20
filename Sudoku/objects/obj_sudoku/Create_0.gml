@@ -2,8 +2,8 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_set_color(c_black);
 
-solver_find_singles_var=0;  //JUST A VALUE COUNTER
-solver_return_singles_var=0;  //JUST A VALUE COUNTER
+solver_find_singles_value_var=0;  //JUST A VALUE COUNTER
+solver_return_singles_value_var=0;  //JUST A VALUE COUNTER
 solver_var=0;  //JUST A VALUE COUNTER
 solver_RCR_var=0;
 solver_RCR_complex_var=0;

@@ -19,20 +19,20 @@ while(solving) {
 	/*
 	for(var i=0;i<81;i++) {
 		var size=ds_list_size(solver_inventory[| i]);
-		if(size>1) { // ? SO MUCH FASTER!! LIKE 10 x FASTER THAN SOLVER_FIND_SINGLES
+		if(size>1) { // ? SO MUCH FASTER!! LIKE 10 x FASTER THAN SOLVER_FIND_singles_value
 			
 			//Return each connected single
 		
-			solving=solver_return_singles(solver_inventory,i); 39ms
+			solving=solver_return_singles_value(solver_inventory,i); 39ms
 			
 			
 		/*} else if(size>1) { 
 				
-			//For each value in squares list: find singles
+			//For each value in squares list: find singles_value
 			
 			var j=0;
 			while(j<ds_list_size(solver_inventory[| i])) {
-				if(solver_find_singles(solver_inventory,i,ds_list_find_value(solver_inventory[| i],j))) {
+				if(solver_find_singles_value(solver_inventory,i,ds_list_find_value(solver_inventory[| i],j))) {
 					ds_list_delete(solver_inventory[| i],j);
 					solving=true;
 					continue;

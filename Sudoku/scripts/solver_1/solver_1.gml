@@ -28,7 +28,7 @@ while(solving) {
 					continue;
 				}
 				 /* 
-				//Hidden Singles
+				//Hidden singles_value
 				if(solver_check_unique(solver_inventory,i,ds_list_find_value(solver_inventory[| i],j))) {
 					var hold=ds_list_find_value(solver_inventory[| i],j);
 					ds_list_clear(solver_inventory[| i]);

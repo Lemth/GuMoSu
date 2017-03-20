@@ -1,9 +1,9 @@
-/// @desc solver_find_singles(list,square,value)
+/// @desc solver_find_singles_value(list,square,value)
 /// @arg list	argument0 
 /// @arg square	argument1
 /// @arg value	argument2
 
-solver_find_singles_var++;  //JUST A VALUE COUNTER
+solver_find_singles_value_var++;  //JUST A VALUE COUNTER
 
 var column=(argument1 mod 9);
 var row=floor(argument1/9);

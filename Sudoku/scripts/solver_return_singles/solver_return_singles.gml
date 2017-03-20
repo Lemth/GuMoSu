@@ -1,8 +1,8 @@
-/// @desc solver_find_singles(list,square)
+/// @desc solver_find_singles_value(list,square)
 /// @arg list	argument0 
 /// @arg square	argument1
 
-solver_return_singles_var++;  //JUST A VALUE COUNTER
+solver_return_singles_value_var++;  //JUST A VALUE COUNTER
 
 var status=false;
 

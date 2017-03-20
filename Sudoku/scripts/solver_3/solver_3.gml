@@ -18,7 +18,7 @@ while(solving) {
 	solving=false;
 	for(var i=0;i<81;i++) {
 		var size=ds_list_size(solver_inventory[| i]);
-		if(size>1) { // ? SO MUCH FASTER!! LIKE 10 x FASTER THAN SOLVER_FIND_SINGLES
+		if(size>1) { // ? SO MUCH FASTER!! LIKE 10 x FASTER THAN SOLVER_FIND_singles_value
 			
 			//Return each connected single
 		
