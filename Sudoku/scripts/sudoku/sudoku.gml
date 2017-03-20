@@ -5,14 +5,19 @@ sudoku_create_solution();
 
 
 inventory=ds_list_create();
+var order=ds_list_create();
 
 for(var i=0;i<81;i++) {
 	inventory[| i]=ds_list_create();
 	ds_list_add(inventory[| i],solution[i]);
+	ds_list_add(order,i);
 }
+ds_list_shuffle(order);
 
 //Try every square once
-for(var i=0;i<81;i++) {
+repeat(81) {
+	i=ds_list_find_value(order,0);
+		  ds_list_delete(order,0);
 	//Remove it
 	ds_list_clear(inventory[| i]);
 	for(var j=1;j<=9;j++) {
@@ -43,3 +48,4 @@ for(var i=0;i<81;i++) {
 }
 
 ds_list_destroy(inventory);
+ds_list_destroy(order);
