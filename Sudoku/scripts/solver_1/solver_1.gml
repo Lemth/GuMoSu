@@ -17,7 +17,7 @@ for(var j=0;j<9;j++) {
 	}
 	while(ds_list_size(singles)>0) {
 		for(var i=0;i<ds_list_size(multiples_id);i++) {
-			ds_list_delete_value(multiples_id[| i],singles[| 0]);
+			ds_list_delete_value(multiples_id,singles[| 0]);
 		}
 		ds_list_delete(singles,0);
 	}
@@ -35,7 +35,7 @@ for(var j=0;j<9;j++) {
 	}
 	while(ds_list_size(singles)>0) {
 		for(var i=0;i<ds_list_size(multiples_id);i++) {
-			ds_list_delete_value(multiples_id[| i],singles[| 0]);
+			ds_list_delete_value(multiples_id,singles[| 0]);
 		}
 		ds_list_delete(singles,0);
 	}
@@ -53,7 +53,7 @@ for(var j=0;j<9;j++) {
 	}
 	while(ds_list_size(singles)>0) {
 		for(var i=0;i<ds_list_size(multiples_id);i++) {
-			ds_list_delete_value(multiples_id[| i],singles[| 0]);
+			ds_list_delete_value(multiples_id,singles[| 0]);
 		}
 		ds_list_delete(singles,0);
 	}
@@ -73,12 +73,44 @@ return true;
 /// @desc solver_RCR_complex(list)
 /// @arg list	argument0 
 
+var singles=ds_list_create();
+var multiples_id=ds_list_create();
 
+for(var i=0;i<27;i++) {
+	singles[| i]=ds_list_create();
+	multiples_id[| i]=ds_list_create();
+}
 
+for(var i=0;i<81;i++) {
+	if(ds_list_size(argument0[| i])==1) {
+		ds_list_add(singles[| floor(i/9)],ds_list_find_value(argument0[| i],0);
+		ds_list_add(singles[| 9+(i mod 9)],ds_list_find_value(argument0[| i],0);	   
+		ds_list_add(singles[| 18+(floor(i/9) mod 3)*3+((i mod 9) mod 3)],ds_list_find_value(argument0[| i],0);
+        } else {
+		ds_list_add(multiples_id[| floor(i/9)],argument0[| i]);
+		ds_list_add(multiples_id[| 9+(i mod 9)],argument0[| i]);	   
+		ds_list_add(multiples_id[| 18+(floor(i/9) mod 3)*3+((i mod 9) mod 3)],argument0[| i]);
+	}
+}
 
+for(var i=0;i<27;i++) {
+	while(ds_list_size(singles[| i])>0) {
+		for(var j=0;j<ds_list_size(multiples_id[| i]);j++) {
+			ds_list_delete_value(multiples_id[| i],singles[| 0]);
+		}
+		ds_list_delete(singles,0);
+	}
+}
+			    
+for(var i=0;i<27;i++) {
+	ds_list_destroy(singles[| i]);
+	ds_list_destroy(multiples_id[| i]);
+}
 
+ds_list_destroy(singles);
+ds_list_destroy(multiples_id);
 
-var region=(row mod 3)*3+(column mod 3);
+return true;
 
 
 /*
