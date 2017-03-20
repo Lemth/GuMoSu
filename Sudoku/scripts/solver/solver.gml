@@ -10,35 +10,13 @@ for(var i=0;i<81;i++) {
 	ds_list_copy(solver_inventory[| i],argument0[| i]);
 }
 
-var solved=true;
-var solving=true;
-
-while(solving) {
-	solver_var++; //JUST A VALUE COUNTER
-	solving=false;
-	for(var i=0;i<81;i++) {
-		var size=ds_list_size(solver_inventory[| i]);
-		if(size>1) { // ? SO MUCH FASTER!! LIKE 10 x FASTER THAN SOLVER_FIND_SINGLES
-			
-			//Return each connected single
-		
-			solving=solver_return_singles(solver_inventory,i); //39ms
-		} else if (size==0) {
-			solving=false;
-			break;
-		}
-	}
-	//solving=solver_RCR(solver_inventory);
-	//solving=solver_RCR_complex(solver_inventory);
-}
-
-
-
+http://norvig.com/sudoku.html
 
 
 
 for(var i=0;i<81;i++) {
 	if(ds_list_size(solver_inventory[| i])!=1) {
+		show_debug_message(string(ds_list_size(solver_inventory[| i])));
 		solved=false;
 	}
 	ds_list_destroy(solver_inventory[| i]);
