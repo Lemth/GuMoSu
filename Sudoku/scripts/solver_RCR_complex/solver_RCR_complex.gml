@@ -36,13 +36,11 @@ for(var i=0;i<27;i++) {
 		}
 		ds_list_delete(singles_value[| i],0);
 	}
-}
-
-//END
-for(var i=0;i<27;i++) {
 	ds_list_destroy(singles_value[| i]);
 	ds_list_destroy(multiples_id[| i]);
 }
+
+//END
 ds_list_destroy(singles_value);
 ds_list_destroy(multiples_id);
 //END
