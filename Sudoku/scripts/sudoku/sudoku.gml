@@ -24,7 +24,7 @@ switch(irandom(2)) {
 		ds_list_add(remove_rcr,0+rand_8,9+rand_8,18+rand_8,27+rand_8,36+rand_8,45+rand_8,54+rand_8,63+rand_8,72+rand_8);
 		break;
 	case 2:
-		ds_list_add(remove_rcr,0,1,2,9,10,11,18,19,20); // add variations
+		ds_list_add(remove_rcr,0+3*rand_8+18*floor(rand_8/3),1+3*rand_8+18*floor(rand_8/3),2+3*rand_8+18*floor(rand_8/3),9+3*rand_8+18*floor(rand_8/3),10+3*rand_8+18*floor(rand_8/3),11+3*rand_8+18*floor(rand_8/3),18+3*rand_8+18*floor(rand_8/3),19+3*rand_8+18*floor(rand_8/3),20+3*rand_8+18*floor(rand_8/3)); // add variations
 		break;
 }
 while(ds_list_size(remove_rcr)>0) {
@@ -34,7 +34,7 @@ while(ds_list_size(remove_rcr)>0) {
 }
 ds_list_destroy(remove_rcr);
 
-//Try every square once
+//Try every square once (9 were already removed earlier)
 repeat(81-9) {
 	i=ds_list_find_value(order,0);
 		  ds_list_delete(order,0);
