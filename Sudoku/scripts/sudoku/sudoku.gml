@@ -14,8 +14,28 @@ for(var i=0;i<81;i++) {
 }
 ds_list_shuffle(order);
 
+remove_rcr=ds_list_create();
+var rand_8=irandom(8);
+switch(irandom(2)) {
+	case 0:
+		ds_list_add(remove_rcr,0+9*rand_8,1+9*rand_8,2+9*rand_8,3+9*rand_8,4+9*rand_8,5+9*rand_8,6+9*rand_8,7+9*rand_8,8+9*rand_8);
+		break;
+	case 1:
+		ds_list_add(remove_rcr,0+rand_8,9+rand_8,18+rand_8,27+rand_8,36+rand_8,45+rand_8,54+rand_8,63+rand_8,72+rand_8);
+		break;
+	case 2:
+		ds_list_add(remove_rcr,0,1,2,9,10,11,18,19,20); // add variations
+		break;
+}
+while(ds_list_size(remove_rcr)>0) {
+	ds_list_clear(inventory[| remove_rcr[| 0]]);
+	ds_list_delete_value(order,remove_rcr[| 0]);
+	ds_list_delete(remove_rcr,0);
+}
+ds_list_destroy(remove_rcr);
+
 //Try every square once
-repeat(81) {
+repeat(81-9) {
 	i=ds_list_find_value(order,0);
 		  ds_list_delete(order,0);
 	//Remove it
