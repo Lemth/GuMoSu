@@ -1,8 +1,8 @@
 {
-    "id": "36832a5d-21a8-48bd-8618-ef65aa7417d3",
+    "id": "264a5cfa-40a7-46fa-a5cc-e6dd7e5fb42d",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "sudoku",
+    "name": "yt_check_Puzzle",
     "IsCompatibility": false,
     "IsDnD": false
 }

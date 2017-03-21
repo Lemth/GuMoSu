@@ -45,4 +45,4 @@ ds_list_destroy(singles_value);
 ds_list_destroy(multiples_id);
 //END
 
-return status;
+return false;

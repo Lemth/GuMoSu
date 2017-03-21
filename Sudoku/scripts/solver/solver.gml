@@ -2,7 +2,7 @@
 /// @arg list	argument0
 //INIT
 var hold=ds_list_create();
-var solved=true;
+var solved=false;
 //BEGIN
 var solver_inventory=ds_list_create();
 for(var i=0;i<81;i++) {
@@ -23,10 +23,13 @@ for(var j=2;j<=9;j++) {
 		} else if(ds_list_size(solver_inventory[| i])==j) {
 			ds_list_copy(hold,solver_inventory[| i]);
 			while(ds_list_size(hold)>0) {
+				show_debug_message(string(j)+"  "+string(ds_list_size(hold))+"  "+string(i));
 				ds_list_clear(solver_inventory[| i]);
 				ds_list_add(solver_inventory[| i],hold[| 0]);
 				if(solver(solver_inventory)) {
 					//A solution!
+					solved=true;
+					show_debug_message("TRUE!");
 					break;
 				} else {
 					//No solution... try next value
@@ -35,14 +38,14 @@ for(var j=2;j<=9;j++) {
 			}
 		}
 	}
-	if(solved==false) {
+	if(solved==true) {
 		break;
 	}
 }
 
 //END
 for(var i=0;i<81;i++) {
-	if(ds_list_size(solver_inventory[| i])!=1) {
+	if(ds_list_size(solver_inventory[| i])==0) {
 		solved=false;
 	}
 	ds_list_destroy(solver_inventory[| i]);

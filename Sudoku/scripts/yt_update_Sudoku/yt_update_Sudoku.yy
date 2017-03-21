@@ -1,8 +1,8 @@
 {
-    "id": "36832a5d-21a8-48bd-8618-ef65aa7417d3",
+    "id": "ab31fc7d-8118-4578-87d9-20547550348e",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "sudoku",
+    "name": "yt_update_Sudoku",
     "IsCompatibility": false,
     "IsDnD": false
 }
