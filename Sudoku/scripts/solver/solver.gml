@@ -80,13 +80,13 @@ sub R {				<----- subroutine (script)
                  $_ / 9 == $i / 9	<-- $_ default == row numbers
               || $_ % 9 == $i % 9	<-- $_ default == column number
               || $_ / 27 == $i / 27 && $_ % 9 / 3 == $i % 9 / 3		<-- /27 && %9/3 (row/3 && column/3)
-              ? $A[$_]			<-- CONDI
-              : 0 => 1
-        } 0 .. 80;
-        R( $A[$i] = $_ ) for grep { !$t{$_} } 1 .. 9;
-        return $A[$i] = 0;
+              ? $A[$_]			<-- CONDITION ? true : false, TRUE=
+              : 0 => 1			<-- FALSE=0, value (for map)=1 (?????)
+        } 0 .. 80;			<-- array 0 ~ 80 (to $_ ?????)
+        R( $A[$i] = $_ ) for grep { !$t{$_} } 1 .. 9;		<-- execute "R" (where $A[$i] = $_ - argument0), for {!map values } between 1~9
+        return $A[$i] = 0;		<-- 0?
     }
-    die @A;
+    die @A;				<-- exit; ?
 }
 R
 The core difference is that in my four line version I stored the sudoku grid on a hash, whereas here I use an array. For convenience here is a sudoku grid where the numbers represent the index in the array:
@@ -107,14 +107,14 @@ I'll now run through the code explaining the various interesting bits.
 use integer;
 @A = split //, <>;
 It is rare that obfus use modules but in this case it saved a few characters. Later on in the code I do a fair amount of integer mathematics, and without the use integer I would have to wrap up six of the expressions like so: int( $_ / 9 ).
-
+OK
 The second line puts the grid from STDIN onto an array @A.
-
+OK
 sub R {
     for $i ( 0 .. 80 ) {
         next if $A[$i];
 The subroutine R is so called because it recurses. The main part of it is a for loop that runs over the whole grid. However if there is a value in the grid it skips on to the next position. $i is now the current position in the grid that we are looking to find a value for.
-
+OK
         my %t = map {
                  $_ / 9 == $i / 9
               || $_ % 9 == $i % 9
