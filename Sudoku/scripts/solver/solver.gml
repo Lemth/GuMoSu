@@ -33,7 +33,6 @@ for(var j=2;j<=9;j++) {
 					ds_list_delete(hold,0);
 				}
 			}
-			break;
 		}
 	}
 	if(solved==false) {
