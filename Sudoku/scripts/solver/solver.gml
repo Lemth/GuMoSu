@@ -123,29 +123,29 @@ OK
               : 0 => 1
         } 0 .. 80;
 This is a bit hairy. I am creating a hash %t that will have as its keys the numbers that can not be used in this position, ie the ones that have been taken. The map contains a bool_expr ? if_true : if_false construct to determine what the key should be.
-
+OK: on multiples; find peers singles and add those to dictionary. 1..9 => 1(true-meaningless)
 The first three lines in the map are the boolean expressions to determine if $_ is in the same row, column or grid as $i. $_ / 9 == $i / 9 is for the row (remember that the division is integer so something like 12/9 equals 1). || $_ % 9 == $i % 9 is for the column and || $_ / 27 == $i / 27 && $_ % 9 / 3 == $i % 9 / 3 is for the grid (first part for grid row, second part for grid column). These are quite straight forward once you've gotten your head round them.
-
+OK.
 Really the booleans should have brackets round them to clear things up, however because Perl will stop evaluating them as soon as it finds one that is true the final && is ok.
-
+OK.
 Remember that the map is assigning a key/value pair to the hash. Well if these tests return true then the key is $A[$_], otherwise it is 0. The value is hard coded to true. I was surprised to find that the code for the key did not need to be in brackets, evidently the ?: is more tightly bound than => which is as you would expect.
-
+OK
         R( $A[$i] = $_ ) for grep { !$t{$_} } 1 .. 9;
 Three things happen here. The for loop runs for all the numbers that can be used in this position thanks to the grep { !$t{$_} } which filters out the numbers that have been used - they have a true value in the hash %t.
-
+OK; loop 1 through 9. use value for this square that is NOT in the dictionary (peer-singles).
 R( $A[$i] = $_ ) sets the current position to one of the possible values and then recurses.
-
+OK; recurses with each possible value.
         return $A[$i] = 0;
 If none of the values in the for loop lead to a solution, or if there were no values to try then we reset the current position to zero and return. This allows other values to be tried in the 'higher' calls to R.
-
+OK;
     }
     die @A;
 }
 If the outermost for loop ever reaches the end (ie $i == 81) then we have our solution. Print it out and stop processing.
-
+Ok;
 R
 The only thing left to do is to actually start running the code.
-
+OK
 So there we are, sudokus solved in three lines of Perl. In my opinion this is cleaner than my previous offerings as the logic is tighter. Still this obfu is not as short as it can get. There are two superfluous semicolons and the logic in the map could be shortened too, as well as some other bits.
 
 */
