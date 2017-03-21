@@ -14,7 +14,7 @@ for(var i=0;i<81;i++) {
 //BEGIN
 
 for (var i=0;i<81;i++) {
-	if(ds_list_size(argument0[| i]==1)) {
+	if(ds_list_size(solver_inventory[| i]==1)) {
 		continue;
 	}
 	for (var j=0;j<81;j++) {
@@ -22,46 +22,21 @@ for (var i=0;i<81;i++) {
 		|| (j mod 9)==(i mod 9)
 		|| (floor(j/27)==floor(i/27) && floor((j mod 9)/3)==floor((i mod 9)/3))) {
 			if(ds_list_size(argument0[| j]==1) {
-				ds_list_delete_value(argument0[| i],ds_list_find_value(argument0[| j],0));
+				ds_list_delete_value(solver_inventory[| i],ds_list_find_value(solver_inventory[| j],0));
 			}
-			   
-	my %t = map {		<----- (my=var), %=hash (lib/ds_dictionary), map { name => value }
-		 $_ / 9 == $i / 9	<-- $_ default == row numbers
-	      || $_ % 9 == $i % 9	<-- $_ default == column number
-	      || $_ / 27 == $i / 27 && $_ % 9 / 3 == $i % 9 / 3		<-- /27 && %9/3 (row/3 && column/3)
-	      ? $A[$_]			<-- CONDITION ? true : false, TRUE=
-	      : 0 => 1			<-- FALSE=0, value (for map)=1 (?????)
-	} 0 .. 80;			<-- array 0 ~ 80 (to $_ ?????)
-	R( $A[$i] = $_ ) for grep { !$t{$_} } 1 .. 9;		<-- execute "R" (where $A[$i] = $_ - argument0), for {!map values } between 1~9
-	return $A[$i] = 0;		<-- 0?
-}
-die @A;				<-- exit; ?
-
-//Search
-for(var j=2;j<9;j++) {
-	for(var i=0;i<81;i++) {
-		if(ds_list_size(solver_inventory[| i])==j) {
-			var hold=ds_list_create();
-			ds_list_copy(hold,solver_inventory[| i]);
-			ds_list_clear(solver_inventory[| i]);
-			ds_list_add(solver_inventory[| i],hold[| 0]);
-			if(solver(solver_inventory)) {
-				//A solution!
-				solved=true;
-				break;
-			} else {
-				//No solution...
-				solved=false;
-			}
-			break;
 		}
 	}
-	if(hold!=0) {
-		break;
+	for (var j=1;j<=9;j++) {
+		if(ds_list_find_pos(solver_inventory[| i],j)>=0) {
+			if(solver(solver_inventory)) {
+				//solved
+			} else {
+				//not solved	
+			}
+		}
 	}
 }
-
-
+					
 //END
 for(var i=0;i<81;i++) {
 	if(ds_list_size(solver_inventory[| i])!=1) {
