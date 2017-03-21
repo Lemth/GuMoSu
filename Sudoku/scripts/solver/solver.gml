@@ -17,7 +17,10 @@ while(solver_RCR_complex(solver_inventory)) { }
 //Search
 for(var j=2;j<=9;j++) {
 	for(var i=0;i<81;i++) {
-		if(ds_list_size(solver_inventory[| i])==j) {
+		if(ds_list_size(solver_inventory[| i])==0) {
+			solved=false;
+			break;
+		} else if(ds_list_size(solver_inventory[| i])==j) {
 			ds_list_copy(hold,solver_inventory[| i]);
 			while(ds_list_size(hold)>0) {
 				ds_list_clear(solver_inventory[| i]);
