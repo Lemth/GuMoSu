@@ -60,3 +60,26 @@ for(var i=0;i<9;i++) {
 }
 // https://www.youtube.com/watch?v=oUtxBYHrHFY 5:03
 return 0;
+
+
+
+/// @desc yt_check_Rows(square,boxes)
+/// @arg square
+/// @arg boxes
+// https://www.youtube.com/watch?v=Nc7eCcTkzxg 2:59
+
+var sum=ds_list_create();
+
+//loop through rows
+for(var i=0;i<9;i++) {
+	//loop through each square in the row
+	for(var j=0;v<9;j++) {
+		// https://www.youtube.com/watch?v=Nc7eCcTkzxg 5:49
+		if(sudoku_grid[# j,i] != 0) {
+			continue;	
+		}
+	}
+}
+
+ds_list_destroy(sum);
+return 0;
