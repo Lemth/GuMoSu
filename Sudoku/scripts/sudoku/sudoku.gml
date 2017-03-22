@@ -19,13 +19,13 @@ var rand_8=irandom(8);
 switch(irandom(2)) {
 	case 0:
 		ds_list_add(remove_rcr,0+9*rand_8,1+9*rand_8,2+9*rand_8,3+9*rand_8,4+9*rand_8,5+9*rand_8,6+9*rand_8,7+9*rand_8,8+9*rand_8);
-		break;
+	break;
 	case 1:
 		ds_list_add(remove_rcr,0+rand_8,9+rand_8,18+rand_8,27+rand_8,36+rand_8,45+rand_8,54+rand_8,63+rand_8,72+rand_8);
-		break;
+	break;
 	case 2:
 		ds_list_add(remove_rcr,0+3*rand_8+18*floor(rand_8/3),1+3*rand_8+18*floor(rand_8/3),2+3*rand_8+18*floor(rand_8/3),9+3*rand_8+18*floor(rand_8/3),10+3*rand_8+18*floor(rand_8/3),11+3*rand_8+18*floor(rand_8/3),18+3*rand_8+18*floor(rand_8/3),19+3*rand_8+18*floor(rand_8/3),20+3*rand_8+18*floor(rand_8/3)); // add variations
-		break;
+	break;
 }
 while(ds_list_size(remove_rcr)>0) {
 	ds_list_clear(inventory[| remove_rcr[| 0]]);
