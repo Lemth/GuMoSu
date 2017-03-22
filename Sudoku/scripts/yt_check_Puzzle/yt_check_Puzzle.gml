@@ -8,14 +8,17 @@ for(var j=0;j<9;j++) {
 			yt_solve_Square(sudoku_grid[# i,j]);
 			yt_update_Sudoku(sudoku_grid,i,j);
 			yt_update_Boxes(sudoku_grid,i,j);
+			
+			// https://www.youtube.com/watch?v=oUtxBYHrHFY 3:11
+			return 1;
 		}
 	}
 }
 
-
 yt_box_Singles(sudoku_grid,sudoku_box);
 
-return true;
+return 1;
+
 
 /// @desc yt_box_Singles(puzzle,boxes)
 /// @arg puzzle
