@@ -4,6 +4,7 @@ draw_set_color(c_black);
 
 globalvar unsolved;
 unsolved=81;
+progress=1;
 
 counter=0;
 
