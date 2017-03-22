@@ -69,17 +69,43 @@ return 0;
 // https://www.youtube.com/watch?v=Nc7eCcTkzxg 2:59
 
 var sum=ds_list_create();
+var place=ds_list_create();
 
 //loop through rows
 for(var i=0;i<9;i++) {
+	
+	//initialize sum to 0 (9 times)
+	ds_list_clear(sum);
+	ds_list_add(sum,0,0,0,0,0,0,0,0,0);
+	
 	//loop through each square in the row
-	for(var j=0;v<9;j++) {
+	for(var j=0;j<9;j++) {
 		// https://www.youtube.com/watch?v=Nc7eCcTkzxg 5:49
-		if(sudoku_grid[# j,i] != 0) {
+		if(ds_map_find_value(sudoku_grid[# j,i],"number") != 0) {
 			continue;	
+		}
+	    	
+		//loop through all possibles
+		for(var k=0;k<9;k++) {
+			// https://www.youtube.com/watch?v=Nc7eCcTkzxg 6:44
+			// check if number k is possible
+			if(ds_list_find_value(ds_map_find_value(sudoku_grid[# j,i],"possibles"),k) == 0) {
+				sum[| k]++;
+				place[| k]=j;
+			}
+		}
+	}
+	    
+	// https://www.youtube.com/watch?v=Nc7eCcTkzxg 9:24
+	for (var k=0;k<9;k++) {
+		if(sum[| k]==1) {
+			// https://www.youtube.com/watch?v=Nc7eCcTkzxg 13:37
+			ds_map_replace(sudoku_grid[# j,place[| k]],"number",k+1);
 		}
 	}
 }
 
+
 ds_list_destroy(sum);
+ds_list_destroy(place);
 return 0;
