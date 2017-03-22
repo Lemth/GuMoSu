@@ -15,8 +15,10 @@ for(var j=0;j<9;j++) {
 	}
 }
 
-return yt_box_Singles(sudoku_grid,sudoku_box);
-
+if(yt_box_Singles(sudoku_grid,sudoku_box)) {
+	return 1;	
+}
+return yt_check_Rows(sudoku_grid,sudoku_box);
 
 
 /// @desc yt_box_Singles(puzzle,boxes)
@@ -68,15 +70,19 @@ return 0;
 /// @arg boxes
 // https://www.youtube.com/watch?v=Nc7eCcTkzxg 2:59
 
+display_debug_messate("We got here!");
+
 var sum=ds_list_create();
 var place=ds_list_create();
 
 //loop through rows
 for(var i=0;i<9;i++) {
 	
-	//initialize sum to 0 (9 times)
+	//initialize sum and palce to 0 (9 times)
 	ds_list_clear(sum);
 	ds_list_add(sum,0,0,0,0,0,0,0,0,0);
+	ds_list_clear(place);
+	ds_list_add(place,0,0,0,0,0,0,0,0,0);
 	
 	//loop through each square in the row
 	for(var j=0;j<9;j++) {
@@ -89,7 +95,7 @@ for(var i=0;i<9;i++) {
 		for(var k=0;k<9;k++) {
 			// https://www.youtube.com/watch?v=Nc7eCcTkzxg 6:44
 			// check if number k is possible
-			if(ds_list_find_value(ds_map_find_value(sudoku_grid[# j,i],"possibles"),k) == 0) {
+			if(ds_list_find_value(ds_map_find_value(sudoku_grid[# j,i],"possible"),k) == 0) {
 				sum[| k]++;
 				place[| k]=j;
 			}
@@ -100,7 +106,18 @@ for(var i=0;i<9;i++) {
 	for (var k=0;k<9;k++) {
 		if(sum[| k]==1) {
 			// https://www.youtube.com/watch?v=Nc7eCcTkzxg 13:37
-			ds_map_replace(sudoku_grid[# j,place[| k]],"number",k+1);
+			ds_map_replace(sudoku_grid[# place[| k],i],"number",k+1);
+			// https://www.youtube.com/watch?v=Nc7eCcTkzxg 15:55
+			ds_map_replace(sudoku_grid[# place[| k],i],"solvable",0);
+			unsolved--;
+			
+			// https://www.youtube.com/watch?v=Nc7eCcTkzxg 16:37
+			yt_update_Sudoku(sudoku_grid,place[|k],i);
+			yt_update_Boxes(sudoku_grid,place[|k],i);
+			
+			ds_list_destroy(sum);
+			ds_list_destroy(place);
+			return 1;
 		}
 	}
 }
