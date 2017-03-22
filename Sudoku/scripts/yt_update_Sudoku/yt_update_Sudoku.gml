@@ -1,4 +1,4 @@
-/// @desc yt_update_Sudoku(puzzle,row,column)
+/// @desc yt_update_Sudoku(puzzle,column,row)
 /// @arg puzzle
 /// @arg column
 /// @arg row
