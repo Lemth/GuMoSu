@@ -1,6 +1,6 @@
 /// @desc sudoku_create_solution()
 
-inventory=ds_list_create();
+var inventory=ds_list_create();
 
 for(var i=0;i<81;i++) {
 	inventory[| i]=ds_list_create();

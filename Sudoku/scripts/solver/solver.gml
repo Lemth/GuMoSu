@@ -14,7 +14,6 @@ var solved=true;
 var solving=true;
 
 while(solving) {
-	solver_var++; //JUST A VALUE COUNTER
 	solving=false;
 	for(var i=0;i<81;i++) {
 		var size=ds_list_size(solver_inventory[| i]);

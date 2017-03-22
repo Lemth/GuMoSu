@@ -87,6 +87,14 @@
             }
         },
         {
+            "Key": "2b783475-fbce-4c78-8ed1-f3ec23809041",
+            "Value": {
+                "id": "7e12a275-b578-4759-8464-d152e30cacf4",
+                "resourcePath": "scripts\\sudoku_create_puzzle\\sudoku_create_puzzle.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "32c8e37e-c052-4434-9907-1bfb36f52ecc",
             "Value": {
                 "id": "f632fc48-7756-41b8-b6a4-fb0e56564d78",
@@ -287,6 +295,14 @@
             }
         },
         {
+            "Key": "a0dede0c-b988-426f-bdd9-3e9c7a6e9ac5",
+            "Value": {
+                "id": "24800179-daa4-430e-830e-db11a7240af8",
+                "resourcePath": "objects\\obj_sudoku_1\\obj_sudoku_1.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "a2033e53-78ac-4921-93a5-1a35aeca7078",
             "Value": {
                 "id": "5feede0c-6c6b-4ada-8b72-d5002fd3e158",
@@ -474,7 +490,8 @@
         "60e8a679-5895-4c14-ba36-32783b0ff837",
         "4f0a816b-c264-41f7-b8f5-ca4d34663c3f",
         "1c854da3-6026-4a90-8e33-d3852d571429",
-        "afbc8f0d-e36c-42ec-8cc5-41706b01bb48"
+        "afbc8f0d-e36c-42ec-8cc5-41706b01bb48",
+        "2b783475-fbce-4c78-8ed1-f3ec23809041"
     ],
     "tutorial": ""
 }
