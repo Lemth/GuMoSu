@@ -15,9 +15,8 @@ for(var j=0;j<9;j++) {
 	}
 }
 
-yt_box_Singles(sudoku_grid,sudoku_box);
+return yt_box_Singles(sudoku_grid,sudoku_box);
 
-return 1;
 
 
 /// @desc yt_box_Singles(puzzle,boxes)
@@ -54,7 +53,10 @@ for(var i=0;i<9;i++) {
 			
 			// https://www.youtube.com/watch?v=28lzkKBmyi4 19:52
 			yt_update_Sudoku(puzzle,ds_map_find_value(ds_list_find_value(ds_map_find_value(boxes[| i],"squares"),temp),"column"),ds_map_find_value(ds_list_find_value(ds_map_find_value(boxes[| i],"squares"),temp),"row"));
+			
+			return 1;
 		}
 	}
 }
-
+// https://www.youtube.com/watch?v=oUtxBYHrHFY 5:03
+return 0;
