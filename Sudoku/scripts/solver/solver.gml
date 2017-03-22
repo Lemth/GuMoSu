@@ -1,56 +1,43 @@
 /// @desc solver(list)
 /// @arg list	argument0
-//INIT
-var hold=ds_list_create();
-var solved=false;
-//BEGIN
+
+
+
 var solver_inventory=ds_list_create();
+
 for(var i=0;i<81;i++) {
 	solver_inventory[| i]=ds_list_create();
 	ds_list_copy(solver_inventory[| i],argument0[| i]);
 }
-//BEGIN
 
-//Constraint Propagation
-while(solver_RCR_complex(solver_inventory)) { }
+var solved=true;
+var solving=true;
 
-//Search
-for(var j=2;j<=9;j++) {
+while(solving) {
+	solver_var++; //JUST A VALUE COUNTER
+	solving=false;
 	for(var i=0;i<81;i++) {
-		if(ds_list_size(solver_inventory[| i])==0) {
-			solved=false;
+		var size=ds_list_size(solver_inventory[| i]);
+		if(size>1) { // ? SO MUCH FASTER!! LIKE 10 x FASTER THAN SOLVER_FIND_SINGLES
+			
+			//Return each connected single
+			solving=solver_return_singles(solver_inventory,i);
+			
+		} else if (size==0) {
+			solving=false;
 			break;
-		} else if(ds_list_size(solver_inventory[| i])==j) {
-			ds_list_copy(hold,solver_inventory[| i]);
-			while(ds_list_size(hold)>0) {
-				show_debug_message(string(j)+"  "+string(ds_list_size(hold))+"  "+string(i));
-				ds_list_clear(solver_inventory[| i]);
-				ds_list_add(solver_inventory[| i],hold[| 0]);
-				if(solver(solver_inventory)) {
-					//A solution!
-					solved=true;
-					show_debug_message("TRUE!");
-					break;
-				} else {
-					//No solution... try next value
-					ds_list_delete(hold,0);
-				}
-			}
 		}
-	}
-	if(solved==true) {
-		break;
 	}
 }
 
-//END
+
 for(var i=0;i<81;i++) {
 	if(ds_list_size(solver_inventory[| i])==0) {
 		solved=false;
 	}
 	ds_list_destroy(solver_inventory[| i]);
 }
+
 ds_list_destroy(solver_inventory);
-ds_list_destroy(hold);
-//END
+
 return solved;
