@@ -19,8 +19,8 @@ var rand_row=irandom(8);
 ds_list_add(remove_rcr,0+9*rand_row,1+9*rand_row,2+9*rand_row,3+9*rand_row,4+9*rand_row,5+9*rand_row,6+9*rand_row,7+9*rand_row,8+9*rand_row);
 var rand_col=irandom(8);
 ds_list_add(remove_rcr,0+rand_col,9+rand_col,18+rand_col,27+rand_col,36+rand_col,45+rand_col,54+rand_col,63+rand_col,72+rand_col);
-var rand_reg=(irandom(3)+square mod 9)
-ds_list_add(remove_rcr,0+3*rand_8+18*floor(rand_8/3),1+3*rand_8+18*floor(rand_8/3),2+3*rand_8+18*floor(rand_8/3),9+3*rand_8+18*floor(rand_8/3),10+3*rand_8+18*floor(rand_8/3),11+3*rand_8+18*floor(rand_8/3),18+3*rand_8+18*floor(rand_8/3),19+3*rand_8+18*floor(rand_8/3),20+3*rand_8+18*floor(rand_8/3)); // add variations
+var rand_reg=(3*irandom(2)+3*rand_row+18*floor(rand_col/3) mod 9);
+ds_list_add(remove_rcr,0+rand_reg,1+rand_reg,2+rand_reg,9+rand_reg,10+rand_reg,11+rand_reg,18+rand_reg,19+rand_reg,20+rand_reg); // add variations
 
 while(ds_list_size(remove_rcr)>0) {
 	ds_list_clear(inventory[| remove_rcr[| 0]]);
