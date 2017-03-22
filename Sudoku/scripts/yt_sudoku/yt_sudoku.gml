@@ -8,7 +8,7 @@ yt_setup_Puzzle();
 while(unsolved>0) {
   progress=yt_check_Puzzle();
   if(progress==0) {
-    display_debug_message("Failed to solve the Puzzle!");
+    show_debug_message("Failed to solve the Puzzle!");
     break; 
   }
 }
@@ -20,7 +20,7 @@ while(unsolved>0) {
 for(var j=0;j<9;j++) {
   //loop through columns
   for(var i=0;i<9;i++) {
-    puzzle[j*9+i]=ds_map_find_value(sudoku_grid[# i,j],"number"));
+    puzzle[j*9+i]=ds_map_find_value(sudoku_grid[# i,j],"number");
     ds_list_destroy(ds_map_find_value(sudoku_grid[# i,j],"possible"));
     ds_map_destroy(sudoku_grid[# i,j]);
   }	
