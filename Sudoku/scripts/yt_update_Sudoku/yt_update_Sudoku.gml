@@ -30,4 +30,4 @@ for(var xx=0;xx<9;xx++) {
 	ds_list_replace(ds_map_find_value(puzzle[# xx,row],"possible"),number-1,1);
 }
 
-return true;
+return 1;
