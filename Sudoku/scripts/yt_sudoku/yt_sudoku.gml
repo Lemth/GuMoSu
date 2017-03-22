@@ -8,6 +8,7 @@ yt_setup_Puzzle();
 while(unsolved>0) {
   progress=yt_check_Puzzle();
   if(progress==0) {
+    display_debug_message("Failed to solve the Puzzle!");
     break; 
   }
 }
