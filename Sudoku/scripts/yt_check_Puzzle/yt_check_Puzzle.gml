@@ -49,8 +49,8 @@ for(var i=0;i<9;i++) {
 			unsolved--;
 			ds_map_replace(ds_list_find_value(ds_map_find_value(boxes[| i],"squares"),temp),"solvable",0);
 			
-			yt_update_Sudoku(sudoku_grid,ds_map_find_value(ds_list_find_value(ds_map_find_value(boxes[| i],"squares"),temp),"column"),
-							 			ds_map_find_value(ds_list_find_value(ds_map_find_value(boxes[| i],"squares"),temp),"row"));
+			// https://www.youtube.com/watch?v=28lzkKBmyi4 19:52
+			yt_update_Sudoku(sudoku_grid,ds_map_find_value(ds_list_find_value(ds_map_find_value(boxes[| i],"squares"),temp),"column"),ds_map_find_value(ds_list_find_value(ds_map_find_value(boxes[| i],"squares"),temp),"row"));
 		}
 	}
 }
