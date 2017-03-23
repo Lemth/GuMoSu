@@ -9,15 +9,15 @@ for(var i=0;i<81;i++) {
 }
 
 var solved=true;
-var solving=true;
+var solving=1;
 
-while(solving) {
-	solving=false;
+while(solving==1) {
+	solving=0;
 	for(var i=0;i<81;i++) {
 		if(ds_list_size(solver_inventory[| i])>1) { 			
 			//Return each connected single
-			solving=solver_return_singles(solver_inventory,i);
-			
+			solving=max(solving,solver_return_singles(solver_inventory,i)); 
+			//if "1" over any of the past 81 ...
 		} else if (ds_list_size(solver_inventory[| i])==0) {
 			solving=false;
 			break;
