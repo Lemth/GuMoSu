@@ -4,6 +4,7 @@
 
 
 var status=0;
+var size=0;
 
 var column=(argument1 mod 9);
 var row=floor(argument1/9);
@@ -12,8 +13,11 @@ var row=floor(argument1/9);
 for(var i=0;i<9;i++) {
 	if(i!=column) {
 		if(ds_list_size(argument0[| row*9+i])==1) {
-			if(ds_list_delete_value(argument0[| argument1],ds_list_find_value(argument0[| row*9+i],0))==true) {
-				status=1;	
+			size=ds_list_delete_value(argument0[| argument1],ds_list_find_value(argument0[| row*9+i],0));
+			if(size==1) {
+				
+			} else if(size==0) {
+				
 			}
 		}
 	}
