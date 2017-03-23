@@ -1,4 +1,4 @@
-/// @desc solver_find_singles_value(list,square)
+/// @desc solver_return_singles_value(list,square)
 /// @arg list	argument0 
 /// @arg square	argument1
 
