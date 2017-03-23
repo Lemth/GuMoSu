@@ -1,8 +1,6 @@
 /// @desc solver(list)
 /// @arg list	argument0
 
-
-
 var solver_inventory=ds_list_create();
 
 for(var i=0;i<81;i++) {
@@ -16,19 +14,16 @@ var solving=true;
 while(solving) {
 	solving=false;
 	for(var i=0;i<81;i++) {
-		var size=ds_list_size(solver_inventory[| i]);
-		if(size>1) { // ? SO MUCH FASTER!! LIKE 10 x FASTER THAN SOLVER_FIND_SINGLES
-			
+		if(ds_list_size(solver_inventory[| i])>1) { 			
 			//Return each connected single
 			solving=solver_return_singles(solver_inventory,i);
 			
-		} else if (size==0) {
+		} else if (ds_list_size(solver_inventory[| i])==0) {
 			solving=false;
 			break;
 		}
 	}
 }
-
 
 for(var i=0;i<81;i++) {
 	if(ds_list_size(solver_inventory[| i])==0) {
