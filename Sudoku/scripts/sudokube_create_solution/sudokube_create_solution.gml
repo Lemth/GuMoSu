@@ -1,4 +1,4 @@
-/// @desc sudokube_create_solution()
+/// @desc sudoku_create_solution()
 
 var inventory=ds_list_create();
 
