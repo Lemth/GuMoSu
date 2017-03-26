@@ -16,7 +16,7 @@ ds_list_add(remove_rcr,0+9*rand_row,1+9*rand_row,2+9*rand_row,3+9*rand_row,4+9*r
 var rand_col=irandom(8);
 ds_list_add(remove_rcr,0+rand_col,9+rand_col,18+rand_col,27+rand_col,36+rand_col,45+rand_col,54+rand_col,63+rand_col,72+rand_col);
 var rand_reg=((3*floor(rand_col/3)+27*(floor(rand_row/3)+irandom(2))) mod 81);
-ds_list_add(remove_rcr,0+rand_reg,1+rand_reg,2+rand_reg,9+rand_reg,10+rand_reg,11+rand_reg,18+rand_reg,19+rand_reg,20+rand_reg); // add variations
+ds_list_add(remove_rcr,0+rand_reg,1+rand_reg,2+rand_reg,9+rand_reg,10+rand_reg,11+rand_reg,18+rand_reg,19+rand_reg,20+rand_reg);
 
 while(ds_list_size(remove_rcr)>0) {
 	ds_list_clear(inventory[| remove_rcr[| 0]]);
@@ -27,7 +27,7 @@ while(ds_list_size(remove_rcr)>0) {
 ds_list_destroy(remove_rcr);
 
 //Try every square once (some were already removed earlier)
-while(ds_list_size(order)>0) {
+while(ds_list_size(order)>7) {
 	i=ds_list_find_value(order,0);
 		  ds_list_delete(order,0);
 	//Remove it
@@ -39,7 +39,7 @@ while(ds_list_size(order)>0) {
 		}
 	}
 	//Try if solvable with different values
-	if(solver(inventory)) {
+	if(solver(inventory)==1) {
 		//Not a unique sudoku - restore solution value
 		ds_list_clear(inventory[| i]);
 		ds_list_add(inventory[| i],solution[i]);
