@@ -151,6 +151,14 @@
             }
         },
         {
+            "Key": "3c02ae86-95bb-43ae-b42e-64c21730cfb9",
+            "Value": {
+                "id": "c9187dec-cb4b-4703-af8f-8c1f4f37fd8d",
+                "resourcePath": "scripts\\sudokube_create_solution\\sudokube_create_solution.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "3f3dab60-4d91-4eac-8389-ae6d55e9f1ac",
             "Value": {
                 "id": "f6999cf8-c8cb-48ba-b4b7-993861347ca0",
