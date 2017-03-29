@@ -3,7 +3,6 @@
 /// @arg square	argument1
 /// @arg value	argument2
 
-var array=argument0;
 var column=(argument1 mod 9);
 var row=floor(argument1/9);
 

@@ -13,8 +13,7 @@
         "ecbbb0a9-41e6-4f0c-a39c-f4c2f85593cc",
         "53ba5a7b-bd86-423b-81fb-380846cd7f35",
         "e3eaaa6c-bd9d-48c4-80e9-97861dc8f3a4",
-        "a0dede0c-b988-426f-bdd9-3e9c7a6e9ac5",
-        "9249ccc6-fd72-4273-80fc-84b1afd02a3f"
+        "a0dede0c-b988-426f-bdd9-3e9c7a6e9ac5"
     ],
     "filterType": "",
     "folderName": "objects",
