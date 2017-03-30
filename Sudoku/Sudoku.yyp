@@ -354,7 +354,7 @@
             "Key": "9d5cad07-37bb-4950-b6fb-f8091888c088",
             "Value": {
                 "id": "9a56a213-a226-4934-b075-dcc79fd8ee56",
-                "resourcePath": "rooms\\room_main\\room_main.yy",
+                "resourcePath": "rooms\\room_2\\room_2.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -612,7 +612,8 @@
         "1c854da3-6026-4a90-8e33-d3852d571429",
         "afbc8f0d-e36c-42ec-8cc5-41706b01bb48",
         "2b783475-fbce-4c78-8ed1-f3ec23809041",
-        "e40228c0-063a-4a98-85d2-0211ac39d045"
+        "e40228c0-063a-4a98-85d2-0211ac39d045",
+        "3c02ae86-95bb-43ae-b42e-64c21730cfb9"
     ],
     "tutorial": ""
 }
