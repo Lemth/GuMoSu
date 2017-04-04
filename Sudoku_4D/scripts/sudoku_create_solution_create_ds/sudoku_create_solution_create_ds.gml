@@ -4,7 +4,7 @@
 ds_list_shuffle(_values); //1,2,3,..,16
 for(var i=0;i<96;i++) {
 	solution[i]=i<16 ? _values[| i] : 0; //ternary op; <expression> ? <expression is true> : <expression is false>
-	puzzle[i]=0;
+	//puzzle[i]=0;
 } 
 
 //CREATE DATASTRUCTURES
