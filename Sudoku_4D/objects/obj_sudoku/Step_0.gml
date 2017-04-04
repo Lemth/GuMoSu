@@ -1,9 +1,10 @@
 if(counter<100) {
 
-//INIT
+//INIT ARRAYS
 ds_list_shuffle(_values); //1,2,3,..,16
 for(var i=0;i<96;i++) {
 	solution[i]=i<16 ? _values[| i] : 0; //ternary op; <expression> ? <expression is true> : <expression is false>
+	puzzle[i]=0;
 } 
 
 //CREATE DATASTRUCTURES
@@ -22,9 +23,11 @@ for(var i=16;i<96;i++) { //starting at 17th (i=16) square (all previous are init
     ds_list_copy(inventory[| i],library[| i]); //replenish inventory from (reduced) library
 }
 
-//START
+//INIT VAR
 step=0;
 square=16;
+
+//START
 while(square<96) { 
     step++;
     if(step>1000000 || square<16) { //Safety net (at 4th STD DEV)
