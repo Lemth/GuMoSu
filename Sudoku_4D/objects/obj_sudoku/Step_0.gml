@@ -21,7 +21,7 @@ for(var i=0;i<96;i++) {
     ds_list_add(zz[| _value_z[i]],inventory[| i]);
 } 
 for(var i=0;i<16;i++) {
-	solution[_certain[| i]]=_values[| i];
+	solution[i]=_values[| i];
 }
 for(var i=0;i<96;i++) {
 	library[| i]=ds_list_create();
@@ -40,10 +40,6 @@ square=16;
 step=0;
 
 while(square<96) {
-	if(ds_list_find_index(_certain,square)>=0) {
-		square++;
-		continue;
-	}
     //START
     step++;
     if(step>1000000 || square<0) { //Safety net (at 4th STD DEV)
