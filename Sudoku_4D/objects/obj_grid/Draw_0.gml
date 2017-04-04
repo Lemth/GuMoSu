@@ -1,31 +1,7 @@
-draw_line_width(room_width*0.5/13,room_height*0.5/17,room_width*0.5/13,room_height*16.5/17,2);
-draw_line(room_width*1.5/13,room_height*0.5/17,room_width*1.5/13,room_height*16.5/17);
-draw_line(room_width*2.5/13,room_height*0.5/17,room_width*2.5/13,room_height*16.5/17);
-draw_line(room_width*3.5/13,room_height*0.5/17,room_width*3.5/13,room_height*16.5/17);
-draw_line_width(room_width*4.5/13,room_height*0.5/17,room_width*4.5/13,room_height*16.5/17,2);
-draw_line(room_width*5.5/13,room_height*0.5/17,room_width*5.5/13,room_height*16.5/17);
-draw_line(room_width*6.5/13,room_height*0.5/17,room_width*6.5/13,room_height*16.5/17);
-draw_line(room_width*7.5/13,room_height*0.5/17,room_width*7.5/13,room_height*16.5/17);
-draw_line_width(room_width*8.5/13,room_height*0.5/17,room_width*8.5/13,room_height*16.5/17,2);
-draw_line(room_width*9.5/13,room_height*0.5/17,room_width*9.5/13,room_height*16.5/17);
-draw_line(room_width*10.5/13,room_height*0.5/17,room_width*10.5/13,room_height*16.5/17);
-draw_line(room_width*11.5/13,room_height*0.5/17,room_width*11.5/13,room_height*16.5/17);
-draw_line_width(room_width*12.5/13,room_height*0.5/17,room_width*12.5/13,room_height*16.5/17,2);
+for(var i=0;i<13;i++) { //vertical lines
+    draw_line_width(room_width*(i+0.5)/13,room_height*0.5/17,room_width*(i+0.5)/13,room_height*16.5/17,2-sign(i mod 4));
+}
 
-draw_line_width(room_width*0.5/13,room_height*0.5/17,room_width*12.5/13,room_height*0.5/17,2);
-draw_line(room_width*0.5/13,room_height*1.5/17,room_width*12.5/13,room_height*1.5/17);
-draw_line(room_width*0.5/13,room_height*2.5/17,room_width*12.5/13,room_height*2.5/17);
-draw_line(room_width*0.5/13,room_height*3.5/17,room_width*12.5/13,room_height*3.5/17);
-draw_line_width(room_width*0.5/13,room_height*4.5/17,room_width*12.5/13,room_height*4.5/17,2);
-draw_line(room_width*0.5/13,room_height*5.5/17,room_width*12.5/13,room_height*5.5/17);
-draw_line(room_width*0.5/13,room_height*6.5/17,room_width*12.5/13,room_height*6.5/17);
-draw_line(room_width*0.5/13,room_height*7.5/17,room_width*12.5/13,room_height*7.5/17);
-draw_line_width(room_width*0.5/13,room_height*8.5/17,room_width*12.5/13,room_height*8.5/17,2);
-draw_line(room_width*0.5/13,room_height*9.5/17,room_width*12.5/13,room_height*9.5/17);
-draw_line(room_width*0.5/13,room_height*10.5/17,room_width*12.5/13,room_height*10.5/17);
-draw_line(room_width*0.5/13,room_height*11.5/17,room_width*12.5/13,room_height*11.5/17);
-draw_line_width(room_width*0.5/13,room_height*12.5/17,room_width*12.5/13,room_height*12.5/17,2);
-draw_line(room_width*0.5/13,room_height*13.5/17,room_width*12.5/13,room_height*13.5/17);
-draw_line(room_width*0.5/13,room_height*14.5/17,room_width*12.5/13,room_height*14.5/17);
-draw_line(room_width*0.5/13,room_height*15.5/17,room_width*12.5/13,room_height*15.5/17);
-draw_line_width(room_width*0.5/13,room_height*16.5/17,room_width*12.5/13,room_height*16.5/17,2);
+for(var i=0;i<17;i++) { //horizontal lines
+    draw_line_width(room_width*0.5/13,room_height*(i+0.5)/17,room_width*12.5/13,room_height*(i+0.5)/17,2-sign(i mod 4));
+}
