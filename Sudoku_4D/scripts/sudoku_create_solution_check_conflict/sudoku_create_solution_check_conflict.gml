@@ -1,11 +1,9 @@
 /// @desc sudoku_create_solution_check_conflict(square)
 /// @arg square argument0
 var s=argument0;
-var xxx=ds_map_find_value(square[| s],"xx");
-var yyy=ds_map_find_value(square[| s],"yy");
-var zzz=ds_map_find_value(square[| s],"zz");
-
-//show_debug_message(string(ds_list_size(region)));
+var xxx=_value_x[| s];
+var yyy=_value_y[| s];
+var zzz=_value_z[| s];
 
 //Check region and columns
 for(var i=0;i<16;i++) {
