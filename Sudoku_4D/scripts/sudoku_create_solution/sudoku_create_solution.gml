@@ -1,12 +1,18 @@
 /// @desc sudoku_create_solution()
-
+step=0;
 var test=0;
 
 //START
 while(square<96) { 
+	if(square==64 && test==0) {
+		sudoku_create_solution_update_ds()
+	}
     step++;
-    if(step>1000000 || square<16) { //Safety net (at 4th STD DEV)
-        break;
+    if((step mod 200000)==0 || square<16) { //Safety net (at median)
+		sudoku_create_solution_destroy_ds();
+		sudoku_create_solution_create_ds();
+		test=0;
+        continue;
     }
     solution[square]=ds_list_find_value(inventory[| square],0); //Get a number randomly from the available numbers
     if(is_undefined(solution[square])) { //Are we out of Numbers?

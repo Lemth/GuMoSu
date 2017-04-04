@@ -24,5 +24,5 @@ for(var i=16;i<96;i++) { //starting at 17th (i=16) square (all previous are init
 }
 
 //INIT VAR
-step=0;
+//step=0;
 square=16;
