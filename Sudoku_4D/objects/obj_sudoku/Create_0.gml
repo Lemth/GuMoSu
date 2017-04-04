@@ -43,12 +43,24 @@ _value_z=[	1,2,3,4,1,2,3,4,1,2,3,4,1,2,3,4,
 			0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 			5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5];
 
+_peers=ds_list_create();
+for(var i=16;i<96;i++) {
+	_peers[| i]=ds_list_create();
+	for(var j=0;j<i;j++) {
+		if(i!=j) {
+			if(_value_x[i]==_value_x[j] || _value_y[i]==_value_y[j] || _value_z[i]==_value_z[j]) {
+				ds_list_add(_peers[| i],j);
+			}
+		}
+	}
+}
+
 _values=ds_list_create();
 ds_list_add(_values,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16);
 
 //INIT VARIABLES
 counter=0;
-sq=0;
+square=0;
 step=0;
 time=get_timer()/1000;
 
