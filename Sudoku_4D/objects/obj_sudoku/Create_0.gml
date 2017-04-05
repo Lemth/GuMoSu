@@ -44,7 +44,7 @@ _value_z=[	1,2,3,4,1,2,3,4,1,2,3,4,1,2,3,4,
 			5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5];
 
 for(var i=0;i<96;i++) {
-	_matrix_position[i]=(((_value_x<<6)&_value_y)<<6)&_value_z;
+	_matrix_position[i]=(((_value_x<<6)|_value_y)<<6)|_value_z;
 	show_debug_message(string(_matrix_position[i]));
 }
 
