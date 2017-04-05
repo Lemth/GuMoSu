@@ -16,7 +16,7 @@ for(var i=16;i<96;i++) { //starting at 17th (i=16) square (all previous are init
 	ds_list_copy(library[| i],_values);
 	for(var j=0;j<16;j++) { //remove assigned numbers from library of each square
 		//if(_value_x[i]==_value_x[j] || _value_y[i]==_value_y[j] || _value_z[i]==_value_z[j]) {
-		if(_matrix_position[i]^_matrix_position[j]>0) {
+		if(_matrix_position[i]&_matrix_position[j]>0) {
 			ds_list_delete_value(library[| i],solution[j]);
 		}
 	}
