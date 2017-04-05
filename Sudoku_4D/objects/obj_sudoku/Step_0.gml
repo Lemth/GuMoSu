@@ -1,4 +1,4 @@
-if(counter<100) {
+if(counter<1000) {
 
 sudoku_create_solution_create_ds();
 
@@ -11,4 +11,8 @@ file_text_write_string(file,string(step)+"\n");
 file_text_close(file);
 
 counter++;
+} else if (counter==1000) {
+	show_debug_message(string(get_timer()));
+	show_debug_message(string(get_timer()-time));
+	counter++;
 }

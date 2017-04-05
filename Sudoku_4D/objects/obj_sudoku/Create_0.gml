@@ -43,17 +43,11 @@ _value_z=[	1,2,3,4,1,2,3,4,1,2,3,4,1,2,3,4,
 			0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 			5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5];
 
-for(var i=0;i<96;i++) {
-	_matrix_position[i]=(((_value_x<<6)|_value_y)<<6)|_value_z;
-	show_debug_message(string(_matrix_position[i]));
-}
-
 _peers=ds_list_create();
 for(var i=16;i<96;i++) {
 	_peers[| i]=ds_list_create();
 	for(var j=0;j<i;j++) {
-		//if(_value_x[i]==_value_x[j] || _value_y[i]==_value_y[j] || _value_z[i]==_value_z[j]) {
-		if(_matrix_position[i]&_matrix_position[j]>0) {
+		if(_value_x[i]==_value_x[j] || _value_y[i]==_value_y[j] || _value_z[i]==_value_z[j]) {
 			ds_list_add(_peers[| i],j);
 		}
 	}

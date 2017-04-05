@@ -31,6 +31,14 @@
     },
     "resources": [
         {
+            "Key": "03a41956-8ae9-44a2-8dd8-09d4a596c400",
+            "Value": {
+                "id": "1edecdf6-13bd-443f-a286-dd40a68c5346",
+                "resourcePath": "scripts\\sudoku_create_puzzle_update_ds\\sudoku_create_puzzle_update_ds.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "153711f3-eb6b-4fdd-8d98-c802fb6c9aab",
             "Value": {
                 "id": "a0e9ccb7-365c-4fcf-ac0a-9b9dcb90c277",
@@ -71,6 +79,14 @@
             }
         },
         {
+            "Key": "3f1e68ab-9e4b-4f5e-a087-5dd784a297dc",
+            "Value": {
+                "id": "bdf91d7e-fc73-42a3-95ec-428e89167385",
+                "resourcePath": "scripts\\sudoku_create_puzzle\\sudoku_create_puzzle.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "48bf7ac6-4779-4b04-aaa7-4cddeca974e5",
             "Value": {
                 "id": "972d3b7a-0391-4a44-bbb3-bf813b784e15",
@@ -91,6 +107,14 @@
             "Value": {
                 "id": "a896fa21-af64-4b2a-8aee-6c25ce84a529",
                 "resourcePath": "scripts\\sudoku_create_solution_check_conflict\\sudoku_create_solution_check_conflict.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "611d9102-7c34-4118-85b7-157e25055c91",
+            "Value": {
+                "id": "6cab6c71-32e1-4886-b9fc-3a43fc16b7c4",
+                "resourcePath": "scripts\\sudoku_create_puzzle_create_ds\\sudoku_create_puzzle_create_ds.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -175,6 +199,14 @@
             }
         },
         {
+            "Key": "abfc4408-9523-46ce-8018-32f94703ec27",
+            "Value": {
+                "id": "9bd1184d-cb41-4fed-8c5c-c85d5497f37c",
+                "resourcePath": "scripts\\sudoku_create_puzzle_check_conflict\\sudoku_create_puzzle_check_conflict.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ca975e65-462d-4663-bd5b-40d10240091c",
             "Value": {
                 "id": "0c835c0c-5e8c-425c-ad51-cbc3f36c7850",
@@ -220,6 +252,14 @@
                 "id": "7239129e-e724-40c7-97a5-8071777dd9ae",
                 "resourcePath": "views\\d679f4ee-0c44-4a83-bb17-e5be3ba9e21e.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e316b2b4-d12c-4afd-95c7-0647fd4199d9",
+            "Value": {
+                "id": "dea0e730-7160-4d7d-82a9-bddd15951549",
+                "resourcePath": "scripts\\sudoku_create_puzzle_destroy_ds\\sudoku_create_puzzle_destroy_ds.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -272,13 +312,18 @@
         }
     ],
     "script_order": [
-        "5d3cb2c6-2fc5-40d0-b886-57753c9357ef",
         "48bf7ac6-4779-4b04-aaa7-4cddeca974e5",
         "f016d7fb-97ec-4597-bbfe-a41d3b078f0e",
+        "d58bfe99-5e01-4874-8d72-0fc1835e8c0e",
+        "5d3cb2c6-2fc5-40d0-b886-57753c9357ef",
         "d47b6af1-7098-41f3-8969-55941d48da64",
         "275748f5-f919-4417-bbe1-5d6fedeb0a27",
         "66ce3607-245f-4e2c-b56c-7790eae49b7d",
-        "d58bfe99-5e01-4874-8d72-0fc1835e8c0e"
+        "3f1e68ab-9e4b-4f5e-a087-5dd784a297dc",
+        "abfc4408-9523-46ce-8018-32f94703ec27",
+        "611d9102-7c34-4118-85b7-157e25055c91",
+        "03a41956-8ae9-44a2-8dd8-09d4a596c400",
+        "e316b2b4-d12c-4afd-95c7-0647fd4199d9"
     ],
     "tutorial": ""
 }
