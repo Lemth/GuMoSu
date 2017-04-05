@@ -53,7 +53,7 @@ for(var i=16;i<96;i++) {
 	_peers[| i]=ds_list_create();
 	for(var j=0;j<i;j++) {
 		//if(_value_x[i]==_value_x[j] || _value_y[i]==_value_y[j] || _value_z[i]==_value_z[j]) {
-		if(_matrix_position[i]^_matrix_position[j]>0) {
+		if(_matrix_position[i]&_matrix_position[j]>0) {
 			ds_list_add(_peers[| i],j);
 		}
 	}
