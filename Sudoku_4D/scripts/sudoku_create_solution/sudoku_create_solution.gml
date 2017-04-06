@@ -4,11 +4,9 @@ var maxsquare=0;
 
 //START
 while(square<96) { 
-	/*if(square>maxsquare) {
-		if(square==40 || square==56 || square==72) {
-			sudoku_create_solution_update_ds(square);
-		}
-	}*/
+	if(square==48 && square>maxsquare) {
+		sudoku_create_solution_update_ds();
+	}
 	maxsquare=max(maxsquare,square);
 	
     step++;
@@ -22,14 +20,14 @@ while(square<96) {
         continue;
     }
 	
-    solution[_order_s[square]]=ds_list_find_value(inventory[| _order_s[square]],0); //Get a number randomly from the available numbers
-    if(is_undefined(solution[_order_s[square]])) { //Are we out of Numbers?
-        ds_list_copy(inventory[| _order_s[square]],library[| _order_s[square]]); //Replenish inventory from (reduced) library
+    solution[square]=ds_list_find_value(inventory[| square],0); //Get a number randomly from the available numbers
+    if(is_undefined(solution[square])) { //Are we out of Numbers?
+        ds_list_copy(inventory[| square],library[| square]); //Replenish inventory from (reduced) library
         square--; //and go back 1 square
-		puzzle[_order_s[square]]=max(maxsquare,puzzle[_order_s[square]]);
+		puzzle[square]=max(maxsquare,puzzle[square]);
         continue;
     }
-    ds_list_delete(inventory[| _order_s[square]],0); //Use it!
+    ds_list_delete(inventory[| square],0); //Use it!
     if(sudoku_create_solution_check_conflict(square)) { //Does it Conflict?
         continue; //Remove from available numbers for this square
     }
