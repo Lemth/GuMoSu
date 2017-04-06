@@ -6,8 +6,8 @@ var v=argument0;
 //UPDATE DATASTRUCTURES
 for(var i=v;i<96;i++) { //starting at 65th (i=64) square for updating
 	for(var j=v-24;j<v-8;j++) { //remove assigned numbers from library of each square UNTIL SAFE VALUE
-		if(_value_x[i]==_value_x[j] || _value_y[i]==_value_y[j] || _value_z[i]==_value_z[j]) {
-			ds_list_delete_value(library[| i],solution[j]);
+		if(_value_x[_order_s[i]]==_value_x[_order_s[j]] || _value_y[_order_s[i]]==_value_y[_order_s[j]] || _value_z[_order_s[i]]==_value_z[_order_s[j]]) {
+			ds_list_delete_value(library[| i],solution[_order_s[j]]);
 		}
 	}
 	ds_list_shuffle(library[| i]); //create randomization
