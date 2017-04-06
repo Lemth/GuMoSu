@@ -12,8 +12,8 @@ while(square<96) {
 	maxsquare=max(maxsquare,square);
 	
     step++;
-    if((step mod 300000)==0 || square<16) { //Safety net (at median / 200.000)
-		if(step>=10000000 || square<0) {
+    if((step mod 20000)==0 || square<16) { //Safety net (at median / 200.000)
+		if(step>=1000000 || square<0) {
 			exit;
 		}
 		sudoku_create_solution_destroy_ds();
@@ -22,13 +22,14 @@ while(square<96) {
         continue;
     }
 	
-    solution[_order_s[square]]=ds_list_find_value(inventory[| square],0); //Get a number randomly from the available numbers
+    solution[_order_s[square]]=ds_list_find_value(inventory[| _order_s[square]],0); //Get a number randomly from the available numbers
     if(is_undefined(solution[_order_s[square]])) { //Are we out of Numbers?
-        ds_list_copy(inventory[| square],library[| square]); //Replenish inventory from (reduced) library
+        ds_list_copy(inventory[| _order_s[square]],library[| _order_s[square]]); //Replenish inventory from (reduced) library
         square--; //and go back 1 square
+		puzzle[_order_s[square]]=max(maxsquare,puzzle[_order_s[square]]);
         continue;
     }
-    ds_list_delete(inventory[| square],0); //Use it!
+    ds_list_delete(inventory[| _order_s[square]],0); //Use it!
     if(sudoku_create_solution_check_conflict(square)) { //Does it Conflict?
         continue; //Remove from available numbers for this square
     }
