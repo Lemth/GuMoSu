@@ -15,8 +15,8 @@ for(var i=16;i<96;i++) { //starting at 17th (i=16) square (all previous are init
 	library[| i]=ds_list_create();
 	ds_list_copy(library[| i],_values);
 	for(var j=0;j<16;j++) { //remove assigned numbers from library of each square
-		if(_value_x[i]==_value_x[j] || _value_y[i]==_value_y[j] || _value_z[i]==_value_z[j]) {
-			ds_list_delete_value(library[| i],solution[j]);
+		if(_value_x[_order_s[i]]==_value_x[_order_s[j]] || _value_y[_order_s[i]]==_value_y[_order_s[j]] || _value_z[_order_s[i]]==_value_z[_order_s[j]]) {
+			ds_list_delete_value(library[| i],solution[_order_s[j]]);
 		}
 	}
 	ds_list_shuffle(library[| i]); //create randomization
