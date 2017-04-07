@@ -47,7 +47,7 @@ _peers=ds_list_create();
 for(var i=16;i<96;i++) {
 	_peers[| i]=ds_list_create();
 	for(var j=0;j<i;j++) {
-		if(_value_x[i]==_value_x[j] || _value_y[i]==_value_y[j] || _value_z[i]==_value_z[j]) {
+		if(is_peer(i,j)) {
 			ds_list_add(_peers[| i],j);
 		}
 	}
@@ -57,7 +57,7 @@ _allpeers=ds_list_create();
 for(var i=0;i<96;i++) {
 	_allpeers[| i]=ds_list_create();
 	for(var j=0;j<96;j++) {
-		if(_value_x[i]==_value_x[j] || _value_y[i]==_value_y[j] || _value_z[i]==_value_z[j]) {
+		if(is_peer(i,j)) {
 			ds_list_add(_allpeers[| i],j);
 		}
 	}
