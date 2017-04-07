@@ -4,7 +4,7 @@
 
 if(ds_list_find_index(argument0,argument1)!=-1) {
 	ds_list_delete(argument0,ds_list_find_index(argument0,argument1));
-	return 1;
+	return true;
 } else {
-	return -1;
+	return false;
 }
