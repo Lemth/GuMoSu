@@ -4,8 +4,10 @@ var maxsquare=0;
 
 //START
 while(square<96) { 
-	if(square==48 && square>maxsquare) {
-		sudoku_create_solution_update_ds();
+	if(square>maxsquare) {
+		if(square==32 || square==48) {
+			sudoku_create_solution_update_ds(square);
+		}
 	}
 	maxsquare=max(maxsquare,square);
 	
@@ -16,7 +18,7 @@ while(square<96) {
 		}
 		sudoku_create_solution_destroy_ds();
 		sudoku_create_solution_create_ds();
-		test=0;
+		maxsquare=0;
         continue;
     }
 	
