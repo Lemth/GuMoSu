@@ -7,7 +7,7 @@ sudoku_create_solution();
 sudoku_create_solution_destroy_ds();
 	
 if(!sudoku_create_solution_validate()) {
-	show_debug_message("!ERROR: Solution not valid.");
+	show_message("!ERROR: Solution not valid.");
 }
 
 file=file_text_open_append("sudokutimes.txt");

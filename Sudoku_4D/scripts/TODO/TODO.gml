@@ -10,13 +10,6 @@
 
 
 
-is_peer --> square_is_peer
-
-_peers --> _reduced_peers
-_allpeers --> _peers
-
-
-
 
 
 

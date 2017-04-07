@@ -4,7 +4,7 @@
 //UPDATE DATASTRUCTURES
 for(var i=argument0;i<96;i++) { //starting at 65th (i=64) square for updating
 	for(var j=argument0-16;j<argument0-8;j++) { //remove assigned numbers from library of each square UNTIL SAFE VALUE
-		if(is_peer(i,j)) {
+		if(square_is_peer(i,j)) {
 			ds_list_delete_value(library[| i],solution[j]);
 		}
 	}

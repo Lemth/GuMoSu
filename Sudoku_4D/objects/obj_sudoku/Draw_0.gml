@@ -3,9 +3,9 @@ if (mouse_check_button(mb_left)) {
     for(i=0;i<12;i++) {
         for(j=0;j<16;j++) {
             var block=_order_xy[16*i+j];
-            if(solution[block]>0) {
+            if(puzzle[block]>0) {
                 numbers++;
-                draw_text(room_width*(i+1)/13,room_height*(j+1)/17,string(solution[block]));
+                draw_text(room_width*(i+1)/13,room_height*(j+1)/17,string(puzzle[block]));
 			}
         }
     }
@@ -23,9 +23,9 @@ if (mouse_check_button(mb_left)) {
     for(i=0;i<12;i++) {
         for(j=0;j<16;j++) {
             var block=_order_xy[16*i+j];
-            if(puzzle[block]>0) {
+            if(solution[block]>0) {
                 numbers++;
-                draw_text(room_width*(i+1)/13,room_height*(j+1)/17,string(puzzle[block]));
+                draw_text(room_width*(i+1)/13,room_height*(j+1)/17,string(solution[block]));
 			}
         }
     }

@@ -15,7 +15,7 @@ for(var i=16;i<96;i++) { //starting at 17th (i=16) square (all previous are init
 	library[| i]=ds_list_create();
 	ds_list_copy(library[| i],_values);
 	for(var j=0;j<16;j++) { //remove assigned numbers from library of each square
-		if(is_peer(i,j)) {
+		if(square_is_peer(i,j)) {
 			ds_list_delete_value(library[| i],solution[j]);
 		}
 	}
@@ -28,18 +28,4 @@ for(var i=16;i<96;i++) { //starting at 17th (i=16) square (all previous are init
 square=16;
 
 
-/// @desc is_peer(square1,square2)
-/// @arg square1 argument0
-/// @arg square2 argument1
 
-if(_value_x[argument0]==_value_x[argument1]) {
-	return true;
-} else
-if(_value_y[argument0]==_value_y[argument1]) {
-	return true;
-} else 
-if(_value_z[argument0]==_value_z[argument1]) {
-	return true;
-} else {
-	return false;
-}

@@ -4,8 +4,10 @@ var maxsquare=0;
 
 //START
 while(square<96) { 
-	if(square==48 && square>maxsquare) { //////////16 t/m 24 @ 32^ 
-		sudoku_create_solution_update_ds(); //////////32 t/m 40 @ 48^ 
+	if(square>maxsquare) { //////////16 t/m 24 @ 32^ 
+		if(square==32 || square==48) {
+			sudoku_create_solution_update_ds(square); //////////32 t/m 40 @ 48^ 
+		}
 	}
 	maxsquare=max(maxsquare,square);
 	
