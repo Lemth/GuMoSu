@@ -53,6 +53,15 @@ for(var i=16;i<96;i++) {
 	}
 }
 
+_allpeers=ds_list_create();
+for(var i=0;i<96;i++) {
+	_allpeers[| i]=ds_list_create();
+	for(var j=0;j<96;j++) {
+		if(_value_x[i]==_value_x[j] || _value_y[i]==_value_y[j] || _value_z[i]==_value_z[j]) {
+			ds_list_add(_allpeers[| i],j);
+		}
+	}
+}
 _values=ds_list_create();
 ds_list_add(_values,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16);
 
