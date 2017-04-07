@@ -55,6 +55,7 @@ for(var i=16;i<96;i++) {
 
 _peers=ds_list_create();
 for(var i=0;i<96;i++) {
+	check[i]=0;
 	_peers[| i]=ds_list_create();
 	for(var j=0;j<96;j++) {
 		if(square_is_peer(i,j)) {
@@ -75,3 +76,8 @@ for(var i=0;i<96;i++) {
     solution[i]=0;
 	puzzle[i]=0;
 }
+
+
+test1=0;
+test2=0;
+test3=0;

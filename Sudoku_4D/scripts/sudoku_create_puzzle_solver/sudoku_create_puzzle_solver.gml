@@ -3,7 +3,8 @@
 
 var solved=0;
 var inventory=ds_list_create();
-if(ds_exists(argument0,ds_type_list)) { //if LIST is supplied
+//if(ds_exists(argument0,ds_type_list)) { //if LIST is supplied
+if(argument0>=96) { //if LIST is supplied
 	for(var i=0;i<96;i++) {
 		inventory[| i]=ds_list_create();
 		ds_list_copy(inventory[| i],argument0[| i]);
@@ -15,7 +16,7 @@ if(ds_exists(argument0,ds_type_list)) { //if LIST is supplied
 			ds_list_add(inventory[| i],puzzle[i]);
 			solved++;
 		} else {
-			ds_list_copy(inventory[| i],_value);
+			ds_list_copy(inventory[| i],_values);
 		}
 	}
 	ds_list_delete_value(inventory[| argument0],solution[argument0]); //Remove solution value from testing square to see alternative solutions!
@@ -26,7 +27,7 @@ while(solved<96) {
 	
 	for(var i=0;i<96;i++) { // RETURN SINGLES
 		if(ds_list_size(inventory[| i])>1) {
-			for(var j=0;j<ds_list_size(_peers);j++) {
+			for(var j=0;j<ds_list_size(_peers[| i]);j++) {
 				if(ds_list_size(inventory[| ds_list_find_value(_peers[| i],j)])==1) {
 					ds_list_delete_value(inventory[| i],ds_list_find_value(inventory[| ds_list_find_value(_peers[| i],j)],0));
 					solved++;
@@ -34,7 +35,8 @@ while(solved<96) {
 				}
 			}
 		} else if (ds_list_size(inventory[| i])<1) {
-			ds_list_destroy_nested(inventory);
+			//ds_list_destroy_nested(inventory);
+			
 			return false; //unsolvable due to 0 possible values for a square
 		}
 	}
@@ -43,7 +45,7 @@ while(solved<96) {
 		for(var i=0;i<96;i++) { // HIDDEN SINGLES
 			if(ds_list_size(inventory[| i])>1) {
 				var available=0;
-				for(var j=0;j<ds_list_size(_peers);j++) {
+				for(var j=0;j<ds_list_size(_peers[| i]);j++) {
 					if(ds_list_size(inventory[| ds_list_find_value(_peers[| i],j)])>1) {
 						for(var k=0;k<ds_list_size(inventory[| ds_list_find_value(_peers[| i],j)]);k++) {
 							available=available|power(2,ds_list_find_value(inventory[| ds_list_find_value(_peers[| i],j)],k)-1); //x OR y
@@ -60,7 +62,8 @@ while(solved<96) {
 					solving=false;
 				}
 			} else if (ds_list_size(inventory[| i])<1) {
-				ds_list_destroy_nested(inventory);
+				//ds_list_destroy_nested(inventory);
+				
 				return false; //unsolvable due to 0 possible values for a square
 			}
 		}
@@ -83,7 +86,7 @@ while(solved<96) {
 		ds_list_clear(inventory[| smallest]);
 		ds_list_add(inventory[| smallest],hold_list[| 0]);
 		if(sudoku_create_puzzle_solver(inventory)) { //if solvable
-			ds_list_destroy_nested(inventory);
+			//ds_list_destroy_nested(inventory);
 			return true; //solvable even in this configuration; not a unique puzzle
 		}
 		ds_list_delete(hold_list,0);
