@@ -126,7 +126,7 @@ return sudoku_create_puzzle_validate(inventory); //true: solvable even in this c
 
 for(var i=0;i<ds_list_size(argument0);i++) {
 	if(ds_exist(argument0[| i],ds_type_list)) {
-		ds_list_destroy(argument0[| i]));
+		ds_list_destroy(argument0[| i]);
 	}
 }
 ds_list_destroy(argument0);
