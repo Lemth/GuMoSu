@@ -56,7 +56,7 @@ while(solved<96) {
 				}
 			}
 		} else if (ds_list_size(inventory[| i])<1) {
-			sudoku_create_puzzle_solver_destroy_ds();
+			ds_list_destroy_nested(inventory);
 			return false; //unsolvable due to 0 possible values for a square
 		}
 	}
@@ -82,7 +82,7 @@ while(solved<96) {
 					solving=false;
 				}
 			} else if (ds_list_size(inventory[| i])<1) {
-				sudoku_create_puzzle_solver_destroy_ds();
+				ds_list_destroy_nested(inventory);
 				return false; //unsolvable due to 0 possible values for a square
 			}
 		}
@@ -105,7 +105,7 @@ while(solved<96) {
 		ds_list_clear(inventory[| smallest]);
 		ds_list_add(inventory[| smallest],hold_list[| 0]);
 		if(sudoku_create_puzzle_solver(inventory)) { //if solvable
-			sudoku_create_puzzle_solver_destroy_ds();
+			ds_list_destroy_nested(inventory);
 			return true; //solvable even in this configuration; not a unique puzzle
 		}
 		ds_list_delete(hold_list[| 0]);
@@ -121,9 +121,14 @@ return sudoku_create_puzzle_validate(inventory); //true: solvable even in this c
 
 
 
-/// @desc sudoku_create_puzzle_solver_destroy_ds()
+/// @desc ds_list_destroy_nested(list)
+/// @arg list argument0
 
-for(var i=0;i<96;i++) {
-	ds_list_destroy(inventory[| i]);
+for(var i=0;i<ds_list_size(argument0);i++) {
+	if(ds_exist(argument0[| i],ds_type_list)) {
+		ds_list_destroy(argument0[| i]));
+	}
 }
-ds_list_destroy(inventory);
+ds_list_destroy(argument0);
+
+return true;
