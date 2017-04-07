@@ -127,4 +127,3 @@ for(var i=0;i<96;i++) {
 	ds_list_destroy(inventory[| i]);
 }
 ds_list_destroy(inventory);
-ds_list_destroy(_order);
