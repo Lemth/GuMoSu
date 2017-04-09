@@ -75,6 +75,7 @@ time=get_timer()/1000;
 for(var i=0;i<96;i++) {
     solution[i]=0;
 	puzzle[i]=0;
+	check[i]=0;
 }
 
 

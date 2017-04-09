@@ -6,7 +6,7 @@ for(var i=0;i<96;i++) {
 	puzzle[i]=solution[i];
 	ds_list_add(_order,i);
 }
-ds_list_shuffle(_order);
+//ds_list_shuffle(_order);
 test1=1;
 }
 

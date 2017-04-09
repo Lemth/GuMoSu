@@ -1,15 +1,19 @@
 /// @desc sudoku_create_puzzle_solver(square/inventory)
 /// @arg square/inventory argument0
 
+show_debug_message("ARGUMENT0: "+string(argument0));
+
 var solved=0;
 var inventory=ds_list_create();
 //if(ds_exists(argument0,ds_type_list)) { //if LIST is supplied
 if(argument0>=96) { //if LIST is supplied
+	show_debug_message("NEVER EVER?");
 	for(var i=0;i<96;i++) {
 		inventory[| i]=ds_list_create();
 		ds_list_copy(inventory[| i],argument0[| i]);
 	}
 } else { //else if SQUARE is supplied
+	
 	for(var i=0;i<96;i++) {
 		inventory[| i]=ds_list_create();
 		if(puzzle[i]>0) { 
@@ -29,9 +33,13 @@ while(solved<96) {
 		if(ds_list_size(inventory[| i])>1) {
 			for(var j=0;j<ds_list_size(_peers[| i]);j++) {
 				if(ds_list_size(inventory[| ds_list_find_value(_peers[| i],j)])==1) {
-					ds_list_delete_value(inventory[| i],ds_list_find_value(inventory[| ds_list_find_value(_peers[| i],j)],0));
-					solved++;
-					solving=false;
+					if (ds_list_delete_value(inventory[| i],ds_list_find_value(inventory[| ds_list_find_value(_peers[| i],j)],0))==true) {
+						solving=false;
+						if(ds_list_size(inventory[| i])==1) {
+							solved++;
+							show_debug_message("Return: "+string(solved));
+						}
+					}
 				}
 			}
 		} else if (ds_list_size(inventory[| i])<1) {
@@ -40,25 +48,27 @@ while(solved<96) {
 			return false; //unsolvable due to 0 possible values for a square
 		}
 	}
-	
-	if(solving) {
+	/*
+	if(solving==true) {
 		for(var i=0;i<96;i++) { // HIDDEN SINGLES
 			if(ds_list_size(inventory[| i])>1) {
 				var available=0;
 				for(var j=0;j<ds_list_size(_peers[| i]);j++) {
-					if(ds_list_size(inventory[| ds_list_find_value(_peers[| i],j)])>1) {
-						for(var k=0;k<ds_list_size(inventory[| ds_list_find_value(_peers[| i],j)]);k++) {
-							available=available|power(2,ds_list_find_value(inventory[| ds_list_find_value(_peers[| i],j)],k)-1); //x OR y
+					var peer=ds_list_find_value(_peers[| i],j);
+					if(ds_list_size(inventory[| peer])>1) {
+						for(var k=0;k<ds_list_size(inventory[| peer]);k++) {
+							available=available|power(2,ds_list_find_value(inventory[| peer],k)-1); //x OR y
 						}
 					}
 				}
 				for(var j=0;j<ds_list_size(inventory[| i]);j++) {
 					available=(available^power(2,ds_list_find_value(inventory[| i],j)-1))&power(2,ds_list_find_value(inventory[| i],j)-1); //(x XOR y) AND y
 				}
-				if(available!=0 && (available&(available-1))==0) {
+				if(available!=0 && ((available&(available-1))==0)) {
 					ds_list_clear(inventory[| i]);
 					ds_list_add(inventory[| i],log2(available)+1);
 					solved++;
+					show_debug_message("Hidden: "+string(solved));
 					solving=false;
 				}
 			} else if (ds_list_size(inventory[| i])<1) {
@@ -68,8 +78,8 @@ while(solved<96) {
 			}
 		}
 	}
-
-	if(solving) {
+*/
+	if(solving==true) {
 		var smallest=0;
 		for(var i=0;i<96;i++) { // BRUTE FORCE
 			if(ds_list_size(inventory[| i])==2) {
@@ -94,8 +104,14 @@ while(solved<96) {
 		ds_list_destroy(hold_list);
 		if(ds_list_size(inventory[| smallest])==1) {
 			solved++;
+			show_debug_message("BRUTE: "+string(solved));
 		}
 	}
+	
+	if(solving==true) {
+		return true;
+	}
+	
 }
 
 return sudoku_create_puzzle_validate(inventory); //true: solvable even in this configuration; not a unique puzzle //false: not a valid solution
