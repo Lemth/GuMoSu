@@ -48,11 +48,12 @@ while(solved<96) {
 			return false; //unsolvable due to 0 possible values for a square
 		}
 	}
-	/*
+	
 	if(solving==true) {
 		for(var i=0;i<96;i++) { // HIDDEN SINGLES
 			if(ds_list_size(inventory[| i])>1) {
 				var available=0;
+				var bucket=0;
 				for(var j=0;j<ds_list_size(_peers[| i]);j++) {
 					var peer=ds_list_find_value(_peers[| i],j);
 					if(ds_list_size(inventory[| peer])>1) {
@@ -62,8 +63,9 @@ while(solved<96) {
 					}
 				}
 				for(var j=0;j<ds_list_size(inventory[| i]);j++) {
-					available=(available^power(2,ds_list_find_value(inventory[| i],j)-1))&power(2,ds_list_find_value(inventory[| i],j)-1); //(x XOR y) AND y
+					bucket=bucket|power(2,ds_list_find_value(inventory[| i],j)-1); //x OR y
 				}
+				available=(available^bucket)&bucket; //(x XOR y) AND y
 				if(available!=0 && ((available&(available-1))==0)) {
 					ds_list_clear(inventory[| i]);
 					ds_list_add(inventory[| i],log2(available)+1);
@@ -78,7 +80,7 @@ while(solved<96) {
 			}
 		}
 	}
-*/
+
 	if(solving==true) {
 		var smallest=0;
 		for(var i=0;i<96;i++) { // BRUTE FORCE
