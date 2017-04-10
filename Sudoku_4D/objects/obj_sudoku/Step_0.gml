@@ -1,26 +1,27 @@
-if(counter<1) {
-
-sudoku_create_solution_create_ds();
-
-sudoku_create_solution();
-
-sudoku_create_solution_destroy_ds();
-	
-if(!sudoku_create_solution_validate()) {
-	show_message("!ERROR: Solution not valid.");
+if(test1==0) {
+	sdk_solver(inventory);
+	var count=0;
+	for(var i=0;i<96;i++) {
+		if(ds_list_size(inventory[| i])==1) {
+			solution[i]=ds_list_find_value(inventory[| i],0);
+			count++;
+		} else {
+			solution[i]=0;
+		}
+		check[i]=ds_list_size(inventory[| i]);
+	}
+	if(count==96) {
+		sudoku_create_solution_validate();
+		test1=1;
+	}
 }
 
-
-
-file=file_text_open_append("sudokutimes.txt");
-file_text_write_string(file,string(step)+"\n");
-file_text_close(file);
-
-counter++;
-} else if (counter==1) {
-	show_debug_message(string(get_timer()));
-	show_debug_message(string(get_timer()-time));
-	counter++;
+if(keyboard_check_pressed(vk_space)) {
+	var rand=irandom(64);
+	ds_list_clear(inventory[| _order_xy[rand]]);
+	ds_list_add(inventory[| _order_xy[rand]],test5[rand]);
+	var catch=sdk_update_for_solved_cell(inventory,_order_xy[rand]);
+	if(catch==-1) {
+		return -1;
+	}
 }
-
-sudoku_create_puzzle();

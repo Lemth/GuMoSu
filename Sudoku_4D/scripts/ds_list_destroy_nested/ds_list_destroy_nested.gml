@@ -7,3 +7,4 @@ for(var i=0;i<96;i++) {
 	}
 }
 ds_list_destroy(argument0);
+return 1;

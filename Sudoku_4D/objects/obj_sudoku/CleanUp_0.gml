@@ -1,5 +1,5 @@
-for(var i=16;i<96;i++) {
-    ds_list_destroy(_reduced_peers[| i]);
-}
-ds_list_destroy(_reduced_peers);
+ds_list_destroy_nested(_reduced_peers);
+ds_list_destroy_nested(_peers);
+ds_list_destroy_nested(_arrays);
+ds_list_destroy_nested(inventory);
 ds_list_destroy(_values);
