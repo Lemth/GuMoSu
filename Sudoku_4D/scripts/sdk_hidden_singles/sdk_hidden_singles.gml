@@ -15,6 +15,9 @@ for(var i=0;i<18;i++) { /* loop through arrays 0,1..17 */
 				bucket[ds_list_find_value(argument0[| array[| j]],k)-1]+=1; // add to bucket
 				single[ds_list_find_value(argument0[| array[| j]],k)-1]=array[| j]; // remember last square
 			}
+		} else if (ds_list_size(argument0[| array[| j]])==1) { /* disable this bucket */
+			bucket[ds_list_find_value(argument0[| array[| j]],0)-1]+=16; /* if no message; then remove */
+		}
 		} else if (ds_list_size(argument0[| array[| j]])<1) {
 			return -1; /* ds_list_size of 0 => unsolvable */
 		}
@@ -28,6 +31,8 @@ for(var i=0;i<18;i++) { /* loop through arrays 0,1..17 */
 				return -1; /* ds_list_size of 0 => unsolvable */
 			}
 			solved+=1+catch; /* solved=1+"solves from updating the square" */
+		} else if (bucket[j]==17) {
+			show_debug_message("SOMETHING WENT WRONG IN sdk_hidden_singles(mainlist)"); /* if no message; then remove */
 		}
 	}
 }
