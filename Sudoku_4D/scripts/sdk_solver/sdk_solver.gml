@@ -70,7 +70,7 @@ break; default:
 			solver_count+=catch;	
 		}
 
-
+/*
 /// @desc sdk_brute_force(mainlist)
 /// @arg mainlist	argument0
 /// return			solves (or -1 if fail)
@@ -92,17 +92,23 @@ var remember=ds_list_create();
 ds_list_copy(remember,argument0[| smallest]);
 ds_list_clear(argument0[| smallest]);
 ds_list_add(argument0[| smallest],remember[| 0]);
-if(sudoku_create_puzzle_solver(argument0)) { //if solvable
-	return true; //solvable even in this configuration; not a unique puzzle
+if(!sdk_solver(argument0)) { //if not solvable
+	ds_list_delete(remember,0);
+	ds_list_copy(argument0[| smallest],remember);
 }
-ds_list_delete(remember,0);
-ds_list_copy(argument0[| smallest],remember);
 ds_list_destroy(remember);
-if(ds_list_size(argument0[| smallest])==1) {
-	solved++;
+switch(ds_list_size(argument0[| smallest])) { 
+	case 0:
+		return -1; 
+	case 1:
+		var catch=sdk_update_for_solved_cell(argument0,smallest);
+		if(catch==-1) { return -1; } 
+		solved+=1+catch; 
+	default:
+	break;
 }
 return solved;
-		
+*/	
 break;
 }
 test2++;
