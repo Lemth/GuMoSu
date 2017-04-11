@@ -17,6 +17,7 @@ sdk_initialize();
 counter=0;
 square=0;
 step=0;
+solve_counter=0;
 
 for(var i=0;i<96;i++) {
     solution[i]=0;
