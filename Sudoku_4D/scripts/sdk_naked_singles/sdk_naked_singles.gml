@@ -1,4 +1,4 @@
-/// @desc sdk_show_possibles(mainlist)
+/// @desc sdk_naked_singles(mainlist)
 /// @arg mainlist	argument0
 /// return			solves (or -1 if fail)
 

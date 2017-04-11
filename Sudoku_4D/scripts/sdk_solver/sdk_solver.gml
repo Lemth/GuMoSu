@@ -8,7 +8,7 @@ var catch;
 switch(test2 mod 8) {
 	case 0:
 
-		catch=sdk_show_possibles(argument0);
+		catch=sdk_naked_singles(argument0);
 		if(catch==-1) {
 			show_debug_message("ERROR 1");
 			exit;

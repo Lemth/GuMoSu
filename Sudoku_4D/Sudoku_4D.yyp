@@ -95,14 +95,6 @@
             }
         },
         {
-            "Key": "379ecaaf-46d0-4f45-b92f-da714cd5a695",
-            "Value": {
-                "id": "85d6167c-1b1a-4af9-acd2-0f6c31854133",
-                "resourcePath": "objects\\obj_sudoku_1\\obj_sudoku_1.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "3bbd5a69-96a7-4dfb-9ade-ff43bcc5198d",
             "Value": {
                 "id": "c77f0e16-7b1f-48b7-b560-2780363bd3f8",
@@ -271,14 +263,6 @@
             }
         },
         {
-            "Key": "97f73dec-381e-4b16-91c6-e7917c8e0a20",
-            "Value": {
-                "id": "76992ba0-8e8b-44a2-a53e-8b8953c159d4",
-                "resourcePath": "rooms\\room_1\\room_1.yy",
-                "resourceType": "GMRoom"
-            }
-        },
-        {
             "Key": "a7998ec0-7ab2-48e5-9f47-189df397b055",
             "Value": {
                 "id": "4b4979c2-1d74-45d8-8864-1f7b7d370d7a",
@@ -327,6 +311,14 @@
             }
         },
         {
+            "Key": "bc3d49c3-0b6a-4929-b890-b59fb2db4e54",
+            "Value": {
+                "id": "a580f68a-e400-426b-97b5-5267bbf9174e",
+                "resourcePath": "objects\\obj_sdk_display_grid\\obj_sdk_display_grid.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "c02bf3b5-b981-4f7d-ae60-5fd9c19f2e23",
             "Value": {
                 "id": "40365eab-6ae6-4f31-a92a-fef0dea6205d",
@@ -348,6 +340,14 @@
                 "id": "bdea9982-fcfd-4832-8a4f-372ee10c8f12",
                 "resourcePath": "options\\windows\\options_windows.yy",
                 "resourceType": "GMWindowsOptions"
+            }
+        },
+        {
+            "Key": "d3cfb46e-4050-4973-9d87-6566ab7f014c",
+            "Value": {
+                "id": "f92ea6d3-a3c3-40e8-8a99-0027b3353b33",
+                "resourcePath": "objects\\obj_sdk\\obj_sdk.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -383,6 +383,14 @@
             }
         },
         {
+            "Key": "df727d2e-cd88-4ca3-ba0f-3c620dcf75a5",
+            "Value": {
+                "id": "15d78a1d-5223-4101-8d01-13ad9b6eb668",
+                "resourcePath": "rooms\\room_sdk\\room_sdk.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "e316b2b4-d12c-4afd-95c7-0647fd4199d9",
             "Value": {
                 "id": "dea0e730-7160-4d7d-82a9-bddd15951549",
@@ -402,7 +410,7 @@
             "Key": "e5dfe6b7-26ff-43ca-b90a-93c6aeef40cf",
             "Value": {
                 "id": "390cad52-1f27-4a3e-8c19-5d5e965cae7f",
-                "resourcePath": "scripts\\sdk_show_possibles\\sdk_show_possibles.yy",
+                "resourcePath": "scripts\\sdk_naked_singles\\sdk_naked_singles.yy",
                 "resourceType": "GMScript"
             }
         },
