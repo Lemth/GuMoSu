@@ -61,7 +61,7 @@ break;	case 5:
 		}
 
 break; default:
-
+/*
 		catch=sdk_brute_force(argument0);
 		if(catch==-1) {
 			show_debug_message("ERROR Default");
@@ -70,7 +70,6 @@ break; default:
 			solver_count+=catch;	
 		}
 
-/*
 /// @desc sdk_brute_force(mainlist)
 /// @arg mainlist	argument0
 /// return			solves (or -1 if fail)
