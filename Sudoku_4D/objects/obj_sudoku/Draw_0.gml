@@ -27,5 +27,7 @@ if (mouse_check_button(mb_left)) {
         }
     }
 }
-draw_text(room_width/2,room_height*16.75/17,"Numbers: "+string(numbers));
-draw_text(room_width/2,room_height*0.25/17,"Steps: "+string(step));
+draw_text(room_width*2/4,room_height*16.75/17,"Numbers: "+string(numbers));
+draw_text(room_width*3/4,room_height*0.25/17,"Steps: "+string(step));
+draw_text(room_width*2/4,room_height*0.25/17,"Solved: "+string(solver_count));
+
