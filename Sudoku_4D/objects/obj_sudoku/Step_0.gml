@@ -22,10 +22,12 @@ if(test1==0) {
 }
 
 if(keyboard_check_pressed(vk_space)) {
-	var rand=irandom(64);
-	ds_list_clear(inventory[| _order_xy[rand]]);
-	ds_list_add(inventory[| _order_xy[rand]],test5[rand]);
-	var catch=sdk_update_for_solved_cell(inventory,_order_xy[rand]);
+	do {
+		var rand=_order_yx[irandom(191)];
+	} until (ds_list_size(inventory[| rand]>1)
+	ds_list_clear(inventory[| rand]);
+	ds_list_add(inventory[| rand],test5[rand]);
+	var catch=sdk_update_for_solved_cell(inventory,rand);
 	if(catch==-1) {
 		return -1;
 	}
