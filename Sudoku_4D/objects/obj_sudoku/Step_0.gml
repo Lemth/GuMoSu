@@ -5,14 +5,19 @@ if(test1==0) {
 		if(ds_list_size(inventory[| i])==1) {
 			solution[i]=ds_list_find_value(inventory[| i],0);
 			count++;
+		} else if (ds_list_size(inventory[| i])==0) {
+			show_debug_message("!!!w00ps solving went wrong. possibly unsolvable.");
+			test1=1;
 		} else {
 			solution[i]=0;
 		}
 		check[i]=ds_list_size(inventory[| i]);
 	}
 	if(count==96) {
+		show_debug_message("!!!all filled in");
 		sudoku_create_solution_validate();
 		test1=1;
+		show_debug_message("!!!complete");
 	}
 }
 
