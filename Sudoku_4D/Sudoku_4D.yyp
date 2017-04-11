@@ -79,6 +79,14 @@
             }
         },
         {
+            "Key": "30663bf1-b790-48a3-8637-52703900641f",
+            "Value": {
+                "id": "5b30b0e5-1366-42b5-a75f-fb5eff45751a",
+                "resourcePath": "scripts\\sdk_brute_force\\sdk_brute_force.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "331ee734-e8bf-4a5d-9c49-20d952011de1",
             "Value": {
                 "id": "b389d2c7-f836-4f86-b62e-2e80f6db0924",
@@ -474,7 +482,8 @@
         "b987ae21-2274-47f6-b8b3-81ba3f169f1f",
         "6f56fda3-7783-4379-9f5a-eca68a5e5c41",
         "73fb9853-052b-4b73-875d-8d0962744ab8",
-        "3ce504e5-4fc0-4bf9-a259-5734a066a631"
+        "3ce504e5-4fc0-4bf9-a259-5734a066a631",
+        "30663bf1-b790-48a3-8637-52703900641f"
     ],
     "tutorial": ""
 }

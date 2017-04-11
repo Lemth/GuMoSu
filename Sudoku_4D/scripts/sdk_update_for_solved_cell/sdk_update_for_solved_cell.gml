@@ -23,5 +23,6 @@ if(value>0) { /* REMOVE THIS CHECK IF NO MESSAGES ENCOUNTERED */
 	return solved;
 } else {
 	show_debug_message("DO NOT REMOVE THIS CHECK IN sdk_update_for_solved_cell(mainlist,square)");	
+	show_debug_message(string(argument0)+"+"+string(argument1)+"+"+string(ds_list_size(argument0[| argument1]))+"+"+string(value));
 }
 return 0; /* only is value is not 1,2..16 does this ever happen? SEE MESSAGE ABOVE */

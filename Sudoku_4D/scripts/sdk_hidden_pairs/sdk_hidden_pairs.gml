@@ -40,4 +40,5 @@ for(var i=0;i<18;i++) { /* loop through arrays 0,1..17 */
 	}
 }
 show_debug_message("hidden pairs: "+string(solved));
+// A 0 LIST FALSE REMOVAL AFTER THIS SOLVE
 return solved;

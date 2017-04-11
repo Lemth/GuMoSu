@@ -12,7 +12,7 @@ for(var i=0;i<18;i++) { /* loop through arrays 0,1..17 */
 	var array=_arrays[| i];
 	for(var j=0;j<16;j++) { /* loop through array[i] positions 0,1..15 */
 		if(ds_list_size(argument0[| array[| j]])==2) { /* ds_list_size of 2 is required for the naked pair */
-			ds_list_sort(argument0[| array[| j]]); /* sort for ease of comparing later on */
+			ds_list_sort(argument0[| array[| j]],true); /* sort for ease of comparing later on */
 			bucket1[j]=ds_list_find_value(argument0[| array[| j]],0); /* add value 1 to bucket1 */
 			bucket2[j]=ds_list_find_value(argument0[| array[| j]],1); /* add value 2 to bucket2 */
 			square[j]=array[| j]; /* remember this square */

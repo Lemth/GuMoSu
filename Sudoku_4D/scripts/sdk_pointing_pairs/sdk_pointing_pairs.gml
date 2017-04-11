@@ -137,4 +137,5 @@ for(var i=0;i<18;i++) { /* loop through arrays 0,1..17 */
 	}
 }
 show_debug_message("pointing pairs: "+string(solved));
+/// PROBLEMATIC. REMOVING SOLVED SQUARES
 return solved;
