@@ -1,6 +1,6 @@
 /// @desc scr_solution_create()
 time=get_timer();
-
+step=0;
 scr_solution_restart();
 var maxsquare=0;
 

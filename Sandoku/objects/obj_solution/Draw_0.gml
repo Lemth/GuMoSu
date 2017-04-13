@@ -33,7 +33,7 @@ if(valid) {
 }
 
 draw_set_halign(fa_right);
-draw_text(bbox_right,bbox_bottom,"["+string(step)+" steps - "+string(round(time/1000))+"ms]");
+draw_text(bbox_right,bbox_bottom,"["+string(scr_thousand_seperator(step))+" steps - "+string(scr_thousand_seperator(round(time/1000)))+"ms]");
 
 /*
 button=[	"Solution:",noone, //0 1
@@ -52,7 +52,7 @@ var yy=bbox_bottom;
 for(var i=0;i<array_length_1d(button);i+=2) {
 	if(button[i+1]==noone) {
 		xx=bbox_left;
-		yy+=30;
+		yy+=20;
 		draw_set_color(c_white);
 		draw_text(xx,yy,button[i]);
 	} else {

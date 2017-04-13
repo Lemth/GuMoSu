@@ -12,9 +12,9 @@ button=[	"Solution:",noone, //0 1
 	   		"Solver",0, //14 15
 	   		"Brute",0]; //16 17
 
-file=file_text_open_write("sandoku_solution.txt");
-file_text_write_string(file,""); // clear
-file_text_close();
+file_sandoku_solution=file_text_open_write("sandoku_solution.txt");
+file_text_write_string(file_sandoku_solution,""); // clear
+file_text_close(file_sandoku_solution);
 //
 
 // 0,1,..95 => rows/columns

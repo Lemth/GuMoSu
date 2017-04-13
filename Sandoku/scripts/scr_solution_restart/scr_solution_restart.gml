@@ -1,5 +1,4 @@
 //INIT VAR
-step=0;
 square=16;
 
 //REFRESH ARRAYS
