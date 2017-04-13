@@ -51,8 +51,23 @@ var xx=bbox_left;
 var yy=bbox_bottom;
 for(var i=0;i<array_length_1d(button);i+=2) {
 	if(button[i+1]==noone) {
-		
-	
+		xx=bbox_left;
+		yy+=30;
+		draw_set_color(c_white);
+		draw_text(xx,yy,button[i]);
+	} else {
+		if(mouse_check_button_pressed(mb_left)) {
+			if(point_in_rectangle(mouse_x,mouse_y,xx,yy,xx+string_width(button[i]),yy+string_height(button[i]))) {
+				button[i+1]=1;
+			}
+		} else if (mouse_check_button_pressed(mb_right)) {
+			if(point_in_rectangle(mouse_x,mouse_y,xx,yy,xx+string_width(button[i]),yy+string_height(button[i]))) {
+				button[i+1]=2;
+			}	
+		}
+		//HERE
+	}
+	xx+=string_width(button[i])+20;
 }
 
 
