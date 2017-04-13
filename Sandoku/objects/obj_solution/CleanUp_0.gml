@@ -50,13 +50,46 @@ if(button[9]>0) { //import from clip
         button[1]=0;
     }
 }
+if(button[3]>0) { //SOLVER <<<<<<<=================================================================<<<<<<<
+    //
+    if(button[1]==1) {
+        button[1]=0;
+    }
+}
+if(button[3]>0) { //BRUTE 
+    for(var i=0;i<96;i++) {
+		obj_puzzle.puzzle[i]=solution[i];	
+	}
+	obj_puzzle.puzzle_create_mode=2;
+    if(button[1]==1) {
+        button[1]=0;
+    }
+}
 
 
 /// @desc scr_convert_string_grid(array,string)
 /// @arg array argument0
 /// @arg string argument1
-
-
+for(var i=0;i<96;i++) {
+	var chr=string_char_at(argument1,i+1);
+	if(chr==".") {
+		argument0[@ i]=0;
+	} else if(chr=="A") {
+		argument0[@ i]=11;
+	} else if(chr=="B") {
+		argument0[@ i]=12;
+	} else if(chr=="C") {
+		argument0[@ i]=13;
+	} else if(chr=="D") {
+		argument0[@ i]=14;
+	} else if(chr=="E") {
+		argument0[@ i]=15;
+	} else if(chr=="F") {
+		argument0[@ i]=16;
+	} else {
+		argument0[@ i]=real(chr)+1;
+	}
+}
 
 /// @desc scr_convert_grid_string(array)
 /// @arg array argument0
