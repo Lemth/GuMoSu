@@ -46,11 +46,11 @@ _value_z=[	1,2,3,4,1,2,3,4,1,2,3,4,1,2,3,4,
 			5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5];
 
 // peers per square
-_peers=ds_list_create(); // !REDUCED PEERS!
-for(var i=16;i<96;i++) {
+_peers=ds_list_create(); //
+for(var i=0;i<96;i++) {
 	_peers[| i]=ds_list_create();
-	for(var j=0;j<i;j++) {
-		if(scr_square_is_peer(i,j)) {
+	for(var j=0;j<96;j++) {
+		if(i!=j && scr_square_is_peer(i,j)) {
 			ds_list_add(_peers[| i],j);	
 		}
 	}
@@ -79,13 +79,38 @@ for(var i=0;i<96;i++) {
 
 //INIT DATASTRUCTURES
 inventory=ds_list_create(); //inventory of values for each square
-library=ds_list_create(); //library of values to replenish inventory with for each square
-for(var i=0;i<96;i++) { //starting at 17th (i=16) square (all previous are init with 0)
-	inventory[| i]=ds_list_create();
-	library[| i]=ds_list_create();
+for(var i=0;i<96;i++) { //
+	inventory[| i]=solution[i]==0 ? $FFFF : power(2,solution[i]-1);
 }
 
+scr_puzzle_create();
 
 
-scr_solution_create();
 
+/// @desc binary_count(str)
+/// @arg str argument0
+return string_count("1",string(argument0));
+
+
+///@desc scr_puzzle_create()
+_order=ds_list_create();
+for(var i=0;i<96;i++) {
+	inventory[| i]=solution[i]==0 ? $FFFF : power(2,solution[i]-1);
+	ds_list_add(_order,i);
+}
+if(ds_list_size(_order)>0) { //work through all squares once
+	var i=ds_list_find_value(_order,0); //get random square
+	ds_list_delete(_order,0); //prevent duplicate squares
+	
+    inventory[| i]=$FFFF; //try all values...
+	if(puzzle_create_mode==1) {
+		if(sudoku_puzzle_solver(i)) { //if solvable then can't remove this square:
+			inventory[| i]=solution[i]==0 ? $FFFF : power(2,solution[i]-1); //restore square
+		}
+	} else if (puzzle_create_mode==2) {
+		if(sudoku_puzzle_brute(i)) { //if solvable then can't remove this square:
+			inventory[| i]=solution[i]==0 ? $FFFF : power(2,solution[i]-1); //restore square
+		}
+	}
+}
+ds_list_destroy(_order);
