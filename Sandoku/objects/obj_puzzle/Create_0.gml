@@ -93,7 +93,7 @@ return string_count("1",string(argument0));
 
 
 ///@desc scr_puzzle_create()
-_order=ds_list_create();
+var _order=ds_list_create();
 for(var i=0;i<96;i++) {
 	inventory[| i]=solution[i]==0 ? $FFFF : power(2,solution[i]-1);
 	ds_list_add(_order,i);
@@ -102,15 +102,46 @@ if(ds_list_size(_order)>0) { //work through all squares once
 	var i=ds_list_find_value(_order,0); //get random square
 	ds_list_delete(_order,0); //prevent duplicate squares
 	
-    inventory[| i]=$FFFF; //try all values...
+    inventory[| i]=$FFFF^power(2,solution[i]-1); //try all values except known value (XOR)
 	if(puzzle_create_mode==1) {
-		if(sudoku_puzzle_solver(i)) { //if solvable then can't remove this square:
+		if(sudoku_puzzle_solver(inventory)) { //if solvable then can't remove this square:
 			inventory[| i]=solution[i]==0 ? $FFFF : power(2,solution[i]-1); //restore square
 		}
 	} else if (puzzle_create_mode==2) {
-		if(sudoku_puzzle_brute(i)) { //if solvable then can't remove this square:
+		if(sudoku_puzzle_brute(inventory)) { //if solvable then can't remove this square:
 			inventory[| i]=solution[i]==0 ? $FFFF : power(2,solution[i]-1); //restore square
 		}
 	}
 }
 ds_list_destroy(_order);
+
+
+
+/// @desc sudoku_puzzle_brute(list)
+/// @arg list argument0
+var smallest=0;
+for(var i=0;i<96;i++) { // BRUTE FORCE
+	if(ds_list_size(inventory[| i])==2) {
+		smallest=i;
+		break;
+	} else if(ds_list_size(inventory[| i]>2)) {
+		if(ds_list_size(inventory[| i]<ds_list_size(inventory[| smallest]))) {
+			smallest=i;	
+		}
+	}
+}
+var hold_list=ds_list_create();
+ds_list_copy(hold_list,inventory[| smallest]);
+ds_list_clear(inventory[| smallest]);
+ds_list_add(inventory[| smallest],hold_list[| 0]);
+if(sudoku_create_puzzle_solver(inventory)) { //if solvable
+	//ds_list_destroy_nested(inventory);
+	return true; //solvable even in this configuration; not a unique puzzle
+}
+ds_list_delete(hold_list,0);
+ds_list_copy(inventory[| smallest],hold_list);
+ds_list_destroy(hold_list);
+if(ds_list_size(inventory[| smallest])==1) {
+	solved++;
+	show_debug_message("BRUTE: "+string(solved));
+}
