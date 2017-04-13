@@ -2,6 +2,15 @@
 draw_set_font(font_small);
 draw_set_halign(fa_center);
 valid=noone;
+button=[	"Solution:",noone, //0 1
+			"New",false, //2 3
+			"Auto",false, //4 5
+			"Clipboard:",noone, //6 7
+			"Export",false, //8 9
+	   		"Import",false, //10 11
+	   		"Puzzle:",noone, //12 13
+	   		"Solver",false, //14 15
+	   		"Brute",false]; //16 17
 //
 
 // 0,1,..95 => rows/columns
