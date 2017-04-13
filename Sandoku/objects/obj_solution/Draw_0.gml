@@ -35,5 +35,23 @@ if(valid) {
 draw_set_halign(fa_right);
 draw_text(bbox_right,bbox_bottom,"["+string(step)+" steps - "+string(round(time/1000))+"ms]");
 
+/*
+button=[	"Solution:",noone, //0 1
+			"New",0, //2 3
+			"Auto",0, //4 5
+			"Clipboard:",noone, //6 7
+			"Export",0, //8 9
+	   		"Import",0, //10 11
+	   		"Puzzle:",noone, //12 13
+	   		"Solver",0, //14 15
+	   		"Brute",0]; //16 17
+*/
+draw_set_halign(fa_left);
+for(var i=0;i<array_length_1d(button);i+=2) {
+	
+}
+
+
+
 draw_set_halign(fa_center);
 draw_set_color(c_black);
