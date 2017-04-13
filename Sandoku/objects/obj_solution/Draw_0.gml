@@ -65,7 +65,15 @@ for(var i=0;i<array_length_1d(button);i+=2) {
 				button[i+1]=2;
 			}	
 		}
-		//HERE
+		draw_set_color(c_red);
+		if(button[i+1]==1 || button[i+1]==2) {
+			draw_set_color(c_blue);
+		}
+		draw_rectangle(xx,yy,xx+string_width(button[i]),yy+string_height(button[i]),false);
+		draw_set_color(c_blue);
+		draw_rectangle(xx,yy,xx+string_width(button[i]),yy+string_height(button[i]),true);
+		draw_set_color(c_white);
+		draw_text(xx,yy,button[i]);
 	}
 	xx+=string_width(button[i])+20;
 }
