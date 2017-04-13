@@ -26,7 +26,7 @@ if(button[3]>0) { //CREATE
     }
 }
 if(button[5]>0) { //LOG
-	file=file_text_open_append("sudokutimes.txt");
+	file=file_text_open_append("sandoku_solution.txt");
 	file_text_write_string(file,scr_convert_grid_string(solution)+","+string(step)+","+step(time)+"\n"); // solution,step,time
 	file_text_close();
     if(button[1]==1) {
