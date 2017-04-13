@@ -11,6 +11,10 @@ button=[	"Solution:",noone, //0 1
 	   		"Puzzle:",noone, //12 13
 	   		"Solver",0, //14 15
 	   		"Brute",0]; //16 17
+
+file=file_text_open_write("sandoku_solution.txt");
+file_text_write_string(file,""); // clear
+file_text_close();
 //
 
 // 0,1,..95 => rows/columns
