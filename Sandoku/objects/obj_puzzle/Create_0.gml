@@ -1,6 +1,7 @@
 //
 draw_set_font(font_small);
 draw_set_halign(fa_center);
+puzzle_create_mode=0; //1==solver; 2==brute <<==!!
 //
 
 // 0,1,..95 => rows/columns
@@ -73,6 +74,7 @@ ds_list_add(_values,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16);
 ds_list_shuffle(_values); //1,2..16
 for(var i=0;i<96;i++) {
 	solution[i]=0;
+	puzzle[i]=0;
 } 
 
 //INIT DATASTRUCTURES
