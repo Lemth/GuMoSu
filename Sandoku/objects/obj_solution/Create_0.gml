@@ -56,7 +56,7 @@ _value_z=[	1,2,3,4,1,2,3,4,1,2,3,4,1,2,3,4,
 
 // peers per square
 _peers=ds_list_create(); // !REDUCED PEERS!
-for(var i=16;i<96;i++) {
+for(var i=0;i<96;i++) {
 	_peers[| i]=ds_list_create();
 	for(var j=0;j<i;j++) {
 		if(scr_square_is_peer(i,j)) {
