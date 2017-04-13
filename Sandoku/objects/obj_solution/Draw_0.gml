@@ -37,8 +37,8 @@ draw_text(bbox_right,bbox_bottom,"["+string(step)+" steps - "+string(round(time/
 
 /*
 button=[	"Solution:",noone, //0 1
-			"New",0, //2 3
-			"Auto",0, //4 5
+			"Create",0, //2 3
+			"Log",0, //4 5
 			"Clipboard:",noone, //6 7
 			"Export",0, //8 9
 	   		"Import",0, //10 11
@@ -47,7 +47,11 @@ button=[	"Solution:",noone, //0 1
 	   		"Brute",0]; //16 17
 */
 draw_set_halign(fa_left);
+var xx=bbox_left;
+var yy=bbox_bottom;
 for(var i=0;i<array_length_1d(button);i+=2) {
+	if(button[i+1]==noone) {
+		
 	
 }
 
