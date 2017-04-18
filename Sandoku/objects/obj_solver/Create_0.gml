@@ -1,21 +1,23 @@
+randomize();
+
 //
 draw_set_font(font_small);
 draw_set_halign(fa_center);
-valid=noone;
+puzzle_create_mode=0; //1==solver; 2==brute <<==!!
 time=0;
-button=[	"Solution:",noone, //0 1
-			"Create New",0, //2 3
-			"Log",0, //4 5
-			"Solution Clip:",noone, //6 7
-			"Export",0, //8 9
-	   		"Import",0, //10 11
-	   		"Solution to Puzzle:",noone, //12 13
-	   		"Solver",0, //14 15
-	   		"Brute",0]; //16 17
+valid=noone;
+number=0;
+for(var i=0;i<39;i++) {
+    checkbox[i]=i<3 ? true : false;
+    active[i]=false;
+    status[i]=noone;
+}
+solver_names=["1: Hidden Singles","2: Naked Pairs/Triples","3: Hidden Pairs/Triples","4: Naked/Hidden Quads","5: Pointing Pairs","6: Box/Line Reduction","7: X-Wing","8: Simple Colouring","9: Y-Wing","10: Swordfish","11: XYZ Wing","12: X-Cycles","13: BUG","14: XY-Chain","15: 3D Medusa","16: Jellyfish","17: Unique Rectangles","18: Extended Unique Rect.","19: Hidden Unique Rect's","20: WXYZ Wing","21: Aligned Pair Exclusion","22: Exocet","23: Grouped X-Cycles","24: Empty Rectangles","25: Finned X-Wing","26: Finned Swordfish","27: Altern. Interence Chains","28: Sue-de-Cog","29: Digit Forcing Chains","30: Nishio Forcing Chains","31: Cell Forcing Chains","32: Unit Forcing Chains","33: Almost Locked Sets","34: Death Blossom","35: Pattern Overlay Method","36: Quad Forcing Chains","37: Bowman's Bingo"];
+counter=0;
+automatic=false;
 
-file_sandoku_solution=file_text_open_write("sandoku_solution.txt");
-file_text_write_string(file_sandoku_solution,""); // clear
-file_text_close(file_sandoku_solution);
+file_sandoku_solver=file_text_open_write("sandoku_solver.txt");
+file_text_close(file_sandoku_solver);
 //
 
 // 0,1,..95 => rows/columns
@@ -60,11 +62,11 @@ _value_z=[	1,2,3,4,1,2,3,4,1,2,3,4,1,2,3,4,
 			5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5];
 
 // peers per square
-_peers=ds_list_create(); // !REDUCED PEERS!
+_peers=ds_list_create(); //
 for(var i=0;i<96;i++) {
 	_peers[| i]=ds_list_create();
-	for(var j=0;j<i;j++) {
-		if(scr_square_is_peer(i,j)) {
+	for(var j=0;j<96;j++) {
+		if(i!=j && scr_square_is_peer(i,j)) {
 			ds_list_add(_peers[| i],j);	
 		}
 	}
@@ -88,14 +90,13 @@ ds_list_add(_values,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16);
 ds_list_shuffle(_values); //1,2..16
 for(var i=0;i<96;i++) {
 	solution[i]=0;
+	puzzle[i]=0;
 } 
 
 //INIT DATASTRUCTURES
 inventory=ds_list_create(); //inventory of values for each square
-library=ds_list_create(); //library of values to replenish inventory with for each square
-for(var i=0;i<96;i++) { //starting at 17th (i=16) square (all previous are init with 0)
-	inventory[| i]=ds_list_create();
-	library[| i]=ds_list_create();
+for(var i=0;i<96;i++) { //
+	inventory[| i]=solution[i]==0 ? $FFFF : power(2,solution[i]-1);
 }
 
-scr_solution_create();
+

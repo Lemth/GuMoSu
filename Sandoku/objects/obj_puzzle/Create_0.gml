@@ -2,6 +2,20 @@
 draw_set_font(font_small);
 draw_set_halign(fa_center);
 puzzle_create_mode=0; //1==solver; 2==brute <<==!!
+time=0;
+valid=noone;
+number=0;
+button=[	"Puzzle:",noone, //0 1
+			"Make Solvable",0, //2 3
+			"Log",0, //4 5
+			"Puzzle Clip:",noone, //6 7
+			"Export",0, //8 9
+	   		"Import",0, //10 11
+	   		"Puzzle to Solver:",noone, //12 13
+	   		"Copy",0, //14 15
+	   		"Make Solvable",0]; //16 17
+file_sandoku_puzzle=file_text_open_write("sandoku_puzzle.txt");
+file_text_close(file_sandoku_puzzle);
 //
 
 // 0,1,..95 => rows/columns
@@ -82,7 +96,5 @@ inventory=ds_list_create(); //inventory of values for each square
 for(var i=0;i<96;i++) { //
 	inventory[| i]=solution[i]==0 ? $FFFF : power(2,solution[i]-1);
 }
-
-scr_puzzle_create();
 
 

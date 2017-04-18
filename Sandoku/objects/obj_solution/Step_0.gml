@@ -44,15 +44,7 @@ if(button[11]>0) { //import from clip
 	}
     button[11]=0;
 }
-if(button[15]>0) { //SOLVER <<<<<<<=================================================================<<<<<<<
-    for(var i=0;i<96;i++) {
-		obj_puzzle.solution[i]=solution[i];	
-	}
-	obj_puzzle.puzzle_create_mode=1;
-    if(button[15]==1) {
-        button[15]=0;
-    }
-}
+
 if(button[17]>0) { //BRUTE 
     for(var i=0;i<96;i++) {
 		obj_puzzle.solution[i]=solution[i];	
@@ -62,3 +54,19 @@ if(button[17]>0) { //BRUTE
         button[17]=0;
     }
 }
+
+
+
+if(button[15]>0) { //SOLVER <<<<<<<=================================================================<<<<<<<
+    for(var i=0;i<96;i++) {
+		obj_puzzle.solution[i]=solution[i];	
+	}
+	obj_puzzle.puzzle_create_mode=1;
+    if(button[15]==1) {
+        button[15]=0;
+    }
+}
+
+
+
+
