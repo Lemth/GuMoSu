@@ -39,6 +39,17 @@ if(button[15]>0) { //
     for(var i=0;i<96;i++) {
 		obj_solver.puzzle[i]=puzzle[i];	
 		obj_solver.inventory[| i]=puzzle[i]==0 ? $FFFF : index_to_binary(puzzle[i]);
+		obj_solver.solvedsquare[| i]=puzzle[i]==0 ? -1 : 2;
+		obj_solver.counter=0;
+		obj_solver.automatic=false;
+		obj_solver.do_step=false;
+		with(obj_solver) {
+			for(var j=0;j<39;j++) {
+			    checkbox[j]=j<3 ? true : false;
+			    active[j]=false;
+			    status[j]=noone;
+			}
+		}
 	}
     if(button[15]==1) {
         button[15]=0;

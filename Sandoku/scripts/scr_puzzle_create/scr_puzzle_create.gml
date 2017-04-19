@@ -7,7 +7,7 @@ for(var i=0;i<96;i++) {
 	inventory[| i]=solution[i]==0 ? $FFFF : index_to_binary(solution[i]);
 	ds_list_add(_order,i);
 }
-//ds_list_shuffle(_order);
+ds_list_shuffle(_order);
 while(ds_list_size(_order)>0) { //work through all squares once
 	var i=ds_list_find_value(_order,0); //get random square
 	show_debug_message(string(round((96-ds_list_size(_order))/.96))+"%");
