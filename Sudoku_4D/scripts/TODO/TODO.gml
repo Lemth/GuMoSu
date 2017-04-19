@@ -10,7 +10,10 @@
 
 
 
+https://docs2.yoyogames.com/source/_build/2_interface/2_tools/source_control.html
 
+
+#macro total_weapons 10
 
 
 
