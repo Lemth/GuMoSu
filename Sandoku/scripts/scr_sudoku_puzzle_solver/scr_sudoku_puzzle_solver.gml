@@ -14,19 +14,15 @@ if(sandoku_solver(binlist)) {
 	        validate|=binlist[| array[| j]];
 	    }
 	    if(validate!=$FFFF) {
-		
-			show_debug_message("esc3");
 			ds_list_destroy(binlist);
 	        return false;
 	    }
 	}
-	show_debug_message("esc2");
 	ds_list_destroy(binlist);
 	return true;
 
 } else {
 
-	show_debug_message("esc1");
 	ds_list_destroy(binlist);
 	return false;
 }

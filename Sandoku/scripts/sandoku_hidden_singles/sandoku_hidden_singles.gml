@@ -19,11 +19,9 @@ for(var a=0;a<ARRAYS;a++) {
 	if(singles>0) {
 		for(var e=0;e<ELEMENTS;e++) {
 			var element=array[| e];
-			if(pop_state(bin[| element])==2) {
+			if(pop_state(bin[| element])==2 && pop_state(bin[| element]&singles)==1) {
 				bin[| element]&=singles;
-				if(pop_state(bin[| element])==1) {
-					r+=sandoku_constrain_peers(bin,element);
-				}
+				r+=sandoku_constrain_peers(bin,element);
 			}
 		}
 	}

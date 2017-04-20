@@ -2,28 +2,35 @@
 /// HIDDEN SINGLES
 
 var returnvalue="No"
-//time=get_timer();
+
+
+time=get_timer();
 // HIDDEN SINGLES IN ROW/BOX/COLUMN (or pinned) in GREEN
 /*
-for(var i=0;i<18;i++) { 
-	var array=_arrays[| i];
+for(var a=0;a<ARRAYS;a++) { //////////// 200us
+	var array=_arrays[| a];
 	var memory=0;
 	var singles=0;
-	for(var j=0;j<16;j++) {
-		var element=inventory[| array[| j]];
-		singles=~(memory^singles)&(memory^element);
-		memory|=element;
+	for(var e=0;e<ELEMENTS;e++) {
+		var values=inventory[| array[| e]];
+		if(pop_state(values)==2) {
+			singles=(memory^~singles)&(memory^values);
+			memory|=values;
+		}
 	}
-	for(var j=0;j<16;j++) {
-		if(scr_count_binary_ones(inventory[| array[| j]]&singles)==1) {
-			ds_list_replace(coloring[| array[| j]],log2(inventory[| array[| j]]&singles),c_green);
-			returnvalue="Yes";
+	if(singles>0) {
+		for(var e=0;e<ELEMENTS;e++) {
+			var element=array[| e];
+			if(pop_state(inventory[| element])==2 && pop_state(inventory[| element]&singles)==1) {
+				ds_list_replace(coloring[| element],log2(inventory[| element]&singles),c_green);
+				returnvalue="Yes";
+			}
 		}
 	}
 }
 */
 
-for(var i=0;i<18;i++) { 
+for(var i=0;i<18;i++) {  ////////////// 600us
 	var array=_arrays[| i];
 	var bucket=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 	var square=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
@@ -45,7 +52,9 @@ for(var i=0;i<18;i++) {
 	}
 }
 
-//show_debug_message(get_timer()-time);
+show_debug_message(string(get_timer()-time));
+
+
 //THE LAST POSSIBLE NUMBER in ORANGE
 for(var i=0;i<96;i++) {
 	if(solvedsquare[| i]<0) {

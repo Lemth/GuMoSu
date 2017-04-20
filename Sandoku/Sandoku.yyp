@@ -271,6 +271,14 @@
             }
         },
         {
+            "Key": "5900363f-d4b7-4a5a-a3eb-8a740b35a289",
+            "Value": {
+                "id": "02ed058b-ea76-4646-95a1-d28b1f6dc33b",
+                "resourcePath": "scripts\\sandoku_conjugate_pairs_recursive\\sandoku_conjugate_pairs_recursive.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "5d6828db-df1c-4db9-ba7e-bc970ebcde4a",
             "Value": {
                 "id": "37ef5f20-ccde-4f4a-aa48-da7ba9ea6591",
@@ -765,6 +773,7 @@
         "80f121fd-b73e-46f1-b27b-6cbbbb0624f1",
         "ea3c13df-236a-4c28-b32c-12829ab857dc",
         "dd761c0c-fb57-47f3-a20e-46b4197c077c",
+        "5900363f-d4b7-4a5a-a3eb-8a740b35a289",
         "780ca288-68ad-4e6a-b49d-dac1cfef1210",
         "9fe66031-8bec-45d7-a428-27df67e242c5",
         "38e4b5df-08de-463c-913d-5a33f81d1370"

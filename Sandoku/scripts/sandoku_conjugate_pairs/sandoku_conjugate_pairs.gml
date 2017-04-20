@@ -3,13 +3,31 @@
 
 var bin=argument0;
 
-/* Conjugate Pairs [O(SQUARES*PEERS)=3648] */
+/* Conjugate Pairs [O()=] */
 for(var a=0;a<ARRAYS;a++) { 
 	var array=_arrays[| a];
-	var memory=0;
-	var singles=0;
-	for(var e=0;e<ELEMENTS;e++) {
-}}
+	var pairs=0;
+	var count=2;
+	pairs=sandoku_conjugate_pairs_recursive(bin,array,pairs,count);
+	
+	
+		
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
