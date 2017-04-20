@@ -1,8 +1,8 @@
 {
-    "id": "9fe66031-8bec-45d7-a428-27df67e242c5",
+    "id": "77a75d70-aa37-42b0-8050-c6c529768981",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "sandoku_4_pointing_pairs",
+    "name": "pop_count",
     "IsCompatibility": false,
     "IsDnD": false
 }

@@ -1,8 +1,8 @@
 {
-    "id": "6acc52e5-6e36-4ec6-9da5-a68497deb6df",
+    "id": "4b56ee8c-9994-4d62-a0a7-66bcc57de028",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "sandoku_0_conjugate_singles",
+    "name": "scr_sudoku_puzzle_solver",
     "IsCompatibility": false,
     "IsDnD": false
 }

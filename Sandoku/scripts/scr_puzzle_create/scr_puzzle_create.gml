@@ -13,13 +13,16 @@ while(ds_list_size(_order)>0) { //work through all squares once
 	show_debug_message(string(round((96-ds_list_size(_order))/.96))+"%");
 	ds_list_delete(_order,0); //prevent duplicate squares
 	
-    inventory[| i]=$FFFF^index_to_binary(solution[i]); //try all values except known value (XOR)
+    inventory[| i]=$FFFF;
 	if(puzzle_create_mode==1) {
-//		if(scr_sudoku_puzzle_solver(inventory)) { //if solvable then can't remove this square:
-			inventory[| i]=solution[i]==0 ? $FFFF : index_to_binary(solution[i]); //restore square
-			show_debug_message("F*CK");
-//		}
-	} else if (puzzle_create_mode==2) {
+		if(!scr_sudoku_puzzle_solver(inventory)) { //if solvable then remove this square:
+			inventory[| i]=index_to_binary(solution[i]); //restore square
+		} else {
+			inventory[| i]=$FFFF;
+		}
+	}
+	inventory[| i]=$FFFF^index_to_binary(solution[i]); //try all values except known value (XOR)
+	if (puzzle_create_mode==2) {
 		if(scr_sudoku_puzzle_brute(inventory)) { //if solvable then can't remove this square:
 			inventory[| i]=index_to_binary(solution[i]); //restore square
 		} else {

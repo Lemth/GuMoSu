@@ -1,12 +1,15 @@
-/// @desc sandoku_2_conjugate_pairs(list)
+/// @desc sandoku_conjugate_pairs(list)
 /// @arg list argument0
 
-// 2 3, 4 5, 6 7, 8????
+var bin=argument0;
 
-
-
-
-
+/* Conjugate Pairs [O(SQUARES*PEERS)=3648] */
+for(var a=0;a<ARRAYS;a++) { 
+	var array=_arrays[| a];
+	var memory=0;
+	var singles=0;
+	for(var e=0;e<ELEMENTS;e++) {
+}}
 
 
 

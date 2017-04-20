@@ -2,8 +2,27 @@
 /// HIDDEN SINGLES
 
 var returnvalue="No"
-
+//time=get_timer();
 // HIDDEN SINGLES IN ROW/BOX/COLUMN (or pinned) in GREEN
+/*
+for(var i=0;i<18;i++) { 
+	var array=_arrays[| i];
+	var memory=0;
+	var singles=0;
+	for(var j=0;j<16;j++) {
+		var element=inventory[| array[| j]];
+		singles=~(memory^singles)&(memory^element);
+		memory|=element;
+	}
+	for(var j=0;j<16;j++) {
+		if(scr_count_binary_ones(inventory[| array[| j]]&singles)==1) {
+			ds_list_replace(coloring[| array[| j]],log2(inventory[| array[| j]]&singles),c_green);
+			returnvalue="Yes";
+		}
+	}
+}
+*/
+
 for(var i=0;i<18;i++) { 
 	var array=_arrays[| i];
 	var bucket=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
@@ -26,6 +45,7 @@ for(var i=0;i<18;i++) {
 	}
 }
 
+//show_debug_message(get_timer()-time);
 //THE LAST POSSIBLE NUMBER in ORANGE
 for(var i=0;i<96;i++) {
 	if(solvedsquare[| i]<0) {
