@@ -4,9 +4,8 @@
 var returnvalue="No"
 
 
-time=get_timer();
 // HIDDEN SINGLES IN ROW/BOX/COLUMN (or pinned) in GREEN
-/*
+
 for(var a=0;a<ARRAYS;a++) { //////////// 200us
 	var array=_arrays[| a];
 	var memory=0;
@@ -28,8 +27,8 @@ for(var a=0;a<ARRAYS;a++) { //////////// 200us
 		}
 	}
 }
-*/
 
+/*
 for(var i=0;i<18;i++) {  ////////////// 600us
 	var array=_arrays[| i];
 	var bucket=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
@@ -51,8 +50,8 @@ for(var i=0;i<18;i++) {  ////////////// 600us
 		}
 	}
 }
+*/
 
-show_debug_message(string(get_timer()-time));
 
 
 //THE LAST POSSIBLE NUMBER in ORANGE

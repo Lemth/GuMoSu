@@ -16,6 +16,8 @@ button=[	"Puzzle:",noone, //0 1
 	   		"Make Solvable",0]; //16 17
 file_sandoku_puzzle=file_text_open_write("sandoku_puzzle.txt");
 file_text_close(file_sandoku_puzzle);
+recursivity=0;
+recursive=0;
 //
 
 // 0,1,..95 => rows/columns

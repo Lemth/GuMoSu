@@ -2,7 +2,24 @@
 /// NAKED PAIRS/TRIPLES (NAKED CANDIDATES)
 
 var returnvalue="No"
+time=get_timer();
 
+/* Conjugate Pairs [O()=] */
+
+for(var a=0;a<ARRAYS;a++) { 
+	var array=_arrays[| a];
+	var r=0;
+	for(var count=2;count<9;count++) {
+		r+=scr_solver_2b(inventory,array,0,count,0,count);
+	}
+	if(r>0) {
+		returnvalue="Yes";
+	}
+}
+
+
+
+/*
 // NAKED PAIRS IN ROW/BOX/COLUMN (or pinned) in GREEN (removables in ORANGE)
 for(var i=0;i<18;i++) { 
 	var array=_arrays[| i];
@@ -72,6 +89,8 @@ for(var i=0;i<18;i++) {
 		}
 	}
 }
-		
+*/
+
+show_debug_message(string(get_timer()-time));
 
 return returnvalue;

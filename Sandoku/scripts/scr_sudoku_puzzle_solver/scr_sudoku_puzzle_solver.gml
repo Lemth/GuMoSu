@@ -14,15 +14,18 @@ if(sandoku_solver(binlist)) {
 	        validate|=binlist[| array[| j]];
 	    }
 	    if(validate!=$FFFF) {
+			recursive=0;
 			ds_list_destroy(binlist);
 	        return false;
 	    }
 	}
+	recursivity=max(recursivity,recursive);
+	recursive=0;
 	ds_list_destroy(binlist);
 	return true;
 
 } else {
-
+	recursive=0;
 	ds_list_destroy(binlist);
 	return false;
 }

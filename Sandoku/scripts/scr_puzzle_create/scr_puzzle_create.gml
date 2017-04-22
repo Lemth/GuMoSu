@@ -8,6 +8,8 @@ for(var i=0;i<96;i++) {
 	ds_list_add(_order,i);
 }
 ds_list_shuffle(_order);
+recursive=0;
+recursivity=0;
 while(ds_list_size(_order)>0) { //work through all squares once
 	var i=ds_list_find_value(_order,0); //get random square
 	show_debug_message(string(round((96-ds_list_size(_order))/.96))+"%");

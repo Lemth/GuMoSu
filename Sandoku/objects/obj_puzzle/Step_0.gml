@@ -2,7 +2,7 @@ if(puzzle_create_mode>0) {
 	number=scr_puzzle_create();
 	if(button[5]>0) { //LOG
 		file_sandoku_puzzle=file_text_open_append("sandoku_puzzle.txt");
-		file_text_write_string(file_sandoku_puzzle,scr_convert_grid_string(solution)+"\t"+scr_convert_grid_string(puzzle)+"\t"+string(number)+"\t"+string(time)+"\n"); // solution,step,time
+		file_text_write_string(file_sandoku_puzzle,scr_convert_grid_string(solution)+"\t"+scr_convert_grid_string(puzzle)+"\t"+string(number)+"\t"+string(time)+"\t"+string(recursivity)+"\n"); // solution,step,time
 		file_text_close(file_sandoku_puzzle);
 	    if(button[5]==1) {
 	        button[5]=0;
@@ -26,7 +26,7 @@ if(button[11]>0) { //import from clip
 			}
 			valid=scr_puzzle_validate();
 			if(valid) {
-				valid=scr_sudoku_puzzle_brute(inventory);
+				valid=scr_sudoku_puzzle_solver(inventory);
 			}
 		} else {
 			show_debug_message("ERROR: wrong string length ("+string(string_length(clip))+").");
