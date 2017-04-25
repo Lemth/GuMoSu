@@ -21,17 +21,8 @@ for(var a=0;a<ARRAYS;a++) {
 		}
 	}
 	if(values>0) {
-		for(var e=0;e<ELEMENTS;e++) {
-			
-			
-			
-			for(var count=2;count<9;count++) {
-				r+=sandoku_hidden_pairs_recursive(bin,array,0,count,0,count);
-			}
-			
-			
-			
-			
+		for(var count=2;count<9;count++) {
+			r+=sandoku_hidden_pairs_recursive(bin,array,0,count,0,count);
 		}
 	}
 }
@@ -45,28 +36,28 @@ return r;
 
 
 
-/// @desc sandoku_hidden_pairs_recursive(list,array,index,recur,pairs,count)
+/// @desc sandoku_hidden_pairs_recursive(list,array,memory,index,recur,pairs,count)
 /// @arg list argument0
 /// @arg array argument1
-/// @arg index argument2
-/// @arg recur argument3
-/// @arg pairs argument4
-/// @arg count argument5
+/// @arg memory argument2
+/// @arg index argument3
+/// @arg recur argument4
+/// @arg pairs argument5
+/// @arg count argument6
 
 var bin=argument0;
 var array=argument1;
-var index=argument2;
-var recur=argument3;
-var pairs=argument4;
-var count=argument5;
+var memory=argument2;
+var index=argument3;
+var recur=argument4;
+var pairs=argument5;
+var count=argument6;
 var r=0;
 
 if(count>0) {
 	for(var e=index;e<ELEMENTS;e++) {
-		if(pop_state(bin[| array[| e]])==2) {
-			if(pop_count(pairs|bin[| array[| e]])<=recur) {
-				r+=sandoku_hidden_pairs_recursive(bin,array,e+1,recur,pairs|bin[| array[| e]],count-1);
-			}
+		if(pop_count(pairs|memory[| e])<=recur) {
+			r+=sandoku_hidden_pairs_recursive(bin,array,e+1,recur,pairs|bin[| array[| e]],count-1);
 		}
 	}
 } else {
