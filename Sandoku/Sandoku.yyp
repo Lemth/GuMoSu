@@ -583,6 +583,14 @@
             }
         },
         {
+            "Key": "d35f7b38-1d83-497c-880b-11903c7e2619",
+            "Value": {
+                "id": "8b8c284d-e93b-4231-99e1-c9530061b1a5",
+                "resourcePath": "scripts\\sandoku_hidden_pairs_recursive\\sandoku_hidden_pairs_recursive.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "d4880ab8-654a-4c0b-91b6-e667a110e46b",
             "Value": {
                 "id": "4f826d55-07bd-42c8-bb9e-45fa0aa92209",
@@ -604,6 +612,14 @@
                 "id": "201e7be3-a811-41c6-85de-c8438bf66134",
                 "resourcePath": "views\\dac79b11-8cae-4f3e-8b6a-8222efefa866.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "dc62397c-9eb6-4014-b0e0-bc1e399bab71",
+            "Value": {
+                "id": "e2f2017f-c6de-4f8b-ae27-0f2559b9c39d",
+                "resourcePath": "scripts\\sandoku_pointing_pairs_recursive\\sandoku_pointing_pairs_recursive.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -784,7 +800,9 @@
         "dd761c0c-fb57-47f3-a20e-46b4197c077c",
         "5900363f-d4b7-4a5a-a3eb-8a740b35a289",
         "780ca288-68ad-4e6a-b49d-dac1cfef1210",
+        "d35f7b38-1d83-497c-880b-11903c7e2619",
         "9fe66031-8bec-45d7-a428-27df67e242c5",
+        "dc62397c-9eb6-4014-b0e0-bc1e399bab71",
         "38e4b5df-08de-463c-913d-5a33f81d1370"
     ],
     "tutorial": ""

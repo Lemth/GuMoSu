@@ -14,7 +14,7 @@ while(solved<SQUARES) {
 		r+=sandoku_last_possible(bin);
 	}
 	if(r==0) {
-		r+=sandoku_conjugate_pairs(bin);
+		r+=sandoku_hidden_pairs(bin);
 	}
 	
 	

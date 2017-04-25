@@ -13,7 +13,9 @@
         "dd761c0c-fb57-47f3-a20e-46b4197c077c",
         "5900363f-d4b7-4a5a-a3eb-8a740b35a289",
         "780ca288-68ad-4e6a-b49d-dac1cfef1210",
-        "9fe66031-8bec-45d7-a428-27df67e242c5"
+        "d35f7b38-1d83-497c-880b-11903c7e2619",
+        "9fe66031-8bec-45d7-a428-27df67e242c5",
+        "dc62397c-9eb6-4014-b0e0-bc1e399bab71"
     ],
     "filterType": "GMScript",
     "folderName": "SANDOKU",
