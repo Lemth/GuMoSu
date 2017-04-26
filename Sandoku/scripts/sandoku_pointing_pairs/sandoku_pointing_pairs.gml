@@ -7,8 +7,13 @@ var r=0;
 /* Pointing Pairs [O(ARRAYS*(ELEMENTS*ELEMENTS))=4608] */
 for(var a=0;a<ARRAYS;a++) { 
 	var array=_arrays[| a];
-	for(var count=2;count<4;count++) {
-		r+=sandoku_pointing_pairs_recursive(bin,array,memory,0,count,0,count,0);
+	var memory=ds_list_create();
+	for(var e=0;e<ELEMENTS;e++) {
+		if(pop_state(bin[| array[| e]])==2) {
+			for(var v=bin[| array[| e]];v>0;v&=v-1) {
+				memory[| log2(v&-v)]|=(1<<e);
+			}
+		}
 	}
 
 
