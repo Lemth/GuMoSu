@@ -27,6 +27,12 @@ for(var a=0;a<ARRAYS;a++) {
 					tensor|=(1<<(_value_y[array[| log2(i&-i)]]+6));
 					tensor|=(1<<(_value_z[array[| log2(i&-i)]]+12));
 				}
+				//memory pc=2 -> tensor pc=4 V pc>4 X
+				//memory pc=3 -> tensor pc=5 V pc>5 X
+				//memory pc=4 -> tensor pc=6 V pc>6 X
+				if(pop_count(tensor)==pop_count(memory[| v])+2) {
+					tensor&=~(1<<a);	
+				}
 			}
 		}
 	}
