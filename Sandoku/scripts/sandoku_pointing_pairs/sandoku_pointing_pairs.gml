@@ -8,6 +8,9 @@ var r=0;
 for(var a=0;a<ARRAYS;a++) { 
 	var array=_arrays[| a];
 	var memory=ds_list_create();
+	for(var i=0;i<VALUES;i++) {
+		memory[| i]=0;
+	}
 	for(var e=0;e<ELEMENTS;e++) {
 		if(pop_state(bin[| array[| e]])==2) {
 			for(var v=bin[| array[| e]];v>0;v&=v-1) {
@@ -15,6 +18,19 @@ for(var a=0;a<ARRAYS;a++) {
 			}
 		}
 	}
+	for(var v;v<VALUES;v++) {
+		if(pop_state(memory[| v])==2) {
+			if(pop_count(memory[| v])<=4) {
+				var tensor=0;
+				for(var i=memory[| v];i>0;i&=i-1) {
+					tensor|=(1<<_value_x[array[| log2(i&-i)]]);
+					tensor|=(1<<(_value_y[array[| log2(i&-i)]]+6));
+					tensor|=(1<<(_value_z[array[| log2(i&-i)]]+12));
+				}
+			}
+		}
+	}
+}
 
 
 
