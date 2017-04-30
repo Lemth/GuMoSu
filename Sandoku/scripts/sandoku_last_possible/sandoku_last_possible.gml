@@ -20,6 +20,7 @@ for(var s=0;s<SQUARES;s++) {
 		if(pop_state(memory)==1) {
 			bin[| s]=memory;
 			r+=sandoku_constrain_peers(bin,s);
+			show_message("GOT LP!");
 		}
 	}
 }

@@ -22,39 +22,34 @@ for(var a=0;a<ARRAYS;a++) { //loop through each array
 				if(pop_count(tarray[| v])==argument1) {
 					var cartesian=0;
 					for(var n=tarray[| v];n>0;n&=n-1) { //add xyz coordinates should be in groups of recur+1+1.
-						cartesian|=(1<<(_value_x[array[| log2(n&-n)]]));
-						cartesian|=(1<<(_value_y[array[| log2(n&-n)]]+6));
-						cartesian|=(1<<(_value_z[array[| log2(n&-n)]]+12));
+						cartesian|=_cartesian[| array[| log2(n&-n)]];
 					}
-					if(pop_count(cartesian)==pop_count(tarray[| v])+2) {
+					if(pop_count(cartesian)==argument1+2) {
 						cartesian&=~(1<<a); //remove current array
-						var mask=[$3F,$FC0,$3F000];
-						if(3==(pop_state(cartesian&mask[0])+pop_state(cartesian&mask[1])+pop_state(cartesian&mask[2]))) { //0+1+2
-							for(var i=0;i<3;i++) { //loop through masks (xyz)
-								if(pop_state(cartesian&mask[i])==1) { //get axis of pointing
-									var parray=_arrays[| log2((cartesian&mask[i])>>(i*6))+i*6]; //convert to pointing array
-									var psquares=ds_list_create();
-									for(var e=0;e<ELEMENTS;e++) { //loop through elements of pointing array
-										if(pop_state(bin[| parray[| e]])==2) { //if unsolved
-											ds_list_add(psquares,parray[| e]); //add squares from pointing array
-										}
-									}
-									for(var n=tarray[| v];n>0;n&=n-1) { //loop through pointing squares
-										ds_list_delete_value(psquares,array[| log2(n&-n)]); //remove initial pointing squares
-									}
-									var size=ds_list_size(psquares);
-									for(var i=0;i<size;i++) { //loop through filtered pointing squares
-										if(pop_state(bin[| psquares[| i]]==2)) {
-											bin[| psquares[| i]]&=~(1<<v); //remove value from pointed squares
-											recursive=max(recursive,argument1); //THIS IS A COUNTER
-											if(pop_state(bin[| psquares[| i]])==1) { //if square is solved
-												r+=sandoku_constrain_peers(bin,psquares[| i]); //update peers
-											}
-										}
-									}
-									ds_list_destroy(psquares);
+						while(cartesian_array(cartesian)) {
+							var c=cartesian_array(cartesian);
+							var parray=_arrays[| c]; //get pointing array
+							cartesian&=~(1<<c); //update cartesian by removing current pointing array
+							var psquares=ds_list_create();
+							for(var e=0;e<ELEMENTS;e++) { //loop through elements of pointing array
+								if(pop_state(bin[| parray[| e]])==2) { //if unsolved
+									ds_list_add(psquares,parray[| e]); //add squares from pointing array
 								}
 							}
+							for(var n=tarray[| v];n>0;n&=n-1) { //loop through pointing squares
+								ds_list_delete_value(psquares,array[| log2(n&-n)]); //remove initial pointing squares
+							}
+							var size=ds_list_size(psquares);
+							for(var p=0;p<size;p++) { //loop through filtered pointing squares
+								if(pop_state(bin[| psquares[| p]])==2) {
+									bin[| psquares[| p]]&=~(1<<v); //remove value from pointed squares
+									depth_pointing=max(depth_pointing,argument1);
+									if(pop_state(bin[| psquares[| p]])==1) { //if square is solved
+										r+=sandoku_constrain_peers(bin,psquares[| p]); //update peers
+									}
+								}
+							}
+							ds_list_destroy(psquares);
 						}
 					}
 				}

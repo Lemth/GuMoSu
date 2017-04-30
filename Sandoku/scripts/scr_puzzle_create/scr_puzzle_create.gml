@@ -8,8 +8,12 @@ for(var i=0;i<96;i++) {
 	ds_list_add(_order,i);
 }
 ds_list_shuffle(_order);
-recursive=0;
-recursivity=0;
+depth_conjugate=0;
+depth_hidden=0;
+depth_pointing=0;
+recur_conjugate=0;
+recur_hidden=0;
+recur_pointing=0;
 while(ds_list_size(_order)>0) { //work through all squares once
 	var i=ds_list_find_value(_order,0); //get random square
 	show_debug_message(string(round((96-ds_list_size(_order))/.96))+"%");
@@ -22,7 +26,13 @@ while(ds_list_size(_order)>0) { //work through all squares once
 			inventory[| i]=index_to_binary(solution[i]); //restore square
 		} else {
 			inventory[| i]=$FFFF;
+			recur_conjugate=max(recur_conjugate,depth_conjugate);
+			recur_hidden=max(recur_hidden,depth_hidden);
+			recur_pointing=max(recur_pointing,depth_pointing);
 		}
+		depth_conjugate=0;
+		depth_hidden=0;
+		depth_pointing=0;
 	}
 	
 	if (puzzle_create_mode==2) {

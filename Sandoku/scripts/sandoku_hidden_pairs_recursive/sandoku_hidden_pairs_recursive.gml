@@ -20,7 +20,7 @@ var r=0;
 
 if(count>0) { //while recursing
 	for(var v=index;v<VALUES;v++) { //loop through values
-		if(tarray[| v]==2) { //if unsolved value
+		if(pop_state(tarray[| v])==2) { //if unsolved value
 			if(pop_count(squares|tarray[| v])<=recur) { //if there are less or equal possible values in this cell than maximum recursion count (COMBINED WITH CELLS FROM PREV RECURSIONS) 
 				r+=sandoku_hidden_pairs_recursive(bin,array,tarray,v+1,recur,count-1,squares|tarray[| v],values|(1<<v)); //recursion: index+1, OR squares together, count-1 (one step closer to maximum recursion count)
 			}
@@ -31,6 +31,7 @@ if(count>0) { //while recursing
 		var s=array[| log2(n&-n)]; //square of lowest set bit of 'n'
 		if(pop_state(bin[| s])==2) { //if still unsolved
 			bin[| s]&=values;  //remove every value that is NOT in 'values' 
+			depth_hidden=max(depth_hidden,recur);
 			if(pop_state(bin[| s])==1) { //if square is solved
 				r+=sandoku_constrain_peers(bin,s); //update peers
 			}

@@ -63,6 +63,12 @@ _value_z=[	1,2,3,4,1,2,3,4,1,2,3,4,1,2,3,4,
 			1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,
 			5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5];
 
+// cartisan per square
+_cartesian=ds_list_create();
+for(var i=0;i<96;i++) {
+	_cartesian[| i]=(1<<_value_x[i])+(1<<(_value_y[i]+6))+(1<<(_value_z[i]+12));
+}
+
 // peers per square
 _peers=ds_list_create(); //
 for(var i=0;i<96;i++) {

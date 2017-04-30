@@ -28,7 +28,8 @@ if(count>0) { //while rercursing
 	for(var n=$FFFF-squares;n>0;n&=n-1) { //for each element that is not a set bit of 'squares'
 		var s=array[| log2(n&-n)]; //square of lowest set bit of 'n'
 		if(pop_state(bin[| s])==2) { //if still unsolved
-			bin[| s]&=~values; //remove every value that is in 'values' 
+			bin[| s]&=~values; //remove every value that is in 'values'
+			depth_conjugate=max(depth_conjugate,recur);
 			if(pop_state(bin[| s])==1) { //if square is solved
 				r+=sandoku_constrain_peers(bin,s); //update peers
 			}

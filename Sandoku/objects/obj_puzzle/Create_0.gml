@@ -16,8 +16,12 @@ button=[	"Puzzle:",noone, //0 1
 	   		"Make Solvable",0]; //16 17
 file_sandoku_puzzle=file_text_open_write("sandoku_puzzle.txt");
 file_text_close(file_sandoku_puzzle);
-recursivity=0;
-recursive=0;
+depth_conjugate=0;
+depth_hidden=0;
+depth_pointing=0;
+recur_conjugate=0;
+recur_hidden=0;
+recur_pointing=0;
 //
 
 // 0,1,..95 => rows/columns
@@ -60,6 +64,12 @@ _value_z=[	1,2,3,4,1,2,3,4,1,2,3,4,1,2,3,4,
 			1,2,3,4,1,2,3,4,1,2,3,4,1,2,3,4,
 			1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,
 			5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5];
+
+// cartisan per square
+_cartesian=ds_list_create();
+for(var i=0;i<96;i++) {
+	_cartesian[| i]=(1<<_value_x[i])+(1<<(_value_y[i]+6))+(1<<(_value_z[i]+12));
+}
 
 // peers per square
 _peers=ds_list_create(); //

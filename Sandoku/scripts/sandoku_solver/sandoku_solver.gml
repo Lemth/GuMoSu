@@ -20,11 +20,10 @@ while(solved<SQUARES) {
 			r+=sandoku_hidden_pairs(bin,count);
 		}
 		if(r==0 && count<=4) {
-			//r+=sandoku_pointing_pairs(bin,count);
+			r+=sandoku_pointing_pairs(bin,count);
 		}
 		count++;
 	}
-	
 	
 	/////////////SECURITY/////////////////////////
 	var check=0; for(var s=0;s<SQUARES;s++) {

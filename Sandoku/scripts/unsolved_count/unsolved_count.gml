@@ -4,13 +4,12 @@
 
 var bin=argument0;
 var array=argument1;
-var size=ds_list_size(array);
-var count=0;
+var counter=0;
 
-for(var i=0;i<size;i++) {
-	if(pop_state(bin[| array[| i]])==2) {
-		count++;
+for(var e=0;e<ELEMENTS;e++) {
+	if(pop_state(bin[| array[| e]])==2) {
+		counter++;
 	}
 }
 	
-return count;
+return counter;
