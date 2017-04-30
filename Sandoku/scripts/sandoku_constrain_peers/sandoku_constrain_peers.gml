@@ -6,14 +6,14 @@ var bin=argument0;
 var s=argument1;
 var r=1;
 
-/* Constrain Peers [O(PEERS)=38]*/
+/* Constrain Peers */
 var peers=_peers[| s];
-for(var p=0;p<PEERS;p++) {
+for(var p=0;p<PEERS;p++) { //loop through each peer
 	var peer=peers[| p];
-	if(pop_state(bin[| peer])==2) {
-		bin[| peer]&=~bin[| s];
-		if(pop_state(bin[| peer])==1) {
-			r+=sandoku_constrain_peers(bin,peer);
+	if(pop_state(bin[| peer])==2) { //if unsolved
+		bin[| peer]&=~bin[| s]; //remove recently solved value from this peer
+		if(pop_state(bin[| peer])==1) { //if square is solved
+			r+=sandoku_constrain_peers(bin,peer); //update peers
 		}
 	}
 }

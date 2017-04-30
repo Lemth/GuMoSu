@@ -13,8 +13,16 @@ while(solved<SQUARES) {
 	if(r==0) {
 		r+=sandoku_last_possible(bin);
 	}
-	if(r==0) {
-		r+=sandoku_hidden_pairs(bin);
+	var count=2;
+	while(r==0 && count<9) {
+		r+=sandoku_conjugate_pairs(bin,count);
+		if(r==0) {
+			r+=sandoku_hidden_pairs(bin,count);
+		}
+		if(r==0 && count<=4) {
+			//r+=sandoku_pointing_pairs(bin,count);
+		}
+		count++;
 	}
 	
 	

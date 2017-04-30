@@ -1,31 +1,25 @@
-/// @desc sandoku_hidden_pairs(list)
+/// @desc sandoku_hidden_pairs(list,count)
 /// @arg list argument0
+/// @arg count argument1
 
 var bin=argument0;
 var r=0;
 
-/* Hidden Pairs [O(ARRAYS*(ELEMENTS*ELEMENTS))=4608] */
-for(var a=0;a<ARRAYS;a++) { 
+/* Hidden Pairs */
+for(var a=0;a<ARRAYS;a++) { //loop through each array
 	var array=_arrays[| a];
-	var unsolved=false;
-	var memory=ds_list_create();
-	for(var i=0;i<VALUES;i++) {
-		memory[| i]=0;
-	}
-	for(var e=0;e<ELEMENTS;e++) {
-		if(pop_state(bin[| array[| e]])==2) {
-			unsolved=true;
-			for(var v=bin[| array[| e]];v>0;v&=v-1) {
-				memory[| log2(v&-v)]|=(1<<e);
+	if(argument1<unsolved_count(bin,array)) { //only continue if there are more unsolved squares than maximum recursion count
+		var tarray=ds_list_create();
+		for(var e=0;e<ELEMENTS;e++) { //loop through each element
+			if(pop_state(bin[| array[| e]])==2) { //if unsolved
+				for(var n=bin[| array[| e]];n>0;n&=n-1) { //transpose array to 'tarray'
+					tarray[| log2(n&-n)]|=(1<<e); //swap elements and values
+				}
 			}
 		}
+		r+=sandoku_hidden_pairs_recursive(bin,array,tarray,0,argument1,argument1,0,0);
+		ds_list_destroy(tarray);
 	}
-	if(unsolved) {
-		for(var count=2;count<4;count++) {
-			r+=sandoku_hidden_pairs_recursive(bin,array,memory,0,count,0,count,0);
-		}
-	}
-	ds_list_destroy(memory);
 }
 
 

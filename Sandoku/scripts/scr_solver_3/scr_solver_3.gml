@@ -2,6 +2,45 @@
 /// HIDDEN PAIRS/TRIPLES (HIDDEN CANDIDATES)
 
 var returnvalue="No"
+var r=0;
+/* Hidden Pairs [O(ARRAYS*(ELEMENTS*ELEMENTS))=4608] */
+for(var a=0;a<ARRAYS;a++) { 
+	var array=_arrays[| a];
+	
+	var empty=0;
+	for(var e=0;e<ELEMENTS;e++) {
+		if(pop_state(inventory[| array[| e]])==2) {
+			empty++;
+		}
+	}
+	
+	//if(argument1<empty) {
+		var tarray=ds_list_create();
+		for(var i=0;i<VALUES;i++) {
+			tarray[| i]=0;
+		}
+		for(var e=0;e<ELEMENTS;e++) {
+			if(pop_state(inventory[| array[| e]])==2) {
+				for(var v=inventory[| array[| e]];v>0;v&=v-1) {
+					tarray[| log2(v&-v)]|=(1<<e);
+				}
+			}
+		}
+		for(var count=2;count<9;count++) {
+			if(count<empty) {
+				r+=scr_solver_3b(inventory,array,tarray,0,count,count,0,0);
+			}
+		}
+		ds_list_destroy(tarray);
+		if(r>0) {
+			returnvalue="Yes";
+		}
+	//}
+}
+
+
+
+/*
 
 // HIDDEN PAIRS IN ROW/BOX/COLUMN (or pinned) in GREEN (removables in ORANGE)
 for(var i=0;i<18;i++) { 
@@ -150,10 +189,10 @@ for(var i=0;i<18;i++) {
 				}
 			
 			}
-			*/
+			*/ /*
 		}
 	}
 }
-		
+		*/
 
 return returnvalue;
