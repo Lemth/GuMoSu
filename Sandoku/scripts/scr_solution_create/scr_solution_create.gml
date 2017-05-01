@@ -6,18 +6,21 @@ var maxsquare=0;
 
 var sr_pos=-1;
 var sr_mov=0;
+var txt_pos="";
+var txt_mov="";
 
 //START
 while(square<96) { 
-	if(sr_pos!=square) {
-		if(sr_pos>square) {
+	
+	if(step<20000 && sr_pos!=square) {
+		if(sr_pos<square) {
 			if(sr_mov>=0) {
 				sr_mov+=1;	
 			} else {
 				sr_mov=1;	
 			}
 		}
-		if(sr_pos<square) {
+		if(sr_pos>square) {
 			if(sr_mov<=0) {
 				sr_mov-=1;	
 			} else {
@@ -25,12 +28,8 @@ while(square<96) {
 			}
 		}
 		sr_pos=square;
-		file_sr_pos=file_text_open_append("sandoku_solution_research_pos.txt");
-		file_text_write_string(file_sr_pos,string(sr_pos)+"\t");
-		file_text_close(file_sr_pos);
-		file_sr_mov=file_text_open_append("sandoku_solution_research_mov.txt");
-		file_text_write_string(file_sr_mov,string(sr_mov)+"\t");
-		file_text_close(file_sr_mov);
+		txt_pos+=string(sr_pos)+",";
+		txt_mov+=string(sr_mov)+",";
 	}
 	
 	
@@ -42,8 +41,16 @@ while(square<96) {
 	maxsquare=max(maxsquare,square);
 	
     step++;
-    if((step mod 2000000)==0 || square<16) { //Safety net (at median / 20.000) CUT SAFETY NET FOR SR !!!!!!!
-		if(step>=1000000 || square<0) {
+//    if((step mod 20000)==0 || square<16) { //Safety net (at median / 20.000) CUT SAFETY NET FOR SR !!!!!!!
+//		if(step>=1000000 || square<0) {
+	if((step mod 30000)==0 || square<16) { //Safety net (at median / 20.000) CUT SAFETY NET FOR SR !!!!!!!
+		if(step>=30000 || square<0) {
+			file_sr_pos=file_text_open_append("sandoku_solution_research_pos.txt");
+			file_text_write_string(file_sr_pos,txt_pos+"\n");
+			file_text_close(file_sr_pos);
+			file_sr_mov=file_text_open_append("sandoku_solution_research_mov.txt");
+			file_text_write_string(file_sr_mov,txt_mov+"\n");
+			file_text_close(file_sr_mov);
 			exit;
 		}
 		scr_solution_restart();
@@ -70,8 +77,8 @@ time=get_timer()-time;
 
 
 file_sr_pos=file_text_open_append("sandoku_solution_research_pos.txt");
-file_text_write_string(file_sr_pos,"\n");
+file_text_write_string(file_sr_pos,txt_pos+"\n");
 file_text_close(file_sr_pos);
 file_sr_mov=file_text_open_append("sandoku_solution_research_mov.txt");
-file_text_write_string(file_sr_mov,"\n");
+file_text_write_string(file_sr_mov,txt_mov+"\n");
 file_text_close(file_sr_mov);
