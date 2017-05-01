@@ -16,6 +16,14 @@ button=[	"Solution:",noone, //0 1
 file_sandoku_solution=file_text_open_write("sandoku_solution.txt");
 file_text_write_string(file_sandoku_solution,""); // clear
 file_text_close(file_sandoku_solution);
+
+file_sr_pos=file_text_open_write("sandoku_solution_research_pos.txt");
+file_text_write_string(file_sr_pos,"");
+file_text_close(file_sr_pos);
+file_sr_mov=file_text_open_write("sandoku_solution_research_mov.txt");
+file_text_write_string(file_sr_mov,"");
+file_text_close(file_sr_mov);
+
 //
 
 // 0,1,..95 => rows/columns
