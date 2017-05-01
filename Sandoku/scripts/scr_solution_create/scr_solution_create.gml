@@ -8,11 +8,17 @@ var sr_pos=-1;
 var sr_mov=0;
 var txt_pos="";
 var txt_mov="";
+var sr_freq=ds_list_create();
+var txt_freq="";
+for(var ii=0;ii<100;ii++) {
+	sr_freq[| ii]=0;
+}
 
 //START
 while(square<96) { 
 	
 	if(step<20000 && sr_pos!=square) {
+		sr_freq[| square]+=1;
 		if(sr_pos<square) {
 			if(sr_mov>=0) {
 				sr_mov+=1;	
@@ -51,6 +57,13 @@ while(square<96) {
 			file_sr_mov=file_text_open_append("sandoku_solution_research_mov.txt");
 			file_text_write_string(file_sr_mov,txt_mov+"\n");
 			file_text_close(file_sr_mov);
+			for(var ii=0;ii<96;ii++) {
+				txt_freq+=string(sr_freq[| ii])+",";
+			}
+			file_sr_freq=file_text_open_append("sandoku_solution_research_freq.txt");
+			file_text_write_string(file_sr_freq,txt_freq+"\n");
+			file_text_close(file_sr_freq);
+			ds_list_destroy(sr_freq);
 			exit;
 		}
 		scr_solution_restart();
@@ -82,3 +95,10 @@ file_text_close(file_sr_pos);
 file_sr_mov=file_text_open_append("sandoku_solution_research_mov.txt");
 file_text_write_string(file_sr_mov,txt_mov+"\n");
 file_text_close(file_sr_mov);
+for(var ii=0;ii<96;ii++) {
+	txt_freq+=string(sr_freq[| ii])+",";
+}
+file_sr_freq=file_text_open_append("sandoku_solution_research_freq.txt");
+file_text_write_string(file_sr_freq,txt_freq+"\n");
+file_text_close(file_sr_freq);
+ds_list_destroy(sr_freq);
