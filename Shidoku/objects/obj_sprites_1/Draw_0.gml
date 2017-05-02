@@ -1,0 +1,1 @@
+draw_cube_pos(sprite_index,image_index,x,y,w,h,get_timer()/10000);

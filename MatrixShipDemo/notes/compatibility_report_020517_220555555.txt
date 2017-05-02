@@ -1,0 +1,16 @@
+game speed set to 30
+added compatibility script d3d/d3d_draw_cone.gml
+added compatibility script d3d/d3d_light_define_ambient.gml
+added compatibility script d3d/d3d_light_define_direction.gml
+added compatibility script d3d/d3d_light_enable.gml
+added compatibility script d3d/d3d_primitive_begin_texture.gml
+added compatibility script d3d/d3d_primitive_end.gml
+added compatibility script d3d/d3d_set_lighting.gml
+added compatibility script d3d/d3d_set_projection_ext.gml
+added compatibility script d3d/d3d_set_shading.gml
+added compatibility script d3d/d3d_start.gml
+added compatibility script d3d/d3d_transform_add_translation.gml
+added compatibility script d3d/d3d_transform_set_identity.gml
+added compatibility script d3d/d3d_vertex_normal_texture.gml
+added compatibility script d3d/__init_d3d.gml
+added compatibility script __init_global.gml

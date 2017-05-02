@@ -1,0 +1,29 @@
+Font font0 has been converted to font family Arial (Regular). Font has been regenerated, small inconsistencies may occur.
+Converting GML script : ${project_dir}\objects\obj_view_matrix\Other_10.gml
+Converted string : line 24 : "distance between camera from and to vectors can't be zero" -> "distance between camera from and to vectors can\'t be zero"
+Converted string : line 116 : "up vector can't have a length of zero" -> "up vector can\'t have a length of zero"
+Converted string : line 128 : "up vector can't point in the same or opposite direction as camera" -> "up vector can\'t point in the same or opposite direction as camera"
+Converted string : line 181 : "right vector can't have a length of zero" -> "right vector can\'t have a length of zero"
+Converted string : line 192 : "right vector can't point in the same or opposite direction as camera" -> "right vector can\'t point in the same or opposite direction as camera"
+
+game speed set to 30
+added compatibility script background/background_get_texture.gml
+added compatibility script d3d/d3d_model_create.gml
+added compatibility script d3d/d3d_model_draw.gml
+added compatibility script d3d/d3d_model_primitive_begin.gml
+added compatibility script d3d/d3d_model_primitive_end.gml
+added compatibility script d3d/d3d_model_vertex_colour.gml
+added compatibility script d3d/d3d_model_vertex_texture.gml
+added compatibility script d3d/d3d_set_culling.gml
+added compatibility script d3d/d3d_set_hidden.gml
+added compatibility script d3d/d3d_set_projection_ortho.gml
+added compatibility script d3d/d3d_set_zwriteenable.gml
+added compatibility script d3d/d3d_start.gml
+added compatibility script d3d/d3d_transform_set_identity.gml
+added compatibility script d3d/__d3d_model_add_vertex.gml
+added compatibility script instance/instance_create.gml
+added compatibility script object/object_get_depth.gml
+added compatibility script background/__init_background.gml
+added compatibility script d3d/__init_d3d.gml
+added compatibility script __init_global.gml
+added compatibility script __global_object_depths.gml
