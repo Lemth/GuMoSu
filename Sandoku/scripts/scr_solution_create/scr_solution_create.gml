@@ -8,42 +8,20 @@ var sr_pos=-1;
 var sr_mov=0;
 var txt_pos="";
 var txt_mov="";
-var sr_freq=ds_list_create();
-var sr_freq2=ds_list_create();
-var sr_freq4=ds_list_create();
+var sr_freq=0;
 var txt_freq="";
-for(var ii=0;ii<100;ii++) {
-	sr_freq[| ii]=0;
-	sr_freq2[| ii]=0;
-	sr_freq4[| ii]=0;
-}
+var ctr=0;
+
 
 //START
 while(square<96) { 
 	
-	if(step<4000 && sr_pos!=square) {
-		sr_freq4[| square]+=1;
-		if(step<2000) {
-			sr_freq2[| square]+=1;	
-			if(step<1000) {
-				sr_freq[| square]+=1;	
-			}
-		}
-		if(sr_pos<square) {
-			if(sr_mov>=0) {
-				sr_mov+=1;	
-			} else {
-				sr_mov=1;	
-			}
-		}
-		if(sr_pos>square) {
-			if(sr_mov<=0) {
-				sr_mov-=1;	
-			} else {
-				sr_mov=-1;	
-			}
-		}
+	if(ctr<600 && sr_pos!=square) {
+		sr_freq+=square;
+		txt_freq+=string(sr_freq)+",";
+		
 		sr_pos=square;
+		ctr++;
 	}
 	
 	
@@ -57,23 +35,17 @@ while(square<96) {
     step++;
 //    if((step mod 20000)==0 || square<16) { //Safety net (at median / 20.000) CUT SAFETY NET FOR SR !!!!!!!
 //		if(step>=1000000 || square<0) {
-	if((step mod 30000)==0 || square<16) { //Safety net (at median / 20.000) CUT SAFETY NET FOR SR !!!!!!!
-		if(step>=30000 || square<0) {
-			for(var ii=0;ii<96;ii++) {
-				txt_freq+=string(sr_freq[| ii])+",";
-				txt_pos+=string(sr_freq2[| ii])+",";
-				txt_mov+=string(sr_freq4[| ii])+",";
+	if((step mod 60000)==0 || square<16) { //Safety net (at median / 20.000) CUT SAFETY NET FOR SR !!!!!!!
+		if(step>=60000 || square<0) {
+			
+			while(ctr<600) {
+				txt_freq+=string(sr_freq)+",";
+				ctr++;
 			}
 			file_sr_freq=file_text_open_append("sandoku_solution_research_freq.txt");
 			file_text_write_string(file_sr_freq,txt_freq+string(step)+"\n");
 			file_text_close(file_sr_freq);
-			file_sr_pos=file_text_open_append("sandoku_solution_research_pos.txt");
-			file_text_write_string(file_sr_pos,txt_pos+string(step)+"\n");
-			file_text_close(file_sr_pos);
-			file_sr_mov=file_text_open_append("sandoku_solution_research_mov.txt");
-			file_text_write_string(file_sr_mov,txt_mov+string(step)+"\n");
-			file_text_close(file_sr_mov);
-			ds_list_destroy(sr_freq);ds_list_destroy(sr_freq2);ds_list_destroy(sr_freq4);
+
 			exit;
 		}
 		scr_solution_restart();
@@ -98,20 +70,10 @@ valid=scr_solution_validate();
 
 time=get_timer()-time;
 
-
-for(var ii=0;ii<96;ii++) {
-	txt_freq+=string(sr_freq[| ii])+",";
-	txt_pos+=string(sr_freq2[| ii])+",";
-	txt_mov+=string(sr_freq4[| ii])+",";
+while(ctr<600) {
+	txt_freq+=string(sr_freq)+",";
+	ctr++;
 }
 file_sr_freq=file_text_open_append("sandoku_solution_research_freq.txt");
 file_text_write_string(file_sr_freq,txt_freq+string(step)+"\n");
 file_text_close(file_sr_freq);
-file_sr_pos=file_text_open_append("sandoku_solution_research_pos.txt");
-file_text_write_string(file_sr_pos,txt_pos+string(step)+"\n");
-file_text_close(file_sr_pos);
-file_sr_mov=file_text_open_append("sandoku_solution_research_mov.txt");
-file_text_write_string(file_sr_mov,txt_mov+string(step)+"\n");
-file_text_close(file_sr_mov);
-ds_list_destroy(sr_freq);ds_list_destroy(sr_freq2);ds_list_destroy(sr_freq4);
-

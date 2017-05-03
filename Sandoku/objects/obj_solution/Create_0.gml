@@ -23,6 +23,9 @@ file_text_close(file_sr_pos);
 file_sr_mov=file_text_open_write("sandoku_solution_research_mov.txt");
 file_text_write_string(file_sr_mov,"");
 file_text_close(file_sr_mov);
+file_sr_freq=file_text_open_write("sandoku_solution_research_freq.txt");
+file_text_write_string(file_sr_freq,"");
+file_text_close(file_sr_freq);
 
 //
 
