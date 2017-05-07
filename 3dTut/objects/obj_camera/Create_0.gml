@@ -25,4 +25,15 @@ camera_set_proj_mat(camera, projMat);
 view_set_camera(0, camera);
 
 //Assigns the update script named "camera_update_script" to the camera belonging to view0
-camera_set_update_script(view_camera[0], camera_update_script);
+//camera_set_update_script(view_camera[0], camera_update_script);
+
+//Set up camera location
+var zz = -1500;
+var xx = room_width/2;
+var yy = room_height/2;
+
+//Build a matrix that looks from the camera location above, to the room center. The up vector points to +z
+mLookat = matrix_build_lookat(xx,yy,zz, xx,yy,0, 0,-1,1);
+
+//Assign the matrix to the camera. This updates were the camera is looking from, without having to unnecessarily update the projection.
+camera_set_view_mat(view_camera[0], mLookat);

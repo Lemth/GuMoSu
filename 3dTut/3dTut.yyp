@@ -47,6 +47,14 @@
             }
         },
         {
+            "Key": "1ea9517c-4316-4ce7-9642-2fa57b1bc25b",
+            "Value": {
+                "id": "c39ab7ae-0d6f-47ab-bbb7-6235dc4167d6",
+                "resourcePath": "objects\\obj_cone\\obj_cone.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "25373546-a821-459d-8936-a3b8a0281a5a",
             "Value": {
                 "id": "fc92d2dd-ed55-47b0-968e-c22503637f65",
@@ -84,6 +92,14 @@
                 "id": "3104a38b-8f14-4c65-b377-83691f1a0e8f",
                 "resourcePath": "views\\4f16e5d6-2d3c-419d-b0ea-e5de4fa1e6fb.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "5791794e-82a2-4ec5-874c-23da95db0578",
+            "Value": {
+                "id": "b5620ed0-d146-4961-9a04-53429ef76c64",
+                "resourcePath": "objects\\object_2\\object_2.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -151,6 +167,14 @@
             }
         },
         {
+            "Key": "99c1e792-d202-49e3-bb23-0e16ae0a9735",
+            "Value": {
+                "id": "af38b575-d4b0-4b09-9d37-0042f3d5e9d9",
+                "resourcePath": "scripts\\d3d_draw_block\\d3d_draw_block.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "a9188620-a624-4a5a-83ae-a1b53faf038b",
             "Value": {
                 "id": "47111607-265e-4fe3-bca7-bd679b573620",
@@ -207,6 +231,14 @@
             }
         },
         {
+            "Key": "d776a11f-e513-4ac8-af79-8867055613ff",
+            "Value": {
+                "id": "d12e0871-0bfb-4d08-a09f-3f0f15fa32c5",
+                "resourcePath": "sprites\\sprite_1\\sprite_1.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "e3c028cd-085d-46b8-9cc4-629d77060914",
             "Value": {
                 "id": "e0a7c283-c932-4410-ab8d-080cac65dd99",
@@ -240,7 +272,8 @@
         }
     ],
     "script_order": [
-        "2c77713e-76a0-4faa-9147-f97712af2a19"
+        "2c77713e-76a0-4faa-9147-f97712af2a19",
+        "99c1e792-d202-49e3-bb23-0e16ae0a9735"
     ],
     "tutorial": ""
 }

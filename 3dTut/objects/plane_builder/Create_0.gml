@@ -7,7 +7,7 @@ vertex_format_begin();
 vertex_format_add_position_3d();//Add 3D position info
 vertex_format_add_normal();//Add 3D surface normal info
 vertex_format_add_color();//Add color info
-vertex_format_add_textcoord();//Texture coordinate info
+vertex_format_add_texcoord();//Texture coordinate info
 
 //End building the format, and assign the format to the variable "format"
 format = vertex_format_end();
@@ -20,7 +20,7 @@ vb_plane = vertex_create_buffer();
 vertex_begin(vb_plane, format);
 
 //Using size to keep it square if we decide to change how bug it is.
-var size = 32;
+var size = 32*4;
 
 //Add the six vertices needed to draw a simple square plane. 
 //The normals are all pointing to (0,0,-1) (upward, in our case)
