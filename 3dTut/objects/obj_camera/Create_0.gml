@@ -4,7 +4,7 @@ gpu_set_zwriteenable(true);//Enables writing to the z-buffer
 gpu_set_ztestenable(true);//Enables the depth testing, so far away things are drawn beind closer things
 
 //Culling
-gpu_set_cullmode(cull_counterclockwise);
+gpu_set_cullmode(cull_noculling);
 
 //First, we need to enable views and make our view visible (in this case, view 0)
 view_enabled = true;//Enable the use of views
@@ -28,12 +28,22 @@ view_set_camera(0, camera);
 //camera_set_update_script(view_camera[0], camera_update_script);
 
 //Set up camera location
-var zz = -1500;
+var zz = -500;
 var xx = room_width/2;
 var yy = room_height/2;
+z=zz;
+x=xx;
+y=yy;
 
 //Build a matrix that looks from the camera location above, to the room center. The up vector points to +z
 mLookat = matrix_build_lookat(xx,yy,zz, xx,yy,0, 0,-1,1);
 
 //Assign the matrix to the camera. This updates were the camera is looking from, without having to unnecessarily update the projection.
 camera_set_view_mat(view_camera[0], mLookat);
+
+camera_matrix = matrix_build(0, 0, 0, 
+                              0, 0, 0,
+                              1, 1, 1);
+rho = sqrt(sqr(x)+sqr(y)+sqr(z));
+theta=0;
+phi=0;
