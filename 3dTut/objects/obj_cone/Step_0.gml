@@ -22,13 +22,7 @@ Although I have stated what is pitch, yaw and roll here, it doesn't really seem 
 I just based them on the YXZ matrix build order of GameMaker
 */
 
-/* START CREATE EVENT */
-mouseDown = false;
-lastMouseX = null;
-lastMouseY = null;
 
-moonRotationMatrix = matrix_build_identity();
-/* END CREATE EVENT */
 
 lastMouseX = mouse_x;
 lastMouseY = mouse_y;
@@ -58,11 +52,11 @@ tempRotationMatrix[10] = dcos(deltaX / 10);
 newRotationMatrix = matrix_multiply(newRotationMatrix, tempRotationMatrix);
 
 newRotationMatrix = matrix_multiply(moonRotationMatrix, moonRotationMatrix);
+
   //mat4.multiply(newRotationMatrix, moonRotationMatrix, moonRotationMatrix);
 
 lastMouseX = newX
 lastMouseY = newY;
-
 
 
 /* */

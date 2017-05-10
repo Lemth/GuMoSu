@@ -9,7 +9,13 @@ trans_matrix[13]=y;
 trans_matrix[14]=z;
                               
 
+/* START CREATE EVENT */
+mouseDown = false;
+lastMouseX = mouse_x;
+lastMouseY = mouse_y;
 
+moonRotationMatrix = matrix_build_identity();
+/* END CREATE EVENT */
 
 
 

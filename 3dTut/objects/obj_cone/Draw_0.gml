@@ -5,7 +5,7 @@ draw_set_color(c_white);
 
 
 //Add the matrix to the current world transform
-matrix_set(matrix_world, matrix_multiply(current_matrix,trans_matrix));
+matrix_set(matrix_world, matrix_multiply(moonRotationMatrix,trans_matrix));
 
 //d3d_transform_add_translation(x,y,z);
 
