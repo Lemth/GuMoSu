@@ -22,44 +22,47 @@ Although I have stated what is pitch, yaw and roll here, it doesn't really seem 
 I just based them on the YXZ matrix build order of GameMaker
 */
 
+/* START CREATE EVENT */
+mouseDown = false;
+lastMouseX = null;
+lastMouseY = null;
 
-  var mouseDown = false;
-  var lastMouseX = null;
-  var lastMouseY = null;
+moonRotationMatrix = matrix_build_identity();
+/* END CREATE EVENT */
 
-  var moonRotationMatrix = mat4.create();
-  mat4.identity(moonRotationMatrix);
+lastMouseX = mouse_x;
+lastMouseY = mouse_y;
 
-  function handleMouseDown(event) {
-    mouseDown = true;
-    lastMouseX = event.clientX;
-    lastMouseY = event.clientY;
-  }
+if (!mouse_check_button(mb_left)) {
+  exit;
+}
+var newX = mouse_x;
+var newY = mouse_y;
 
-  function handleMouseUp(event) {
-    mouseDown = false;
-  }
+var newRotationMatrix = matrix_build_identity();
 
-  function handleMouseMove(event) {
-    if (!mouseDown) {
-      return;
-    }
-    var newX = event.clientX;
-    var newY = event.clientY;
+var tempRotationMatrix = matrix_build_identity();    
+var deltaX = newX - lastMouseX;
+tempRotationMatrix[0] = dcos(deltaX / 10);
+tempRotationMatrix[2] = dsin(deltaX / 10);
+tempRotationMatrix[8] = -dsin(deltaX / 10);
+tempRotationMatrix[10] = dcos(deltaX / 10);
+newRotationMatrix = matrix_multiply(newRotationMatrix, tempRotationMatrix);
 
-    var deltaX = newX - lastMouseX;
-    var newRotationMatrix = mat4.create();
-    mat4.identity(newRotationMatrix);
-    mat4.rotate(newRotationMatrix, degToRad(deltaX / 10), [0, 1, 0]);
+var tempRotationMatrix = matrix_build_identity();
+var deltaY = newY - lastMouseY;
+tempRotationMatrix[5] = dcos(deltaX / 10);
+tempRotationMatrix[6] = -dsin(deltaX / 10);
+tempRotationMatrix[9] = dsin(deltaX / 10);
+tempRotationMatrix[10] = dcos(deltaX / 10);
+newRotationMatrix = matrix_multiply(newRotationMatrix, tempRotationMatrix);
 
-    var deltaY = newY - lastMouseY;
-    mat4.rotate(newRotationMatrix, degToRad(deltaY / 10), [1, 0, 0]);
+newRotationMatrix = matrix_multiply(moonRotationMatrix, moonRotationMatrix);
+  //mat4.multiply(newRotationMatrix, moonRotationMatrix, moonRotationMatrix);
 
-    mat4.multiply(newRotationMatrix, moonRotationMatrix, moonRotationMatrix);
+lastMouseX = newX
+lastMouseY = newY;
 
-    lastMouseX = newX
-    lastMouseY = newY;
-  }
 
 
 /* */
