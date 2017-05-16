@@ -16,20 +16,29 @@ rotation_matrix=matrix_multiply(rotation_matrix,matrix_build(0,0,0, delta_y,delt
 
 
 
+
+
+
 pointer_vector=m3d_projection_calculate();
 
 order=ds_grid_create(7,6);
 order_count=0;
-z_check(-1,1,1,-1,-1,-1);
-z_check(-1,-1,1,1,-1,-1);
-z_check(-1,1,-1,1,-1,-1);
-z_check(1,-1,1,1,1,-1);
-z_check(1,1,1,-1,1,-1);
-z_check(1,1,1,-1,-1,1);
-ds_grid_sort(order,6,true);
+z_check(-1,-1,-1, 1,1,-1);
+/*
+z_check(1,-1,1, -1,-1,-1);
+z_check( -1,-1,1, -1,1,-1);
+z_check(-1,1,1, 1,-1,1);
+z_check(1,1,-1, -1,1,1);
+z_check(1,-1,-1, 1,1,1);
+*/
+ds_grid_sort(order,6,false);
+collision_state=false;
 for(var i=0;i<6;i++) {
-    if(order[# 6,i]>0) {
+    if(order[# 6,i]<0) {
         z_collision(order[# 0,i],order[# 1,i],order[# 2,i],order[# 3,i],order[# 4,i],order[# 5,i]);
     }
 }
 ds_grid_destroy(order);
+if(collision_state==true) {
+	selection_vector=matrix_transform_vertex(matrix_transpose(rotation_matrix),collision_vector[0],collision_vector[1],collision_vector[2]);
+}

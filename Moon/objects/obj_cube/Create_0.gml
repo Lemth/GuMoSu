@@ -16,4 +16,11 @@ vertex_build_cube();
 
 
 
-pointer_vector=m3d_projection_calculate();
+
+
+
+pointer_vector=[0,0,0];
+collision_vector=[0,0,0];
+collision_state=false;
+selection_vector=[0,0,0];
+selected_square=-1;

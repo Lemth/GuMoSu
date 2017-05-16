@@ -1,7 +1,7 @@
 ///@desc matrix_transpose(matrix)
 ///@arg matrix argument0
 
-var transposed_matrix;
+var transposed_matrix=matrix_build_identity();
 
 transposed_matrix[0]=argument0[0];
 transposed_matrix[1]=argument0[4];

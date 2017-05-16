@@ -28,11 +28,10 @@
  */
  
 // Grab the needed camera values
-var __projection = argument0[3]; // Projection for camera data
 
-var __camx = __projection[| __M3D_JPORT.xfrom], // Look-from values
-    __camy = __projection[| __M3D_JPORT.yfrom],
-    __camz = __projection[| __M3D_JPORT.zfrom];
+var __camx = 0, // Look-from values
+    __camy = 0,
+    __camz = -5;
 var __rayx = argument0[0],  // pointer directional vector
     __rayy = argument0[1],
     __rayz = argument0[2];
@@ -100,9 +99,9 @@ if (__t < 0 || (__s + __t) > 1)
     return false;
     
 // Record where the collision took place
-__projection[| __M3D_JPORT.lcx] = __ix;
-__projection[| __M3D_JPORT.lcy] = __iy;
-__projection[| __M3D_JPORT.lcz] = __iz;
+collision_vector[0] = __ix;
+collision_vector[1] = __iy;
+collision_vector[2] = __iz;
     
 // Point falls inside
 return true;

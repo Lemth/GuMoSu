@@ -3,7 +3,7 @@ gpu_set_ztestenable(true);//enables the depth testing, so far away things are dr
 gpu_set_cullmode(cull_counterclockwise);
 
 var camera=camera_create();
-var mat_projection=matrix_build_projection_perspective_fov(45,window_get_width()/window_get_height(),1,100);
+var mat_projection=matrix_build_projection_perspective_fov(45,window_get_width()/window_get_height(),1,10);
 var mat_lookat=matrix_build_lookat(0,0,-5, 0,0,0, 0,1,0);
 
 view_enabled=true; //enable the use of views
