@@ -9,9 +9,9 @@
     "inheritCreationOrder": false,
     "inheritLayers": false,
     "instanceCreationOrderIDs": [
-        "41e829a6-8fe6-4308-8a1e-2655d9665a10",
         "0d4e515f-2cb5-4611-aefa-9a3bd1865e44",
-        "ceff20c1-609f-45c6-a17a-59338f8e24a0"
+        "ceff20c1-609f-45c6-a17a-59338f8e24a0",
+        "796f0305-fcf4-41c0-b5fa-c440e4247f57"
     ],
     "layers": [
         {
@@ -23,7 +23,7 @@
             "grid_x": 32,
             "grid_y": 32,
             "hierarchyFrozen": false,
-            "hierarchyVisible": false,
+            "hierarchyVisible": true,
             "inheritLayerDepth": false,
             "inheritLayerSettings": false,
             "inheritSubLayers": false,
@@ -35,17 +35,17 @@
             "m_serialiseFrozen": false,
             "name": "Camera",
             "userdefined_depth": false,
-            "visible": false,
+            "visible": true,
             "instances": [
                 {
-                    "id": "41e829a6-8fe6-4308-8a1e-2655d9665a10",
+                    "id": "796f0305-fcf4-41c0-b5fa-c440e4247f57",
                     "modelName": "GMRInstance",
                     "mvc": "1.0",
                     "ignore": false,
                     "inheritItemSettings": false,
                     "m_originalParentID": "00000000-0000-0000-0000-000000000000",
                     "m_serialiseFrozen": false,
-                    "name": "inst_153B65DF",
+                    "name": "inst_4A89ED7D",
                     "x": 0,
                     "y": 0,
                     "IsDnD": false,
@@ -55,7 +55,7 @@
                     "creationCodeFile": "",
                     "creationCodeType": "",
                     "inheritCode": false,
-                    "name_with_no_file_rename": "inst_153B65DF",
+                    "name_with_no_file_rename": "inst_4A89ED7D",
                     "objId": "02712629-db69-46ca-8b69-81c1ee585be3",
                     "rotation": 0,
                     "scaleX": 1,

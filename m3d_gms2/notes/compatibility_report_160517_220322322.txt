@@ -1,0 +1,100 @@
+Converting GML script : ${project_dir}\scripts\m3d_projection_destroy\m3d_projection_destroy.gml
+Converted description : /// @description m3d_projection_destroy(id)/// @function m3d_projection_destroy
+/// @param id
+
+Converting GML script : ${project_dir}\scripts\m3d_projection_collision_get_y\m3d_projection_collision_get_y.gml
+Converted description : /// @description m3d_projection_collision_get_y(id)/// @function m3d_projection_collision_get_y
+/// @param id
+
+Converting GML script : ${project_dir}\scripts\m3d_projection_collision_get_x\m3d_projection_collision_get_x.gml
+Converted description : /// @description m3d_projection_collision_get_x(id)/// @function m3d_projection_collision_get_x
+/// @param id
+
+Converting GML script : ${project_dir}\scripts\m3d_projection_collision_get_z\m3d_projection_collision_get_z.gml
+Converted description : /// @description m3d_projection_collision_get_z(id)/// @function m3d_projection_collision_get_z
+/// @param id
+
+Converting GML script : ${project_dir}\scripts\m3d_intersect_triangle\m3d_intersect_triangle.gml
+Converted description : /// @description m3d_intersect_triangle([ARRAY] data, x1, y1, z1, x2, y2, z2, x3, y3, z3)/// @function m3d_intersect_triangle
+/// @param [ARRAY] data
+/// @param  x1
+/// @param  y1
+/// @param  z1
+/// @param  x2
+/// @param  y2
+/// @param  z2
+/// @param  x3
+/// @param  y3
+/// @param  z3
+
+Converting GML script : ${project_dir}\scripts\m3d_intersect_plane\m3d_intersect_plane.gml
+Converted description : /// @description m3d_intersect_plane([ARRAY] data, vx1, vy1, vz1, vx2, vy2, vz2, px, py, pz)/// @function m3d_intersect_plane
+/// @param [ARRAY] data
+/// @param  vx1
+/// @param  vy1
+/// @param  vz1
+/// @param  vx2
+/// @param  vy2
+/// @param  vz2
+/// @param  px
+/// @param  py
+/// @param  pz
+
+Converting GML script : ${project_dir}\scripts\m3d_pointer_destroy\m3d_pointer_destroy.gml
+Converted description : /// @description m3d_pointer_destroy(id)/// @function m3d_pointer_destroy
+/// @param id
+
+Converting GML script : ${project_dir}\scripts\m3d_pointer_setpos\m3d_pointer_setpos.gml
+Converted description : /// @description m3d_pointer_setpos(id, x, y)/// @function m3d_pointer_setpos
+/// @param id
+/// @param  x
+/// @param  y
+
+Converting GML script : ${project_dir}\scripts\m3d_pointer_create\m3d_pointer_create.gml
+Converted description : /// @description m3d_pointer_create()/// @function m3d_pointer_create
+
+Converting GML script : ${project_dir}\scripts\m3d_pointer_get_y\m3d_pointer_get_y.gml
+Converted description : /// @description m3d_pointer_get_y(id)/// @function m3d_pointer_get_y
+/// @param id
+
+Converting GML script : ${project_dir}\scripts\m3d_projection_create\m3d_projection_create.gml
+Converted description : /// @description m3d_projection_create(xport, yport, wport, hport)/// @function m3d_projection_create
+/// @param xport
+/// @param  yport
+/// @param  wport
+/// @param  hport
+
+Converting GML script : ${project_dir}\scripts\m3d_pointer_get_x\m3d_pointer_get_x.gml
+Converted description : /// @description m3d_pointer_get_x(id)/// @function m3d_pointer_get_x
+/// @param id
+
+Converting GML script : ${project_dir}\scripts\m3d_projection_calculate\m3d_projection_calculate.gml
+Converted description : /// @description m3d_projection_calculate(projection id, pointer id)/// @function m3d_projection_calculate
+/// @param projection id
+/// @param  pointer id
+
+Converting GML script : ${project_dir}\scripts\m3d_projection_define\m3d_projection_define.gml
+Converted description : /// @description m3d_projection_define(id, xfrom, yfrom, zfrom, xto, yto, zto, xup, yup, zup, angle, aspect)/// @function m3d_projection_define
+/// @param id
+/// @param  xfrom
+/// @param  yfrom
+/// @param  zfrom
+/// @param  xto
+/// @param  yto
+/// @param  zto
+/// @param  xup
+/// @param  yup
+/// @param  zup
+/// @param  angle
+/// @param  aspect
+
+Converting GML script : ${project_dir}\scripts\m3d_projection_draw\m3d_projection_draw.gml
+Converted description : /// @description m3d_projection_draw(id, near, far)/// @function m3d_projection_draw
+/// @param id
+/// @param  near
+/// @param  far
+
+macOS icon ${options_dir}\mac\icons\icon512.png written out as 32-bit.
+added compatibility script d3d/d3d_set_projection_ext.gml
+added compatibility script d3d/__init_d3d.gml
+added compatibility script __init_global.gml
