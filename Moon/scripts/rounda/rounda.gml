@@ -1,0 +1,1 @@
+return round(abs(argument0))*sign(argument0);

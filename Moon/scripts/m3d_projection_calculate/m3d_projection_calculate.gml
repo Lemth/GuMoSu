@@ -5,7 +5,7 @@
     A 1D array of 3 values will then be returned, a value for each axis
     
     
-    Returns     -   [1D ARRAY] Of 4 unit vector values:
+    Returns     -   [1D ARRAY] Of 3 unit vector values:
                     0   -   x-vec direction
                     1   -   y-vec direction
                     2   -   z-vec direction
@@ -87,7 +87,7 @@ __vz *= __tfov * __aspect;
 
 // Grab the position of the pointer ID
 var __pointerx = window_mouse_get_x(),
-    __pointery = window_mouse_get_y();
+    __pointery = window_get_height()-window_mouse_get_y();
     
 // Compensate for the view port:
 __pointerx -= __xport;
