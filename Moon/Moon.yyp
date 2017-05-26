@@ -231,14 +231,6 @@
             }
         },
         {
-            "Key": "b9379346-50eb-408a-afa0-91ab35bfa3f6",
-            "Value": {
-                "id": "0c39fba1-43fd-41a5-b5cc-87185a7bfcc7",
-                "resourcePath": "datafiles_yy\\glMatrixmat4.txt.yy",
-                "resourceType": "GMIncludedFile"
-            }
-        },
-        {
             "Key": "c294c2df-39de-4e22-bc3a-df229a1f151e",
             "Value": {
                 "id": "28d7eb4d-8198-44bb-b3cb-2a8d96cf0050",
