@@ -13,14 +13,13 @@ gpu_set_cullmode(cull_counterclockwise);
 #macro YUP 1
 #macro ZUP 0
 #macro FOV_Y 45
-#macro ASPECT (window_get_width()/window_get_height())
 #macro ZNEAR 1
 #macro ZFAR 10
 ///CONSTANTS
 
 var camera=camera_create();
 var mat_lookat=matrix_build_lookat(XFROM,YFROM,ZFROM, XTO,YTO,ZTO, XUP,YUP,ZUP);
-var mat_projection=matrix_build_projection_perspective_fov(FOV_Y,ASPECT,ZNEAR,ZFAR);
+var mat_projection=matrix_build_projection_perspective_fov(FOV_Y,window_get_width()/window_get_height(),ZNEAR,ZFAR);
 
 view_enabled=true; //enable the use of views
 view_set_visible(0,true);//make this view visible

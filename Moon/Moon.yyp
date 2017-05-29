@@ -127,14 +127,6 @@
             }
         },
         {
-            "Key": "5cc78180-fd85-4722-9132-822e022bd42b",
-            "Value": {
-                "id": "5a1dcec5-840a-4771-8ec2-f868bf67afc1",
-                "resourcePath": "sprites\\spr_numbers\\spr_numbers.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "631ae6dc-8682-495d-acb2-6d932a2e3805",
             "Value": {
                 "id": "2fccfb8f-f134-4448-b276-0bbbe16a0e5a",
@@ -218,7 +210,7 @@
             "Key": "93d13ec2-ffe8-4c08-a5ec-2f9c036cd750",
             "Value": {
                 "id": "cf1f01dc-0cfc-4036-8e29-8d08928a559f",
-                "resourcePath": "sprites\\spr_numbers1\\spr_numbers1.yy",
+                "resourcePath": "sprites\\spr_numbers\\spr_numbers.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -276,6 +268,14 @@
                 "id": "68252d0e-95e8-492b-9916-721e1533763a",
                 "resourcePath": "options\\windows\\options_windows.yy",
                 "resourceType": "GMWindowsOptions"
+            }
+        },
+        {
+            "Key": "d59e69ea-8d21-4746-80c5-103cbee9c279",
+            "Value": {
+                "id": "1fc39bf4-bf92-4c25-855c-f2b191d0dc4b",
+                "resourcePath": "scripts\\_TODO\\_TODO.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -338,7 +338,8 @@
         "2a72c497-4675-4cd1-82fd-2baf9980e187",
         "f567b6b6-d9c4-494c-85e0-5e59a53e27d0",
         "6865fe0d-0f41-4908-b235-fdc931970525",
-        "f7ac10e1-5306-4926-8923-f2db44de37f3"
+        "f7ac10e1-5306-4926-8923-f2db44de37f3",
+        "d59e69ea-8d21-4746-80c5-103cbee9c279"
     ],
     "tutorial": ""
 }

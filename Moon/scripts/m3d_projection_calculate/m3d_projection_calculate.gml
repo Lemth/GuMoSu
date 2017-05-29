@@ -26,7 +26,7 @@ var __xport  = view_xport,
     __yup    = YUP,
     __zup    = ZUP,
     __angle  = FOV_Y,
-    __aspect = ASPECT;
+    __aspect = window_get_width()/window_get_height();
     
 var __vector; // The final vector to be returned
 __vector[2] = 0;
