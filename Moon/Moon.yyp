@@ -95,6 +95,14 @@
             }
         },
         {
+            "Key": "434ef601-1238-4aaa-bad8-4e38442cd794",
+            "Value": {
+                "id": "a6252790-196e-423b-8dea-1300fa8871aa",
+                "resourcePath": "scripts\\scr_puzzle_number\\scr_puzzle_number.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "4773f6d3-a783-4d7a-a2b1-fb03be61e4fb",
             "Value": {
                 "id": "4468d9dc-b8c1-4dd8-a1f4-8dd57601db65",
@@ -131,6 +139,14 @@
             "Value": {
                 "id": "2fccfb8f-f134-4448-b276-0bbbe16a0e5a",
                 "resourcePath": "scripts\\m3d_intersect_triangle\\m3d_intersect_triangle.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "66837546-7fba-439d-98cb-2393125289bc",
+            "Value": {
+                "id": "a4b49cbf-f8de-4060-b323-37f1da077f28",
+                "resourcePath": "scripts\\scr_puzzle_shuffle\\scr_puzzle_shuffle.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -339,7 +355,9 @@
         "f567b6b6-d9c4-494c-85e0-5e59a53e27d0",
         "6865fe0d-0f41-4908-b235-fdc931970525",
         "f7ac10e1-5306-4926-8923-f2db44de37f3",
-        "d59e69ea-8d21-4746-80c5-103cbee9c279"
+        "d59e69ea-8d21-4746-80c5-103cbee9c279",
+        "434ef601-1238-4aaa-bad8-4e38442cd794",
+        "66837546-7fba-439d-98cb-2393125289bc"
     ],
     "tutorial": ""
 }
