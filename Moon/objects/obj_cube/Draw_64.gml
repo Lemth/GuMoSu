@@ -11,4 +11,8 @@ draw_text(10,130,"mouse_x: "+string(mouse_x));
 draw_text(10,150,"mouse_y: "+string(mouse_y));
 draw_text(10,170,"HOVER: "+string(hover_square));
 draw_text(10,190,"SELECTED: "+string(selected_square));
+
+draw_text(10,room_height-30,"puzzle[2]: "+puzzle[2]+"#");
+draw_text(10,room_height-50,"puzzle[1]: "+puzzle[1]+"#");
+draw_text(10,room_height-70,"puzzle[0]: "+puzzle[0]+"#");
 draw_set_color(c_black);

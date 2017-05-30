@@ -34,7 +34,13 @@ if(selected_square>=0) {
 			case ord("d"):
 			case ord("e"):
 			case ord("f"):
-				puzzle_string=string_set_byte_at(puzzle_string,selected_square+1,ord(string_upper(keyboard_lastchar)));
+				puzzle[2]=string_set_byte_at(puzzle[2],selected_square+1,ord(string_upper(keyboard_lastchar)));
+				keyboard_lastchar="";
+				selected_square=-1;
+				break;
+			case ord("-"):
+			case ord("."):
+				puzzle[2]=string_set_byte_at(puzzle[2],selected_square+1,ord("."));
 			default:
 				keyboard_lastchar="";
 				selected_square=-1;
@@ -42,9 +48,9 @@ if(selected_square>=0) {
 		}
 	}
 }
-if(solution_string==puzzle_string) {
+if(puzzle[0]==puzzle[2]) {
 	show_message("WE DID IT!");
-	solution_string="";
+	puzzle[0]="";
 }
 
 delta_x=clamp((delta_x+2.5*(keyboard_check(vk_right)-keyboard_check(vk_left)))/1.4,-25,25);

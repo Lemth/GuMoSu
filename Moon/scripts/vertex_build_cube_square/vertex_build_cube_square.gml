@@ -8,22 +8,12 @@
 ///@arg z2 argument6
 
 var swap=false;
-var index=HEX2DEC(string_char_at(puzzle_string,square_counter+1));
+var index=HEX2DEC(string_char_at(puzzle[2],square_counter+1));
 var color=c_white;
 var alpha=1;
-if(index==32 || index!=HEX2DEC(string_char_at(starting_string,square_counter+1))) {
-	if((argument1==argument4 && argument1==round(1000*selection_vector[0])/1000 &&
-	point_in_rectangle(selection_vector[1],selection_vector[2],min(argument2,argument5),min(argument3,argument6),max(argument2,argument5),max(argument3,argument6)))
-	|| (argument2==argument5 && argument2==round(1000*selection_vector[1])/1000 &&
-	point_in_rectangle(selection_vector[0],selection_vector[2],min(argument1,argument4),min(argument3,argument6),max(argument1,argument4),max(argument3,argument6)))
-	|| (argument3==argument6 && argument3==round(1000*selection_vector[2])/1000 &&
-	point_in_rectangle(selection_vector[0],selection_vector[1],min(argument1,argument4),min(argument2,argument5),max(argument1,argument4),max(argument2,argument5)))
-	) {
-		hover_square=square_counter;
-		index=47;
-	}
-	if(selected_square==square_counter) {
-		index=40;
+if(string_char_at(puzzle[1],square_counter+1)==".") {
+	if(index<16) {
+		index+=24;
 	}
 }
 if((argument1==argument4 && argument1==round(1000*selection_vector[0])/1000 &&
@@ -34,6 +24,18 @@ point_in_rectangle(selection_vector[0],selection_vector[2],min(argument1,argumen
 point_in_rectangle(selection_vector[0],selection_vector[1],min(argument1,argument4),min(argument2,argument5),max(argument1,argument4),max(argument2,argument5)))
 ) {
 	color=make_color_hsv(0,0,150);
+	if(index>16 && index<56) {
+		hover_square=square_counter;
+	} else {
+		hover_square=-1;
+	}
+}
+if(selected_square==square_counter) {
+	if(round(get_timer()/500000)%2==0) {
+		index=54;
+	} else {
+		color=make_color_hsv(0,0,150);
+	}
 }
 
 var u1=(index%8)/8;

@@ -24,11 +24,15 @@ hover_square=-1;
 selected_square=-1;
 
 
+puzzle[0]="ADCB8420F53E61972CB918E456DA730F76E8A5B149CDF0324BAD0281E76C39F5CA569042BF73DE1841209FD3B7A6E8C5";
+puzzle[1]="A.C.84.0....6....CB.1..4.6.A7.0.7......1.9C...3....D..8.E...39.5..5....2.F73...84....F....A6E..5";
+puzzle[2]="A.C.84.0....6....CB.1..4.6.A7.0.7......1.9C...3....D..8.E...39.5..5....2.F73...84....F....A6E..5";
+//puzzle/="A.C.84.0....6....CB.1..4.6.A7.0.7......1.9C...3....D..8.E...39.5..5....2.F73...84....F....A6E..5";
+//puzzle/="ADCB8420F.3E61972CB918E456DA730F76E8.5B149CDF0324B.D0281E76C39F5CA56.042BF73DE1841209FD.B7A6E8C5";
+//puzzle=scr_puzzle_count(puzzle,90);
+puzzle=scr_puzzle_shuffle(puzzle);
+puzzle=scr_puzzle_limit(puzzle,9);
 
-solution_string="ADCB8420F53E61972CB918E456DA730F76E8A5B149CDF0324BAD0281E76C39F5CA569042BF73DE1841209FD3B7A6E8C5";
-puzzle_string = "ADCB8420F.3E61972CB918E456DA730F76E8.5B149CDF0324B.D0281E76C39F5CA56.042BF73DE1841209FD.B7A6E8C5";
-//puzzle_string = "A.C.84.0....6....CB.1..4.6.A7.0.7......1.9C...3....D..8.E...39.5..5....2.F73...84....F....A6E..5";
-starting_string=puzzle_string;
 
 
 vertex_prime_cube();

@@ -1,5 +1,7 @@
-if(argument0==".") {
-	return 32;
+if(argument0=="*") {
+	return 59;
+} else if(argument0==".") {
+	return 53;
 } else if(argument0=="0") {
 	return 0;
 } else if(argument0=="1") {

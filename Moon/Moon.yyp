@@ -98,7 +98,7 @@
             "Key": "434ef601-1238-4aaa-bad8-4e38442cd794",
             "Value": {
                 "id": "a6252790-196e-423b-8dea-1300fa8871aa",
-                "resourcePath": "scripts\\scr_puzzle_number\\scr_puzzle_number.yy",
+                "resourcePath": "scripts\\scr_puzzle_limit\\scr_puzzle_limit.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -231,6 +231,14 @@
             }
         },
         {
+            "Key": "942f9b8c-229b-4c07-babe-50563a1b8b72",
+            "Value": {
+                "id": "8d9c919e-dfd4-4e3c-a674-aed9d7982165",
+                "resourcePath": "scripts\\scr_puzzle_count\\scr_puzzle_count.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "a73604fd-f5e3-4003-8b91-5467bd265b60",
             "Value": {
                 "id": "623992a8-1697-4113-a9fc-badbe458ccbb",
@@ -357,7 +365,8 @@
         "f7ac10e1-5306-4926-8923-f2db44de37f3",
         "d59e69ea-8d21-4746-80c5-103cbee9c279",
         "434ef601-1238-4aaa-bad8-4e38442cd794",
-        "66837546-7fba-439d-98cb-2393125289bc"
+        "66837546-7fba-439d-98cb-2393125289bc",
+        "942f9b8c-229b-4c07-babe-50563a1b8b72"
     ],
     "tutorial": ""
 }

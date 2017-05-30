@@ -1,6 +1,6 @@
 matrix_set(matrix_world,rotation_matrix);
-gpu_set_cullmode(cull_clockwise);
-vertex_submit(vertex_buffer, pr_trianglelist, cube_texture);
+//gpu_set_cullmode(cull_clockwise);
+//vertex_submit(vertex_buffer, pr_trianglelist, cube_texture);
 gpu_set_cullmode(cull_counterclockwise);
 vertex_submit(vertex_buffer, pr_trianglelist, cube_texture);
 matrix_set(matrix_world,matrix_build_identity());
