@@ -4,8 +4,10 @@
 
 var a=[argument0[0],argument0[1],argument0[2]];
 
-for(var i=0;i<string_length(a[0]);++i) {
-
+for(var i=1;i<=string_length(a[0]);++i) {
+  if(HEX2DEC(string_char_at(a[0],i))>argument1) {
+    
+  }
 }
 
 return a;
