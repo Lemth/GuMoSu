@@ -159,6 +159,14 @@
             }
         },
         {
+            "Key": "68387ce3-0f30-41d3-8f3a-1156cf2e4303",
+            "Value": {
+                "id": "eff1a787-9f0a-44b6-89d1-5e23d388a33e",
+                "resourcePath": "scripts\\scr_puzzle_prime\\scr_puzzle_prime.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "6865fe0d-0f41-4908-b235-fdc931970525",
             "Value": {
                 "id": "714ca189-cd9d-4994-94e9-175251c1f3a9",
@@ -372,10 +380,11 @@
         "6865fe0d-0f41-4908-b235-fdc931970525",
         "f7ac10e1-5306-4926-8923-f2db44de37f3",
         "d59e69ea-8d21-4746-80c5-103cbee9c279",
-        "434ef601-1238-4aaa-bad8-4e38442cd794",
-        "66837546-7fba-439d-98cb-2393125289bc",
+        "68387ce3-0f30-41d3-8f3a-1156cf2e4303",
+        "193bbcea-c70d-4cac-9910-07e2e49715e9",
         "942f9b8c-229b-4c07-babe-50563a1b8b72",
-        "193bbcea-c70d-4cac-9910-07e2e49715e9"
+        "66837546-7fba-439d-98cb-2393125289bc",
+        "434ef601-1238-4aaa-bad8-4e38442cd794"
     ],
     "tutorial": ""
 }
