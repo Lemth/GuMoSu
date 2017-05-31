@@ -13,6 +13,7 @@ colors=[c_red,c_orange,c_yellow,c_green,c_blue,c_purple];
 cube_texture=sprite_get_texture(spr_numbers,0);
 
 
+scr_puzzle_prime();
 
 
 
