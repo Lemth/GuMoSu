@@ -1,12 +1,3 @@
-///@desc scr_puzzle_check(puzzle)
-
-
-
-
-
-
-
-
 
 ///@desc scr_puzzle_prime()
 group[17]=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
@@ -37,3 +28,19 @@ for(var i=0;i<array_length_1d(group);++i) {
     groupnumber[g[j]]=i;
   }
 }
+
+
+///@desc scr_puzzle_check(puzzle)
+
+for(var i=0;i<array_length_1d(group);++i) {
+  var g=group[i];
+  for(var j=0;j<array_length_1d(g);++j) {
+    groupnumber[g[j]]=i;
+  }
+}
+
+
+
+
+
+
