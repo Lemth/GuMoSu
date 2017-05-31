@@ -46,6 +46,7 @@ if(selected_square>=0) {
 				selected_square=-1;
 				break;
 		}
+		faulty_group=scr_puzzle_check(puzzle);
 	}
 }
 if(puzzle[0]==puzzle[2]) {
