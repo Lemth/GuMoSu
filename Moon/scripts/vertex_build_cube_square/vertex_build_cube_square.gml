@@ -10,6 +10,11 @@
 var swap=false;
 var index=HEX2DEC(string_char_at(puzzle[2],square_counter+1));
 var color=c_white;
+if(faulty_group!=-1) {
+	if(faulty_group==groupnumber[square_counter]) {
+		color=c_red;
+	}
+}
 var alpha=1;
 if(string_char_at(puzzle[1],square_counter+1)==".") {
 	if(index<16) {
