@@ -12,7 +12,7 @@ var index=HEX2DEC(string_char_at(puzzle[2],square_counter+1));
 var color=c_white;
 if(faulty_group!=-1) {
 	if(faulty_group==groupnumber[square_counter]) {
-		color=c_red;
+		color=make_color_hsv(0,127,255);
 	}
 }
 var alpha=1;
@@ -28,7 +28,11 @@ point_in_rectangle(selection_vector[0],selection_vector[2],min(argument1,argumen
 || (argument3==argument6 && argument3==round(1000*selection_vector[2])/1000 &&
 point_in_rectangle(selection_vector[0],selection_vector[1],min(argument1,argument4),min(argument2,argument5),max(argument1,argument4),max(argument2,argument5)))
 ) {
-	color=make_color_hsv(0,0,150);
+	if(color==c_white) {
+		color=make_color_hsv(0,0,191);
+	} else {
+		color=make_color_hsv(0,95,127);
+	}
 	if(index>16 && index<56) {
 		hover_square=square_counter;
 	} else {
@@ -39,7 +43,7 @@ if(selected_square==square_counter) {
 	if(round(get_timer()/500000)%2==0) {
 		index=54;
 	} else {
-		color=make_color_hsv(0,0,150);
+		color=make_color_hsv(127,0,127);
 	}
 }
 
