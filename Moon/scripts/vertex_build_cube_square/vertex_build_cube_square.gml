@@ -7,6 +7,11 @@
 ///@arg y2 argument5
 ///@arg z2 argument6
 
+if(ds_grid_value_exists(square_notes,0,square_counter,15,square_counter,1)) {
+	vertex_build_cube_square_notes(argument0,argument1,argument2,argument3,argument4,argument5,argument6);	
+}
+
+
 var swap=false;
 var index=HEX2DEC(string_char_at(puzzle[2],square_counter+1));
 var color=c_white;
