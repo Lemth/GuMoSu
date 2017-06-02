@@ -29,4 +29,4 @@ for(var i=0;i<array_length_1d(group);++i) {
   }
 }
 
-square_notes=ds_grid_create(
+square_notes=ds_grid_create(16,96);
