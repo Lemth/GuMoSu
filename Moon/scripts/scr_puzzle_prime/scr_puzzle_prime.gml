@@ -28,3 +28,5 @@ for(var i=0;i<array_length_1d(group);++i) {
     groupnumber[g[j]]=i;
   }
 }
+
+square_notes=ds_grid_create(
