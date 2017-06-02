@@ -1,10 +1,10 @@
 /*TODO/
 
-- spr_numbers:
+ds_grid_value_exists
+ds_grid accesors
 
- : RED is WRONG! number overlay!
- 
- 
+
+shape (different obj) click -> transfer number.
  
 
 /TODO*/
