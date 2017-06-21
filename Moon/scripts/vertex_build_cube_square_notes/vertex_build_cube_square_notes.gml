@@ -54,7 +54,7 @@ repeat(16) {
 	}
 
 	var swap=false;
-	var index=rep;
+	var index=square_notes[# rep,square_counter]==1?rep:54;
 	rep++;
 	var color=c_white;
 
@@ -95,42 +95,42 @@ repeat(16) {
 	var v1=floor(index/8)/8;
 	var v2=(1+floor(index/8))/8;
 
-	vertex_position_3d(argument0, argument1,argument2,argument3);
+	vertex_position_3d(argument0, x1,y1,z1);
 	vertex_color(argument0, color, alpha);
 	vertex_texcoord(argument0,u1,v1);
 	if(argument3!=argument6) {
-		vertex_position_3d(argument0, argument1,argument2,argument6);
+		vertex_position_3d(argument0, x1,y1,z2);
 		vertex_color(argument0, color, alpha);
 		vertex_texcoord(argument0,u2,v1); swap=true;
 	}
 	if(argument1!=argument4) {
-		vertex_position_3d(argument0, argument4,argument2,argument3);
+		vertex_position_3d(argument0, x2,y1,z1);
 		vertex_color(argument0, color, alpha);
 		if(swap==false) { vertex_texcoord(argument0,u2,v1); swap=true; }
 		else { vertex_texcoord(argument0,u1,v2); swap=false; }
 	}
 	if(argument2!=argument5) {
-		vertex_position_3d(argument0, argument1,argument5,argument3);
+		vertex_position_3d(argument0, x1,y2,z1);
 		vertex_color(argument0, color, alpha);
 		if(swap==true) { vertex_texcoord(argument0,u1,v2); swap=false; }
 	}
 	if(argument2!=argument5) {
-		vertex_position_3d(argument0, argument1,argument5,argument3);
+		vertex_position_3d(argument0, x1,y2,z1);
 		vertex_color(argument0, color, alpha);
 		vertex_texcoord(argument0,u1,v2); swap=true;
 	}
 	if(argument1!=argument4) {
-		vertex_position_3d(argument0, argument4,argument2,argument3);
+		vertex_position_3d(argument0, x2,y1,z1);
 		vertex_color(argument0, color, alpha);
 		if(swap==false) { vertex_texcoord(argument0,u1,v2); swap=true; }
 		else { vertex_texcoord(argument0,u2,v1); swap=false; }
 	}
 	if(argument3!=argument6) {
-		vertex_position_3d(argument0, argument1,argument2,argument6);
+		vertex_position_3d(argument0, x1,y1,z2);
 		vertex_color(argument0, color, alpha);
 		if(swap==true) { vertex_texcoord(argument0,u2,v1); swap=false; }
 	}
-	vertex_position_3d(argument0, argument4,argument5,argument6);
+	vertex_position_3d(argument0, x2,y2,z2);
 	vertex_color(argument0, color, alpha);
 	vertex_texcoord(argument0,u2,v2);
 
