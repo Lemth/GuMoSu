@@ -30,3 +30,6 @@ for(var i=0;i<array_length_1d(group);++i) {
 }
 
 square_notes=ds_grid_create(16,96);
+repeat(64) {
+	square_notes[# irandom(10),irandom(90)]=1;
+}

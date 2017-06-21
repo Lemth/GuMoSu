@@ -8,14 +8,9 @@
 ///@arg z2 argument6
 
 // ds_grid_value_exists(square_notes,0,square_counter,15,square_counter,1)
-var hor=0;
-var ver=0;
-var rep=0;
-
-repeat(16) {
-	if(ver==1) {
-		exit;
-	}
+for(var rep=0;rep<16;rep++) {
+	var hor=(rep%4)/4;
+	var ver=floor(rep/4)/4;
 
 	if(argument1==argument4) {
 		var x1=argument1;
@@ -47,15 +42,9 @@ repeat(16) {
 		var y2=lerp(argument2,argument5,ver);
 		var z2=argument6;
 	}
-	if(hor==1) {
-		hor=0;	
-	} else {
-		ver-=(1/4);
-	}
 
 	var swap=false;
 	var index=square_notes[# rep,square_counter]==1?rep:54;
-	rep++;
 	var color=c_white;
 
 	var alpha=1;

@@ -36,5 +36,5 @@ if(argument0=="*") {
 	return 15;
 } else {
 	show_debug_message("WRONG HEX2DEC");
-	return -1;
+	return 100;
 }

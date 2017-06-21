@@ -6,7 +6,7 @@ gpu_set_cullmode(cull_counterclockwise);
 #macro XFROM 0
 #macro YFROM 0
 #macro ZFROM -5
-#macro XTO 0
+#macro XTO 1.31
 #macro YTO 0
 #macro ZTO 0
 #macro XUP 0
